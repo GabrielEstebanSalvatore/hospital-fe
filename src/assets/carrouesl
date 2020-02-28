@@ -1,0 +1,91 @@
+{/*<div class="container pb-4">
+                                     <div class="container text-center">
+                                            <h1 class="text-dark">What our Reader's Say about us</h1>
+                                            <p class="text-secondary">Lorem ipsum dolor sit amet.</p>
+                                        </div>
+                            <div class="row ">
+                                        
+
+
+                                <div class="col-sm ">
+                                    <div class="col-md col-10 text-center">
+                                        <div class="card mr-2 d-inline-block shadow-lg">
+                                            <div class="card-img-top">
+                                                <img src="../assets/UI-face-4.jpg" class="img-fluid border-radius p-4" alt=""></img>
+                                            </div>
+                                            <div class="card-body">
+                                                <h3 class="card-title">Olivia Louis</h3>
+                                                <p class="card-text">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
+                                                minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
+                                                </p>
+                                                <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
+                                                <p class="text-black-50">CEO at Google</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-sm">
+                                    <div class="col-md-12 ">
+                                        <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
+                                            <div class="carousel-inner text-center">
+                                                <div class="carousel-item active">
+                                                    <div class="card mr-2 d-inline-block shadow">
+                                                        <div class="card-img-top">
+                                                            <img src="../assets/UI-face-1.jpg" class="img-fluid rounded-circle w-50 p-4" alt="" />
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h3 class="card-title">Allen Agnes</h3>
+                                                            <p class="card-text">
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
+                                                            minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
+                                                            </p>
+                                                            <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
+                                                            <p class="text-black-50">CEO at Google</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <div class="card  d-inline-block mr-2 shadow">
+                                                            <div class="card-img-top">
+                                                                <img src="../assets/UI-face-2.jpg" class="img-fluid rounded-circle w-50 p-4" alt="" />
+                                                            </div>
+                                                        <div class="card-body">
+                                                                <h3 class="card-title">Amiel Barbara</h3>
+                                                                <p class="card-text">
+                                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
+                                                                    minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
+                                                                </p>
+                                                                <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
+                                                                <p class="text-black-50">CEO at Google</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-sm">
+                                    <div class="col-md col-10 text-center">
+                                        <div class="card mr-2 d-inline-block shadow-lg">
+                                            <div class="card-img-top">
+                                                <img src="../assets/UI-face-4.jpg" class="img-fluid border-radius p-4" alt=""></img>
+                                            </div>
+                                            <div class="card-body">
+                                                <h3 class="card-title">Olivia Louis</h3>
+                                                <p class="card-text">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
+                                                minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
+                                                </p>
+                                                <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
+                                                <p class="text-black-50">CEO at Google</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>*/}
