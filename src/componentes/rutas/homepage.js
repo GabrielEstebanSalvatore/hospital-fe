@@ -15,60 +15,70 @@ class homepage extends Component{
         return(
             <Fragment>
                 <body>
-                  <section>
-                        <div className="text-center">
-                            <div className="row align-items-md-center justify-content-center">
-                                <div className="col-md-5 mt-2 col-sm-12 pt-4 pb-4 ">
-                                    <h1>Nuestros Servicios</h1>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere accusamus eum dignissimos ipsa sequi expedita.
-                                    </p>
-                                    <div className="col-12 mt-3 pt-4">
-                                        <Link to="/turnos" className="btn btn-white mt-4">
-                                            <h2>
-                                                <i className="fas fa-user-md fa-lg"></i>  {''} 
-                                                <button className="btn btn-light px-5 py-2 primary-btn">
-                                                    Turnos
+                 {/*<div className="padre pt-4">
+                        <div className="izquierda"><a href=""> izquierda</a></div>
+                        <div className="centro"><a href=""> izquierda</a></div>
+                        <div className="derecha"><a href=""> izquierda</a></div>
+                    </div>*/}
+                    {/*<div className="turnos-general">
+                        <div className="row">
+                            <div className="col" >
+                                Nuestros servicios
+                            </div>
+                        </div>
+                        <div className="row">
+
+                        <div className="col" id="turnos" >
+                                <a href="/turnos">Turnos</a>
+                            </div>
+                            <div className="col" id="emergencias" >
+                                <a href="/emergencias">Emergencias</a>
+                            </div>
+                            <div className="col internaciones" id="internaciones" >
+                                <a href="/internaciones">Internaciones</a>
+                            </div>
+
+                        </div>
+                </div>*/}
+                    <div className="col-12 mt-3 pt-4">
+                        <Link to="/turnos" className="btn btn-white mt-4">
+                            <h2>
+                                <i className="fas fa-user-md fa-lg"></i>  {''}
+                                <button className="btn btn-light px-5 py-2 primary-btn">
+                                    Turnos
                                                 </button>
-                                            </h2>
-                                        </Link>
-                                        
-                                    </div>
-                                    <div className="col-12 mt-3">
-                                        <Link to="/emergencias" className="btn btn-white mt-4">
-                                            <h2>
-                                                <i className="fas fa-ambulance "></i>  {''} 
-                                                <button className="btn btn-light px-5 py-2 primary-btn">
-                                                    Emergencias
+                            </h2>
+                        </Link>
+
+                    </div>
+                    <div className="col-12 mt-3">
+                        <Link to="/emergencias" className="btn btn-white mt-4">
+                            <h2>
+                                <i className="fas fa-ambulance "></i>  {''}
+                                <button className="btn btn-light px-5 py-2 primary-btn">
+                                    Emergencias
                                                 </button>
-                                            </h2>
-                                        </Link>
-                                        
-                                    </div>
-                                    <div className="col-12 mb-5 mt-3">
-                                        <Link to="/internaciones" className="btn btn-white mt-4">
-                                            <h2>
-                                                <i className="fas fa-procedures "></i>  {''} 
-                                                <button className="btn btn-light px-5 py-2 primary-btn">
-                                                    Internaciones
+                            </h2>
+                        </Link>
+
+                    </div>
+                    <div className="col-12 mb-5 mt-3">
+                        <Link to="/internaciones" className="btn btn-white mt-4">
+                            <h2>
+                                <i className="fas fa-procedures "></i>  {''}
+                                <button className="btn btn-light px-5 py-2 primary-btn">
+                                    Internaciones
                                                 </button>
-                                            </h2>
-                                        </Link>
-                                        
-                                    </div>
+                            </h2>
+                        </Link>
+
+                    </div>
                                     
                                                        
-                                </div>
-
-                                {/* <div className="col-md-5 col-sm-12  h-25">
-                                <img src="../assets/header-img.png" alt="Book" />
-                                </div> */}
-                            </div>
-                            <div className="container"><hr/></div> 
-                        </div>
-                        
-                    </section>
+                                
                     
+                    
+
                     <main>
                         
                         {/* SECCIÓN 1 */}

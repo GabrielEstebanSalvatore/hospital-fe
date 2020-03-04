@@ -28,8 +28,12 @@ export default (state, action) => {
         case AGREGAR_TURNO:
             return {
                 ...state,
-                proyectos: [...state.turnos, action.payload],
-                errorformulario: false
+                autenticado: true,
+                mensaje: null,
+                token: action.payload.token,
+                cargando: false
+                /*turnos: [...state.turnos, action.payload],
+                errorformulario: false*/
             }
         case VALIDAR_FORMULARIO:
             return {

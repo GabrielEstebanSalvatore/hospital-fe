@@ -1,24 +1,31 @@
-import React, { Fragment, useState, useContext } from 'react';
+import React, { Fragment, useState, useContext, useEffect } from 'react';
 import proyectoContext from '../../context/proyectos/proyectoContext';
 import {Link} from "react-router-dom";
+import AuthContext from '../../context/autenticacion/authContext';
 
 
 const Emergencias = () => {
     
     const proyectosContext = useContext(proyectoContext);
-    const { errorformulario,  agregarTurno, mostrarError} = proyectosContext;
+    const authContext = useContext(AuthContext);
+    const { errorformulario,  agregarTurno, mostrarError, } = proyectosContext;
+    const { clienteAutenticado } = authContext;
+
+    useEffect(() => {
+        clienteAutenticado()
+    }, [])
 
     // State para Emergencia
     const [turno, guardarTurno] = useState({
         name:'',
         tipoTurno:'EMERGENCIA',
         doctor:'EMERGENCIA',
-        fecha:new Date(),
+        fecha:'',
         hora:''
     });
 
     // Extraer nombre de emergencia
-    const {name } = turno;
+    const { name } = turno.name;
 
     // Lee los contenidos del input
     const onChange= e => {
@@ -49,8 +56,6 @@ const Emergencias = () => {
             fecha:'',
             hora:''
         })
-        
-        
     }
         return (
             <Fragment>

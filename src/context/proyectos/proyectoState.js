@@ -19,10 +19,10 @@ import clienteAxios from '../../config/axios';
 
 const ProyectoState = props => {
     const turnos =[ 
-        {id:1 ,nombre: 'turnos', estado:false},
+        /*{id:1 ,nombre: 'turnos', estado:false},
         {id:2 ,nombre: 'internacion', estado:true},
         {id:3 ,nombre: 'emergencia', estado:false},
-        {id:4 ,nombre: 'salchicha', estado:false}
+        {id:4 ,nombre: 'salchicha', estado:false}*/
     ]
 
     const initialState = {
@@ -34,7 +34,7 @@ const ProyectoState = props => {
     // Dispatch para ejecutar las acciones
     const [state, dispatch] = useReducer(proyectoReducer, initialState)
 
-    // Serie de funciones para el CRUD
+    // Serie de funciones para el CRUD--------ver
     const mostrarFormulario = () => {
         dispatch({
             type: FORMULARIO_PROYECTO
@@ -53,14 +53,19 @@ const ProyectoState = props => {
 
     //Agregar nuevo turno
     const agregarTurno = async turno =>{
+        console.log('turno fuera', turno);
+        //validar que venga fecha y hora
+
+        let fechaFormatead = turno.fecha + "T" + turno.hora + ":00Z"
+        turno.fecha = new Date(fechaFormatead).toISOString()
         
         try {
-            const resultado = await clienteAxios.post('/turnos', turno )
-            console.log(resultado);
-            /*dispatch({
+            const respuesta = await clienteAxios.post('/turnos', turno);
+            console.log(respuesta);
+            dispatch({
                 type: AGREGAR_TURNO,
-                payload: resultado.data
-            })*/
+                payload: respuesta.data
+            })
             
         } catch (error) {
             console.log(error);
@@ -92,69 +97,7 @@ const ProyectoState = props => {
             payload: turnoId
         })
     }
-
-
-    /*// Agregar nuevo proyecto
-    const agregarProyecto = async proyecto => {
-
-        try {
-            const resultado = await clienteAxios.post('/api/proyectos', proyecto);
-            console.log(resultado);
-            // Insertar el proyecto en el state
-            dispatch({
-                type: AGREGAR_PROYECTO,
-                payload: resultado.data
-            })
-        } catch (error) {
-            const alerta = {
-                msg: 'Hubo un error',
-                categoria: 'alerta-error'
-            }
-            
-            dispatch({
-                type: PROYECTO_ERROR,
-                payload: alerta
-            })
-        }
-    }
-
-    // Valida el formulario por errores
-    const mostrarError = () => {
-        dispatch({
-            type: VALIDAR_FORMULARIO
-        })
-    } 
-
-    // Selecciona el Proyecto que el usuario dio click
-    const proyectoActual = proyectoId => {
-        dispatch({
-            type: PROYECTO_ACTUAL,
-            payload: proyectoId
-        })
-    }
-
-    // Elimina un proyecto
-    const eliminarProyecto = async proyectoId => {
-        try {
-            await clienteAxios.delete(`/api/proyectos/${proyectoId}`);
-            dispatch({
-                type: ELIMINAR_PROYECTO,
-                payload: proyectoId
-            })
-        } catch (error) {
-            const alerta = {
-                msg: 'Hubo un error',
-                categoria: 'alerta-error'
-            }
-            
-            dispatch({
-                type: PROYECTO_ERROR,
-                payload: alerta
-            })
-        }
-    }*/
-
-
+    
     return (
         <proyectoContext.Provider
             value={{
@@ -169,9 +112,7 @@ const ProyectoState = props => {
                 agregarTurno,
                 mostrarError,
                 eliminarTurno
-                /*mensaje: state.mensaje,
-                proyectoActual,*/
-                    }}
+            }}
         >
             {props.children}
         </proyectoContext.Provider>
