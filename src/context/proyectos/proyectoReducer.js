@@ -21,6 +21,7 @@ export default (state, action) => {
                 formulario: true
             }*/
         case OBTENER_TURNOS:
+            //console.log(action.payload); para ver por consola que llega del be
             return {
                 ...state,
                 turnos: action.payload

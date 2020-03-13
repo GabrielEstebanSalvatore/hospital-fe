@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import AuthContext from '../../context/autenticacion/authContext';
 
 
+
 const Emergencias = () => {
     
     const proyectosContext = useContext(proyectoContext);
@@ -40,7 +41,7 @@ const Emergencias = () => {
         e.preventDefault();
 
         // Validar el turno
-        if(name === '') {
+        if(turno.name === '' ) {
             mostrarError();
             return;
         }
@@ -144,7 +145,12 @@ const Emergencias = () => {
                                     </button>
                                 </form>
                                 {errorformulario ? 
-                                <div className="form-group">El nombre del Turno es obligatorio</div> 
+                                    <div className="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <div> Todos Los campos son obligatorios</div>
+                                        <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div> 
                                 : null}
                             </div>
                         </div>

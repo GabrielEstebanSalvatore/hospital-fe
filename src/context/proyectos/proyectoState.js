@@ -42,12 +42,19 @@ const ProyectoState = props => {
     }
 
     // Obtener los turnos
-    const obtenerTurnos = () => {
+    const obtenerTurnos = async () => {
         
-        dispatch({
-            type: OBTENER_TURNOS,
-            payload: turnos
-        })
+        try {
+            const respuesta = await clienteAxios.get('/turnos');
+            
+            dispatch({
+                type: OBTENER_TURNOS,
+                payload: respuesta.data.turnos
+            })
+        } catch (error) {
+            console.log(error);
+            
+        }
     
     }
 
@@ -92,10 +99,15 @@ const ProyectoState = props => {
 
     //Elimina un Turno
     const eliminarTurno = async turnoId => {
-        dispatch({
+      try {
+          await clienteAxios.delete(`/turnos/${turnoId}`)
+          dispatch({
             type: ELIMINAR_TURNO,
             payload: turnoId
         })
+      } catch (error) {
+          
+      }
     }
     
     return (

@@ -7,6 +7,11 @@ header,
 section {
   overflow-x: hidden;
 }
+.aside, 
+.barranav{
+  background-color: rgba(224, 221, 221, 0.5);
+  border: transparent;
+}
 /* encabezado  ----HOVER---- */
 
 

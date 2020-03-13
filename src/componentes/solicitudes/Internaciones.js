@@ -1,21 +1,30 @@
-import React, { Component} from 'react';
-import axios from 'axios';
+import React, { Fragment, useState, useContext, useEffect } from 'react';
+import proyectoContext from '../../context/proyectos/proyectoContext';
 import {Link} from "react-router-dom";
+import AuthContext from '../../context/autenticacion/authContext';
 
 
-
-class Internaciones extends Component {
+const Internaciones = () => {
     
+    const proyectosContext = useContext(proyectoContext);
+    const authContext = useContext(AuthContext);
+    const { errorformulario,  agregarTurno, mostrarError, } = proyectosContext;
+    const { clienteAutenticado } = authContext;
 
-    state = {
+    useEffect(() => {
+        clienteAutenticado()
+    }, [])
+
+    // State para Internaciones
+    const [turno, guardarTurno] = useState({
         name:'',
-        tipoTurno:'',
-        doctor:'',
-        fecha:new Date(),
+        tipoTurno:'INTERNACION',
+        doctor:'INTERNACION',
+        fecha:'',
         hora:''
-    }
+    });
 
-    async componentDidMount() {
+    /*async componentDidMount() {
 
         this.setState({
             tipoTurno: 'INTERNACIONES',
@@ -23,37 +32,44 @@ class Internaciones extends Component {
         })
 
         //await axios.post('http://localhost:4000/turnos');
-    }
-    onSubmit = async (e) => {
-        e.preventDefault();
-                
-        const newTurno = {
-            name: this.state.name,
-            tipoTurno: this.state.tipoTurno,
-            doctor: this.state.doctor,
-            fecha: this.state.fecha,
-            hora: this.state.hora
-        };
-        //console.log(newTurno);
-        axios.post('http://localhost:4000/turnos', newTurno);
-       
-        window.location.href = '/';
-    }
-    onInputChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
+    }*/
+
+    // Lee los contenidos del input
+    const onChange= e => {
+        guardarTurno({
+            ...turno,
+            [e.target.name] : e.target.value
         })
     }
+    
+    // Extraer nombre de emergencia
+    const { name } = turno.name;
 
-    onChangeDate = date => {
-        this.setState({ date });
+    const onSubmitTurno = e => {
+        e.preventDefault();
+
+        // Validar el turno
+        if(turno.name === '') {
+            mostrarError();
+            return;
+        }
+
+        // agregar al state
+        agregarTurno(turno)
+
+        // Reiniciar el form
+        guardarTurno({
+            name:'',
+            tipoTurno:'',
+            doctor:'',
+            fecha:'',
+            hora:''
+        })
     }
-     
-
-    render() {
-        return (
+         
+    return (
+        <Fragment>
             <div className="container">
-
                 <div className="row">
                     <div className="col-12 mb-4">
                         <Link to="/" className="btn btn-secondary mt-4">
@@ -70,7 +86,8 @@ class Internaciones extends Component {
                         <div className="row justify-content-center">
                             <div className="col-md-8 mt-5">
                                 <form
-                                    onSubmit={this.onSubmit}
+                                    onSubmit={onSubmitTurno}
+                                    noValidate
                                 >
                                     <div className="form-group">
                                         <label>Paciente:</label>
@@ -80,8 +97,8 @@ class Internaciones extends Component {
                                             name="name"
                                             placeholder="Escriba su nombre"
                                             required
-                                            value={this.state.name}
-                                            onChange={this.onInputChange}
+                                            value={name}
+                                            onChange={onChange}
                                         />
                                     </div>
                                     <div className="form-group">
@@ -113,7 +130,7 @@ class Internaciones extends Component {
                                                 type="date" 
                                                 className="form-control"
                                                 name="fecha"
-                                                onChange={this.onChangeDate}
+                                                onChange={onChange}
                                                 
                                             />
                                         </div>                            
@@ -124,7 +141,7 @@ class Internaciones extends Component {
                                                 type="time" 
                                                 className="form-control" 
                                                 name="hora"
-                                                onChange={this.onInputChange}
+                                                onChange={onChange}
                                             
                                             />
                                         </div> 
@@ -133,19 +150,20 @@ class Internaciones extends Component {
                                     <button className="btn btn-success btn-block mb-4">
                                     Aceptar
                                     </button>
-                        
-
-                                    {/*<input type="submit" value="Agregar Libro" className="btn btn-success mb-4"/>*/}
-
+                                                           
                                 </form>
+                                {errorformulario ? 
+                                <div className="form-group">El nombre del Turno es obligatorio</div> 
+                                : null}
                             </div>
                         </div>
                     </div>
                     
                 </div> 
             </div>
+            </Fragment>
         )
-    }
+    
 }
 
 export default  Internaciones;

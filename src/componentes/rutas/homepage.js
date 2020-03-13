@@ -15,12 +15,8 @@ class homepage extends Component{
         return(
             <Fragment>
                 <body>
-                 {/*<div className="padre pt-4">
-                        <div className="izquierda"><a href=""> izquierda</a></div>
-                        <div className="centro"><a href=""> izquierda</a></div>
-                        <div className="derecha"><a href=""> izquierda</a></div>
-                    </div>*/}
-                    {/*<div className="turnos-general">
+                
+                    <div className="turnos-general">
                         <div className="row">
                             <div className="col" >
                                 Nuestros servicios
@@ -29,18 +25,21 @@ class homepage extends Component{
                         <div className="row">
 
                         <div className="col" id="turnos" >
-                                <a href="/turnos">Turnos</a>
+                                <Link to="/turnos">Turnos</Link>
+                                {/*<a href="/turnos">Turnos</a>*/}
                             </div>
                             <div className="col" id="emergencias" >
-                                <a href="/emergencias">Emergencias</a>
+                                <Link to="/emergencias">Emergencias</Link>
+                                {/*<a href="/emergencias">Emergencias</a>*/}
                             </div>
                             <div className="col internaciones" id="internaciones" >
-                                <a href="/internaciones">Internaciones</a>
+                                <Link to="/internaciones">Internaciones</Link>
+                                {/*<a href="/internaciones">Internaciones</a>*/}
                             </div>
 
                         </div>
-                </div>*/}
-                    <div className="col-12 mt-3 pt-4">
+                </div>*
+                    {/*<div className="col-12 mt-3 pt-4">
                         <Link to="/turnos" className="btn btn-white mt-4">
                             <h2>
                                 <i className="fas fa-user-md fa-lg"></i>  {''}
@@ -72,13 +71,7 @@ class homepage extends Component{
                             </h2>
                         </Link>
 
-                    </div>
-                                    
-                                                       
-                                
-                    
-                    
-
+            </div>*/}
                     <main>
                         
                         {/* SECCIÓN 1 */}
