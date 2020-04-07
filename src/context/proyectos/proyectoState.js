@@ -8,6 +8,10 @@ import {
     AGREGAR_TURNO,
     VALIDAR_FORMULARIO,
     ELIMINAR_TURNO,
+    ENVIO_CORREO,
+    EDITAR_TURNO,
+    EDITAR_TURNO_EXITO,
+    //EDITAR_TURNO_ERROR
     //TURNO_ERROR,
     /*
     
@@ -18,17 +22,12 @@ import {
 import clienteAxios from '../../config/axios';
 
 const ProyectoState = props => {
-    const turnos =[ 
-        /*{id:1 ,nombre: 'turnos', estado:false},
-        {id:2 ,nombre: 'internacion', estado:true},
-        {id:3 ,nombre: 'emergencia', estado:false},
-        {id:4 ,nombre: 'salchicha', estado:false}*/
-    ]
-
+    
     const initialState = {
 
         turnos : [],
-        errorformulario: false
+        errorformulario: false,
+        tunoeditar:null
     }
 
     // Dispatch para ejecutar las acciones
@@ -60,7 +59,6 @@ const ProyectoState = props => {
 
     //Agregar nuevo turno
     const agregarTurno = async turno =>{
-        console.log('turno fuera', turno);
         //validar que venga fecha y hora
 
         let fechaFormatead = turno.fecha + "T" + turno.hora + ":00Z"
@@ -68,7 +66,7 @@ const ProyectoState = props => {
         
         try {
             const respuesta = await clienteAxios.post('/turnos', turno);
-            console.log(respuesta);
+            //console.log(respuesta);
             dispatch({
                 type: AGREGAR_TURNO,
                 payload: respuesta.data
@@ -86,7 +84,22 @@ const ProyectoState = props => {
                 type: TURNO_ERROR,
                 payload: alerta
             })*/
+        }
+    }
+
+    //ENVIO DE CORREO
+    const envioCorreo = async correo =>{
+               
+        try {
+            const respuesta = await clienteAxios.post('/correo', correo);
+            //console.log(respuesta);
+            dispatch({
+                type: ENVIO_CORREO,
+                payload: respuesta.data
+            })
             
+        } catch (error) {
+            console.log(error);
         }
     }
 
@@ -109,12 +122,37 @@ const ProyectoState = props => {
           
       }
     }
+
+     //Editar un Turno
+   
+    const editarTurno = turno =>{
+        dispatch({
+            type:  EDITAR_TURNO,
+            payload: turno
+        })
+    }
     
+    const editarTurnoExito = async turno =>{
+       
+        try {
+            const resultado = await clienteAxios.put(`/turnos/${turno.id}`, turno)
+            console.log('resultado:',resultado);
+        
+            dispatch({
+              type: EDITAR_TURNO_EXITO,
+              payload: resultado.data.turno
+          })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <proyectoContext.Provider
             value={{
                 turnos:state.turnos,
                 errorformulario: state.errorformulario,
+                tunoeditar:state.tunoeditar,
                 /*
                 formulario: state.formulario,
                 ,*/
@@ -123,7 +161,10 @@ const ProyectoState = props => {
                 obtenerTurnos,
                 agregarTurno,
                 mostrarError,
-                eliminarTurno
+                eliminarTurno,
+                envioCorreo,
+                editarTurno,
+                editarTurnoExito
             }}
         >
             {props.children}

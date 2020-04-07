@@ -27,10 +27,10 @@ const AuthState = props => {
     const [ state, dispatch ] = useReducer(AuthReducer, initialState);
 
     const registrarCliente = async datos => {
-        console.log('Fuera',datos);
+        //console.log('Fuera',datos);
         try {
             const respuesta = await clienteAxios.post('/clientes', datos);
-            console.log("Roberto", respuesta);
+            //console.log("Roberto", respuesta);
             
             dispatch({
                 type: REGISTRO_EXITOSO,
@@ -50,13 +50,13 @@ const AuthState = props => {
             })
         }
     }
-
+    
     //Retorna el usuario autenticado 
     const clienteAutenticado= async ( )=>{
         const token = localStorage.getItem('token');
         if(token) {
             tokenAuth(token);
-            console.log('Token : ',token);
+            //console.log('Token : ',token);
         }
 
         try {
@@ -64,14 +64,14 @@ const AuthState = props => {
                 "x-auth-token": token
             }
             const respuesta = await clienteAxios.get('/auth', {headers});
-            console.log(respuesta);
+            //console.log(respuesta);
             dispatch({
                 type: OBTENER_USUARIO,
                 payload: respuesta.data
             });
             
         } catch (error) {
-            console.log(error.response);
+            //console.log(error.response);
             dispatch({
                 type: LOGIN_ERROR
             })
@@ -83,7 +83,7 @@ const AuthState = props => {
     const iniciarSesion= async datos => {
         try{
             const respuesta = await clienteAxios.post('/auth', datos);
-            console.log(respuesta);
+            //console.log(respuesta);
             
             dispatch({
                 type:LOGIN_EXITOSO,

@@ -8,9 +8,12 @@ import homepage from './componentes/rutas/homepage';
 import Emergencias from './componentes/solicitudes/Emergencias';
 import Internaciones from './componentes/solicitudes/Internaciones';
 import GestionUsuario from './componentes/rutas/Gestion';
+
 //Usuario
 import Signin from './componentes/auth/signin';
 import Signup from './componentes/auth/signup';
+import Contacto from './componentes/rutas/Contacto'
+import Editar from './componentes/rutas/Editar'
 
 /*Componentes*/
 import Navigation from './componentes/layout/Navigation';
@@ -48,13 +51,15 @@ function App() {
                     <Route exact path="/emergencias" component={Emergencias}/>
                     <Route exact path="/internaciones" component={Internaciones}/>
                     <RutaPrivada exact path="/gestion" component={GestionUsuario}/>
+                    <Route exact path="/contacto" component={Contacto}/>
+                    <Route exact path='/turno/:id' component={Editar}/>
 
                     <Route exact path="/user/signin" component={Signin}/>
                     <Route exact path="/user/signup" component={Signup}/>
                   </Switch>
                 </div>
-              </Router>
               <Footer/>
+              </Router>
             </AuthState>
         </AlertaState>
       </ProyectoState>

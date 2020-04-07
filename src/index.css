@@ -14,7 +14,6 @@ section {
 }
 /* encabezado  ----HOVER---- */
 
-
 #turnos:hover #post-s{
   width: 100%;
   opacity: 0.5;
@@ -23,10 +22,8 @@ section {
 #turnos, #emergencias, #internaciones{
   background-color: black;
   transition: all 0.5s ease-in-out;
-  /*flex-direction: row;
-  flex-wrap: wrap;*/
   text-align: center;
-  height: 20rem;
+  height: 22rem;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -49,8 +46,15 @@ section {
 }
 
 #turnos:hover, #emergencias:hover, #internaciones:hover{
- opacity: .8;
+ opacity: .85;
   
+}
+
+.turnos-general p {
+  padding-top: 50%;
+  font-size: larger;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
 }
 
 
@@ -68,7 +72,8 @@ section {
   #internaciones{
     flex: 1 1 auto;
    }
- }
+}
+
 
 /*---------------------*/
 .section-1 {
@@ -268,9 +273,6 @@ section {
   .section-4 .carousel-item {
     padding-left: 0.6rem;
   }
-  footer .row .col-md-2 {
-    margin-top: 8vmin;
-  }
 }
 
 /* screen size 375px */
@@ -297,4 +299,44 @@ section {
 .alerta-error {
   background-color: rgb(230, 78, 78);
   color: var(--blanco);
+}
+
+/*TURNOS*/ 
+@media only screen and (max-width: 800px) {
+  #accion{
+    flex: 1 1 auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  #acciones{
+    flex: 1 1 auto;
+    
+    margin-bottom: 1rem;
+   }
+  
+}
+
+
+/*------------------------------FOOTER------------------------------- */
+
+#primero{
+  background-color: green;
+}
+#segundo{
+  background-color: blue;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+  color: white;
+  font-size: 2rem;
+  
+}
+#segundo p{
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  padding-top: 2rem;
+}
+#segundo:hover{
+ opacity: .9;
 }

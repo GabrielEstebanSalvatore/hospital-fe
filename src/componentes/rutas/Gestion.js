@@ -1,9 +1,6 @@
 import React, { /*useContext, useEffect */} from 'react';
 //import {Link} from 'react-router-dom';
-
-import Sidebar from '../routesGestionLayouts/Sidebar';
 import Barra from '../layout/Barra';
-
 import ListadoTurnos from '../routesGestionLayouts/ListadoTurnos'
  
 const GestionUsuario= () => {

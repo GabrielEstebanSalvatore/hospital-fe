@@ -4,12 +4,12 @@ import {
     AGREGAR_TURNO,
     VALIDAR_FORMULARIO,
     ELIMINAR_TURNO,
+    ENVIO_CORREO,
+    EDITAR_TURNO,
+    EDITAR_TURNO_EXITO,
+    //EDITAR_TURNO_ERROR
     //TURNO_ERROR
-    /*
     
-    
-    PROYECTO_ACTUAL,
-    ELIMINAR_PROYECTO*/
 } from '../../types';
 
 
@@ -27,6 +27,7 @@ export default (state, action) => {
                 turnos: action.payload
             }
         case AGREGAR_TURNO:
+        case ENVIO_CORREO:/*REVISAR ENVIO_CORREO*/ 
             return {
                 ...state,
                 autenticado: true,
@@ -46,24 +47,14 @@ export default (state, action) => {
                 ...state,
                 turnos: state.turnos.filter(turno => turno._id !== action.payload )                
         } 
-        /*case TURNO_ERROR:
-            return {
+        case EDITAR_TURNO:
+        case EDITAR_TURNO_EXITO:
+            //console.log('pr', action.payload);
+            
+            return{
                 ...state,
-                mensaje: action.payload
-            }*/
-        
-        /*case PROYECTO_ACTUAL:
-            return {
-                ...state,
-                proyecto: state.proyectos.filter(proyecto => proyecto._id === action.payload )
-            }*/
-        /*case ELIMINAR_PROYECTO:
-            return {
-                ...state,
-                proyectos: state.proyectos.filter(proyecto => proyecto._id !== action.payload ),
-                proyecto: null
+                tunoeditar: action.payload
             }
-       */
         default:
             return state;
     }

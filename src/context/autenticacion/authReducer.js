@@ -20,13 +20,13 @@ export default (state, action) => {
                 cargando: false
             }
         case OBTENER_USUARIO:
-        return {
-            ...state,
-            autenticado: true,
-            mensaje: null,
-            cliente: action.payload.cliente,
-            cargando: false
-        }
+            return {
+                ...state,
+                autenticado: true,
+                mensaje: null,
+                cliente: action.payload.cliente,
+                cargando: false
+            }
         case CERRAR_SESION:
         case LOGIN_ERROR:
         case REGISTRO_ERROR:

@@ -1,7 +1,6 @@
 import React, {useContext, useEffect}from 'react';
 import Turno from './Turno'
 import proyectoContext from '../../context/proyectos/proyectoContext';
-import genPDF from '../layout/Pdf'
 
 const ListadoTurnos = () => {
     //Extraer Turnos de state inicial
@@ -17,7 +16,7 @@ const ListadoTurnos = () => {
 
     if(turnos.length === 0 ) return <p>No hay turnos solicitados</p>;;
         
-    const PDF = genPDF()
+   
     
     return(
             <div>
@@ -33,7 +32,7 @@ const ListadoTurnos = () => {
                     
                 </ul>
     
-                <a href="javascript:PDF">Download PDF</a>
+                
             </div>
             
        

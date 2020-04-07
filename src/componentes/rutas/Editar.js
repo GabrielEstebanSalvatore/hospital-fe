@@ -1,40 +1,30 @@
-import React, { Fragment, useState, useContext, useEffect } from 'react';
+import React, { Fragment, useState, useContext, useEffect} from 'react';
 import proyectoContext from '../../context/proyectos/proyectoContext';
+//import {useSelector} from 'react-redux';
 import {Link} from "react-router-dom";
-import AuthContext from '../../context/autenticacion/authContext';
+//
 
 
-const Internaciones = () => {
-    
+const Editar = () => {
+
     const proyectosContext = useContext(proyectoContext);
-    const authContext = useContext(AuthContext);
-    const { errorformulario,  agregarTurno, mostrarError, } = proyectosContext;
-    const { clienteAutenticado } = authContext;
+    const { tunoeditar, agregarTurno, editarTurnoExito } = proyectosContext;
+    
+    /*useEffect(()=>{
+        guardarTurno(tunoeditar)
+    },[tunoeditar])*/
 
-    useEffect(() => {
-        clienteAutenticado()
-        //eslint-disable-next-line
-    }, [])
-
-    // State para Internaciones
+    // State para Emergencia
     const [turno, guardarTurno] = useState({
         name:'',
-        tipoTurno:'INTERNACION',
-        doctor:'INTERNACION',
+        /*tipoTurno:'EMERGENCIA',
+        doctor:'EMERGENCIA',
         fecha:'',
-        hora:''
+        hora:''*/
     });
 
-    /*async componentDidMount() {
-
-        this.setState({
-            tipoTurno: 'INTERNACIONES',
-            doctor: 'INTERNACIONES',
-        })
-
-        //await axios.post('http://localhost:4000/turnos');
-    }*/
-
+    //const { name, fecha } = tunoeditar;
+    const { name } = turno.name;
     // Lee los contenidos del input
     const onChange= e => {
         guardarTurno({
@@ -42,32 +32,24 @@ const Internaciones = () => {
             [e.target.name] : e.target.value
         })
     }
+   
     
-    // Extraer nombre de emergencia
-    const { name } = turno.name;
-
     const onSubmitTurno = e => {
         e.preventDefault();
-
-        // Validar el turno
-        if(turno.name === '') {
-            mostrarError();
-            return;
-        }
-
         // agregar al state
-        agregarTurno(turno)
-
+        editarTurnoExito(turno)
+        console.log(turno);
+        
         // Reiniciar el form
         guardarTurno({
             name:'',
-            tipoTurno:'',
+            /*tipoTurno:'',
             doctor:'',
             fecha:'',
-            hora:''
+            hora:''*/
         })
     }
-         
+    
     return (
         <Fragment>
             <div className="container">
@@ -81,7 +63,7 @@ const Internaciones = () => {
                     <div className="col-12">
                         <h2>
                             <i className="fas fa-user-md "></i> {''}
-                            Gestion de Internaciones
+                            Editar Turno
                         </h2>
 
                         <div className="row justify-content-center">
@@ -102,7 +84,7 @@ const Internaciones = () => {
                                             onChange={onChange}
                                         />
                                     </div>
-                                    <div className="form-group">
+                                    {/*<div className="form-group">
                                         <label>Tipo:</label>
                                         <input 
                                             type="text"
@@ -131,7 +113,7 @@ const Internaciones = () => {
                                                 type="date" 
                                                 className="form-control"
                                                 name="fecha"
-                                                onChange={onChange}
+                                                //onChange={onChange}
                                                 
                                             />
                                         </div>                            
@@ -142,20 +124,18 @@ const Internaciones = () => {
                                                 type="time" 
                                                 className="form-control" 
                                                 name="hora"
-                                                onChange={onChange}
+                                                //onChange={onChange}
                                             
                                             />
                                         </div> 
-                                    </div>                      
-                                    
+                                    </div>    */}                 
+                                                                    
                                     <button className="btn btn-success btn-block mb-4">
                                     Aceptar
                                     </button>
                                                            
                                 </form>
-                                {errorformulario ? 
-                                <div className="form-group">El nombre del Turno es obligatorio</div> 
-                                : null}
+                            
                             </div>
                         </div>
                     </div>
@@ -167,4 +147,4 @@ const Internaciones = () => {
     
 }
 
-export default  Internaciones;
+export default  Editar;

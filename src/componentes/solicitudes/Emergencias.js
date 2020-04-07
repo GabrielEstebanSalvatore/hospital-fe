@@ -14,6 +14,7 @@ const Emergencias = () => {
 
     useEffect(() => {
         clienteAutenticado()
+        //eslint-disable-next-line
     }, [])
 
     // State para Emergencia
