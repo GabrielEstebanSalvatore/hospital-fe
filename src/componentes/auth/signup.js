@@ -20,9 +20,10 @@ const Signup = (props) => {
             props.history.push('/user/signin')
         }
         if(mensaje){
-            mostrarAlerta(mensaje.msg, mensaje.categoria);
+            mostrarAlerta(mensaje.msg);
         }
-    },[mensaje,autenticado, props.history, mostrarAlerta])
+        // eslint-disable-next-line
+    },[mensaje,autenticado, props.history])
     // State para iniciar sesión
     const [cliente, guardarCliente] = useState({
         name: '',
@@ -49,20 +50,21 @@ const Signup = (props) => {
         if( name.trim() === '' || 
             email.trim() === '' || 
             password.trim() === '' || 
-            confirm_password.trim() === '' ) {
-                mostrarAlerta('Todos los campos son obligatorios', 'alerta-error');
+            confirm_password.trim() === '' ) 
+            {
+                mostrarAlerta('Todos los campos son obligatorios');
                 return;
             }
 
         // Password minimo de 6 caracteres
         if(password.length < 6) {
-            mostrarAlerta('El password debe ser de al menos 6 caracteres', 'alerta-error');
+            mostrarAlerta('El password debe ser de al menos 6 caracteres');
             return;
         }
 
         // Los 2 passwords son iguales
         if(password !== confirm_password) {
-            mostrarAlerta('Los passwords no son iguales', 'alerta-error');
+            mostrarAlerta('Los passwords no son iguales');
             return;
         }
         //Pasarlo al action
@@ -76,20 +78,20 @@ const Signup = (props) => {
     
     
 
-    
+    //noValidate
     return(
         <div className="row">
-                <div className="col-md-4 mx-auto mt-4">
+                <div className="col-md-4 mx-auto mt-4 pb-4">
                     <div className="card">
                         <div className="card-header text-center badge-primary">
                             Registro de Cliente
                         </div>
                         <div className="card-body">
-                            <form onSubmit={onSubmit} noValidate>
+                            <form onSubmit={onSubmit} noValidate >
                                 <div className="form-group">
                                 { alerta ? 
                                 <div className="alert alert-danger alert-dismissible fade show" role="alert">
-                                    <div className={`alerta ${alerta.categoria}`}> {alerta.msg} </div>
+                                    <div> {alerta.msg} </div>
                                     <button type="button" className="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>

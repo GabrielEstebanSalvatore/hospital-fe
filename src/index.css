@@ -201,15 +201,31 @@ section {
 }
 
 /* Barra Usuario*/
+
 .nombre-usuario {
   color: var(--blanco);
   font-size: 1.5rem;
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .nombre-usuario span {
   font-weight: 900;
 }
-
+.dropdown{
+  padding-right: 6.5em;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 0.5s ease;
+}
+.dropdown-menu{
+  transition: all 0.5s ease-in-out;
+}
+.dropdown-menu .dropdown-item .span:hover{
+  margin-left: 10px;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+  font-weight: bold;
+}
+/*
 @media (min-width: 768px) {
   .contenedor-app {
       display: flex;
@@ -224,21 +240,7 @@ section {
       flex: 1;
   }
 
-}
-
-/*Listado de turnos*/
-
-
-.estado button, 
-.mensaje {
-  font-weight: 900;
-  font-size: 1rem;
-  padding: .5rem;
-  border-radius: .5rem;
-  cursor: pointer;
-  border: none;
-}
-
+}*/
 
 
 /*----------------------------------MAX / MIN RESOLUCIONES-------------------------------------------*/
@@ -319,24 +321,50 @@ section {
 
 /*------------------------------FOOTER------------------------------- */
 
-#primero{
-  background-color: green;
-}
-#segundo{
-  background-color: blue;
-  text-align: center;
-  transition: all 0.5s ease-in-out;
-  color: white;
-  font-size: 2rem;
+
+.footer-padre{
   
+  display: flex;
+  margin-top: auto;
+  color: #fff;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
-#segundo p{
-  font-family: Arial, Helvetica, sans-serif;
+.footer-h1{
+  margin-top: auto;
+  flex-basis: 300px;
+  flex-grow: 0;
+}
+.footer-h2{
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  transition: all 0.5s ease-in-out;
+  font-size: 2em;
   text-decoration: none;
-  color: white;
-  font-size: 2rem;
-  padding-top: 2rem;
 }
-#segundo:hover{
- opacity: .9;
+.footer-h2:hover{
+ color: green;
+ font-size: 2.1em;
 }
+.root{
+  display: flex;
+  justify-content: flex-end;
+}
+.App{
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
+  justify-content: space-between;
+}
+
+.footerApp{
+  
+  
+  width: 100%;
+}
+
+

@@ -1,14 +1,14 @@
-import React, { Fragment, useState, useContext, useEffect} from 'react';
+import React, { Fragment, useState, useContext} from 'react';
 import proyectoContext from '../../context/proyectos/proyectoContext';
 //import {useSelector} from 'react-redux';
 import {Link} from "react-router-dom";
 //
 
 
-const Editar = () => {
+const Editar = (props) => {
 
     const proyectosContext = useContext(proyectoContext);
-    const { tunoeditar, agregarTurno, editarTurnoExito } = proyectosContext;
+    const { tunoeditar, editarTurnoExito } = proyectosContext;
     
     /*useEffect(()=>{
         guardarTurno(tunoeditar)
@@ -16,15 +16,16 @@ const Editar = () => {
 
     // State para Emergencia
     const [turno, guardarTurno] = useState({
-        name:'',
-        /*tipoTurno:'EMERGENCIA',
+        name:tunoeditar.name,
+        tipoTurno:'EMERGENCIA',
         doctor:'EMERGENCIA',
-        fecha:'',
-        hora:''*/
+        fecha:tunoeditar.fecha,
+        hora:tunoeditar.hora,
+        id:tunoeditar._id
     });
 
     //const { name, fecha } = tunoeditar;
-    const { name } = turno.name;
+    //const { name } = turno.name;
     // Lee los contenidos del input
     const onChange= e => {
         guardarTurno({
@@ -38,16 +39,18 @@ const Editar = () => {
         e.preventDefault();
         // agregar al state
         editarTurnoExito(turno)
-        console.log(turno);
+        console.log("Dentro de editar",turno);
         
         // Reiniciar el form
         guardarTurno({
             name:'',
-            /*tipoTurno:'',
+            tipoTurno:'',
             doctor:'',
             fecha:'',
-            hora:''*/
+            hora:''
         })
+
+        props.history.push('/gestion');
     }
     
     return (
@@ -80,11 +83,11 @@ const Editar = () => {
                                             name="name"
                                             placeholder="Escriba su nombre"
                                             required
-                                            value={name}
+                                            value={turno.name}
                                             onChange={onChange}
                                         />
                                     </div>
-                                    {/*<div className="form-group">
+                                    <div className="form-group">
                                         <label>Tipo:</label>
                                         <input 
                                             type="text"
@@ -113,7 +116,7 @@ const Editar = () => {
                                                 type="date" 
                                                 className="form-control"
                                                 name="fecha"
-                                                //onChange={onChange}
+                                                onChange={onChange}
                                                 
                                             />
                                         </div>                            
@@ -124,11 +127,11 @@ const Editar = () => {
                                                 type="time" 
                                                 className="form-control" 
                                                 name="hora"
-                                                //onChange={onChange}
+                                                onChange={onChange}
                                             
                                             />
                                         </div> 
-                                    </div>    */}                 
+                                    </div>                  
                                                                     
                                     <button className="btn btn-success btn-block mb-4">
                                     Aceptar

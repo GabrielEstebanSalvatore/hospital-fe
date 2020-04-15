@@ -1,34 +1,36 @@
 import React, { useState, useContext, useEffect } from 'react';
 import {Link} from "react-router-dom";
-import clienteAxios from '../../config/axios';
 import proyectoContext from '../../context/proyectos/proyectoContext';
 import AuthContext from '../../context/autenticacion/authContext';
 
-const Turnos = () => {
+const Turnos = (props) => {
 
     const proyectosContext = useContext(proyectoContext);
     const authContext = useContext(AuthContext);
-    const { agregarTurno, mostrarError, } = proyectosContext;
+    const { agregarTurno, mostrarError,obtenerDoctores,doctoresNombre } = proyectosContext;
     const { clienteAutenticado } = authContext;
 
     useEffect(() => {
-        clienteAxios.get('http://localhost:4000/doctores')
-        //console.log('TURNO res',res);
-        
+        //const respuesta = await clienteAxios.get('/doctores');
+        obtenerDoctores()    
         /*guardarTurno(
             {   
-                doctores: res.data.doctorDB
+              //doctores: doctor.doctorDB
             }
         );*/
         clienteAutenticado()
+        // eslint-disable-next-line
     }, [])
-
+    
+    
     const [turno, guardarTurno] = useState({
         fecha: new Date(),
-        doctores: [],
+        //doctores: [],
         userSelected: ''
+        
     });
-
+    console.log(doctoresNombre);
+    
     // Lee los contenidos del input
      const onChange= e => {
         guardarTurno({
@@ -53,9 +55,9 @@ const Turnos = () => {
         // Reiniciar el form
         guardarTurno({
             fecha: new Date(),
-            doctores: [],
             userSelected: ''
         })
+        props.history.push('/gestion');
     }
     return (
         <div className="container">
@@ -105,13 +107,13 @@ const Turnos = () => {
 
                                         required>
                                         {
-                                            turno.doctores.map(doctor => (
+                                            doctoresNombre.map(doctor => (
                                                 <option key={doctor._id} value={doctor}>
-                                                    {doctor.name}
+                                                    {doctor.name} - {doctor.profesion}
                                                 </option>
                                             ))
                                         }
-                                        }
+                                    }
                                         </select>
                                 </div>
 

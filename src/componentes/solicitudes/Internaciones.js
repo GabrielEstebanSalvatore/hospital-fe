@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import AuthContext from '../../context/autenticacion/authContext';
 
 
-const Internaciones = () => {
+const Internaciones = (props) => {
     
     const proyectosContext = useContext(proyectoContext);
     const authContext = useContext(AuthContext);
@@ -66,6 +66,7 @@ const Internaciones = () => {
             fecha:'',
             hora:''
         })
+        props.history.push('/gestion');
     }
          
     return (

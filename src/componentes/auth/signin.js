@@ -8,7 +8,7 @@ const Signin = (props) => {
 
     // extraer los valores del context
     const alertaContext = useContext(AlertaContext);
-    const { alerta, mostrarAlerta } = alertaContext;
+    const { alerta, mostrarAlerta} = alertaContext;
 
     const authContext = useContext(AuthContext);
     const { mensaje, autenticado, iniciarSesion } = authContext;
@@ -18,9 +18,10 @@ const Signin = (props) => {
         if(autenticado) {
             props.history.push('/gestion');
         }
-
+       
         if(mensaje) {
-            mostrarAlerta(mensaje.msg, mensaje.categoria);
+            //mostrarAlerta(mensaje.msg, mensaje.categoria);
+            mostrarAlerta(mensaje.msg);
         }
         // eslint-disable-next-line
     }, [mensaje, autenticado, props.history]);
@@ -47,32 +48,36 @@ const Signin = (props) => {
 
         // Validar que no haya campos vacios
         if(email.trim() === '' || password.trim() === '') {
-            mostrarAlerta('Todos los campos son obligatorios', 'alerta-error');
+            mostrarAlerta('Todos los campos son obligatorios');
+            //mostrarAlerta('Todos los campos son obligatorios', 'alerta-error');
         }
 
         // Pasarlo al action
         iniciarSesion({ email, password });
     }
 
-
+//noValidate
     return(
-        <div className="row">
+        <div className="row pb-4">
                 <div className="col-md-4 mx-auto mt-4">
                     <div className="card">
                         <div className="card-header text-center badge-primary">
                             Ingreso de clientes
                         </div>
                         <div className="card-body">
-                            <form onSubmit={onSubmit} noValidate>
+                            <form onSubmit={onSubmit}  noValidate> 
 
                             { alerta ? 
                                 <div className="alert alert-danger alert-dismissible fade show" role="alert">
-                                    <div className={`alerta ${alerta.categoria}`}> {alerta.msg} </div>
+                                    {/*<div className={`alerta ${alerta.categoria}`}> {alerta.msg} </div>*/}
+                                    <div> {alerta.msg} </div>
+                                    
                                     <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
+                                        <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                            : null }
+                                    : null
+                            }
                                 
                                 <div className="form-group">
                                    

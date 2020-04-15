@@ -20,6 +20,10 @@ export const CERRAR_SESION = 'CERRAR_SESION';
 
 export const ENVIO_CORREO = 'ENVIO_CORREO';
 
+export const NUEVO_DOCTOR = 'NUEVO_DOCTOR';
+export const OBTENER_DOCTORES = 'OBTENER_DOCTORES';
+
+
 /**/
 
 

@@ -7,6 +7,7 @@ import {
     ENVIO_CORREO,
     EDITAR_TURNO,
     EDITAR_TURNO_EXITO,
+    OBTENER_DOCTORES
     //EDITAR_TURNO_ERROR
     //TURNO_ERROR
     
@@ -25,6 +26,11 @@ export default (state, action) => {
             return {
                 ...state,
                 turnos: action.payload
+            }
+        case OBTENER_DOCTORES:
+            return{
+                ...state,
+                doctoresNombre:action.payload
             }
         case AGREGAR_TURNO:
         case ENVIO_CORREO:/*REVISAR ENVIO_CORREO*/ 
@@ -53,7 +59,7 @@ export default (state, action) => {
             
             return{
                 ...state,
-                tunoeditar: action.payload
+                turnoeditar: action.payload
             }
         default:
             return state;

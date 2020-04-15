@@ -3,11 +3,12 @@ import proyectoContext from '../../context/proyectos/proyectoContext';
 import clienteAxios from '../../config/axios';
 import { saveAs } from 'file-saver';
 import {useHistory} from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 const Turno = ({turno}) => {
 
     // State para Emergencia
-    const [ticket, {/*guardarTicket*/}] = useState({
+    const [ticket] = useState({
         name:turno.name,
         tipoTurno:turno.tipoTurno,
         doctor:turno.doctor,
@@ -24,7 +25,26 @@ const Turno = ({turno}) => {
     
     //Elimina un turno
     const onClickEliminar = () => {
-        eliminarTurno(turno._id)
+        Swal.fire({
+            title: '¿Estas seguro?',
+            text: "!Si eliminas el turno, no lo podras recuperar!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'Cancelar',
+            confirmButtonText: 'Si, eliminar'
+          }).then((result) => {
+            if (result.value) {
+                eliminarTurno(turno._id)
+                Swal.fire(
+                    'Eliminado!',
+                    'El turno se eliminó correctamente.',
+                    'success'
+                )
+            }
+          })
+        
     }
     //Editar turno
     const redireccionarEdicion = ()=>{

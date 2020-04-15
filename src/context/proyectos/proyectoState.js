@@ -11,6 +11,7 @@ import {
     ENVIO_CORREO,
     EDITAR_TURNO,
     EDITAR_TURNO_EXITO,
+    OBTENER_DOCTORES
     //EDITAR_TURNO_ERROR
     //TURNO_ERROR,
     /*
@@ -27,7 +28,8 @@ const ProyectoState = props => {
 
         turnos : [],
         errorformulario: false,
-        tunoeditar:null
+        tunoeditar:null,
+        doctoresNombre:[]
     }
 
     // Dispatch para ejecutar las acciones
@@ -53,6 +55,22 @@ const ProyectoState = props => {
         } catch (error) {
             console.log(error);
             
+        }
+    
+    }
+    /////////////Doctores//////////////////
+      const obtenerDoctores = async () => {
+        
+        try {
+            const respuesta = await clienteAxios.get('/doctores');
+            //console.log('Doctores ',respuesta);
+            
+            dispatch({
+                type: OBTENER_DOCTORES,
+                payload: respuesta.data.doctorDB
+            })
+        } catch (error) {
+            console.log(error);
         }
     
     }
@@ -133,10 +151,11 @@ const ProyectoState = props => {
     }
     
     const editarTurnoExito = async turno =>{
+       console.log("put",turno._id);
        
         try {
-            const resultado = await clienteAxios.put(`/turnos/${turno.id}`, turno)
-            console.log('resultado:',resultado);
+            const resultado = await clienteAxios.put(`/turnos/${turno._id}`, turno)
+            console.log('resultado put:',resultado);
         
             dispatch({
               type: EDITAR_TURNO_EXITO,
@@ -153,6 +172,7 @@ const ProyectoState = props => {
                 turnos:state.turnos,
                 errorformulario: state.errorformulario,
                 tunoeditar:state.tunoeditar,
+                doctoresNombre: state.doctoresNombre,
                 /*
                 formulario: state.formulario,
                 ,*/
@@ -164,7 +184,8 @@ const ProyectoState = props => {
                 eliminarTurno,
                 envioCorreo,
                 editarTurno,
-                editarTurnoExito
+                editarTurnoExito,
+                obtenerDoctores
             }}
         >
             {props.children}

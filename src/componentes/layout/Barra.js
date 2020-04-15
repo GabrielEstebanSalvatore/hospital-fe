@@ -20,8 +20,32 @@ const Barra = () => {
                         {cliente ? <p className="nombre-usuario">Gestión de Turnos de: <span>{cliente.name} </span> </p> : null}
                     </div>
 
+                    <div className="dropdown">
+                        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ( &#43; )  Turnos
+                        </button>
+                        <div className="dropdown-menu" >
+                            <button className="dropdown-item" type="button"><Link to="/turnos" className="text-dark"><span className="span">Turnos</span></Link></button>
+                            <button className="dropdown-item" type="button"><Link to="/emergencias" className="text-dark"><span className="span">Emergencias</span></Link></button>
+                            <button className="dropdown-item" type="button"><Link to="/internaciones" className="text-dark"><span className="span">Internaciones</span></Link></button>
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </nav>
+        </div>
+
+        /*
+        <div className="barranav">
+            <nav className="navbar navbar-expand-lg navbar-primary bg-grey">
+                <div className="container-fluid">
+                    <div className="col-8">
+                        {cliente ? <p className="nombre-usuario">Gestión de Turnos de: <span>{cliente.name} </span> </p> : null}
+                    </div>
+
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon bg-dark"></span>
+                        <span className="btn btn-primary "  type="button"><h5><strong> &laquo;</strong></h5></span>
                     </button>
 
                     <div className="collapse navbar-collapse col-4" id="navbarNav">
@@ -33,18 +57,12 @@ const Barra = () => {
                                       
                                 </Link>
                             </li>
-                            {/*<li className="nav-item">
-                                <Link
-                                    className="btn btn-info "
-                                    onClick={() => cerrarSesion()}
-                                >Cerrar Sesión
-                                </Link>
-                            </li>*/}
-                       </ul>
+                        </ul>
                     </div>
                 </div>
             </nav>
         </div>
+        */
     
      );
 }

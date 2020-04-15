@@ -30,7 +30,8 @@ const Navigation = () => {
                 }
 
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon bg-light"></span>
+                    <span className="btn btn-light"  ><h5><strong> &laquo;</strong></h5></span>
+                    {/*<span className="navbar-toggler-icon bg-light"></span>*/}
                 </button>
                 
                 <div className="collapse navbar-collapse" id="navbarNav">

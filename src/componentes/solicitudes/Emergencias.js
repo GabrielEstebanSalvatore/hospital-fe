@@ -5,7 +5,7 @@ import AuthContext from '../../context/autenticacion/authContext';
 
 
 
-const Emergencias = () => {
+const Emergencias = (props) => {
     
     const proyectosContext = useContext(proyectoContext);
     const authContext = useContext(AuthContext);
@@ -58,6 +58,7 @@ const Emergencias = () => {
             fecha:'',
             hora:''
         })
+        props.history.push('/gestion');
     }
         return (
             <Fragment>
