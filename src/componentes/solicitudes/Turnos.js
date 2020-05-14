@@ -2,12 +2,15 @@ import React, { useState, useContext, useEffect } from 'react';
 import {Link} from "react-router-dom";
 import proyectoContext from '../../context/proyectos/proyectoContext';
 import AuthContext from '../../context/autenticacion/authContext';
+import DoctoresContext from '../../context/doctores/doctoresContext'
 
 const Turnos = (props) => {
 
     const proyectosContext = useContext(proyectoContext);
     const authContext = useContext(AuthContext);
-    const { agregarTurno, mostrarError,obtenerDoctores,doctoresNombre } = proyectosContext;
+    const doctoresContext= useContext(DoctoresContext)
+    const {obtenerDoctores,doctoresNombre} = doctoresContext;
+    const { agregarTurno, mostrarError } = proyectosContext;
     const { clienteAutenticado } = authContext;
 
     useEffect(() => {
@@ -106,7 +109,7 @@ const Turnos = (props) => {
                                         name="userSelected"
 
                                         required>
-                                        {
+                                       {
                                             doctoresNombre.map(doctor => (
                                                 <option key={doctor._id} value={doctor}>
                                                     {doctor.name} - {doctor.profesion}

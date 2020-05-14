@@ -48,9 +48,7 @@ const Signup = (props) => {
 
         // Validar que no haya campos vacios
         if( name.trim() === '' || 
-            email.trim() === '' || 
-            password.trim() === '' || 
-            confirm_password.trim() === '' ) 
+            email.trim() === '' ) 
             {
                 mostrarAlerta('Todos los campos son obligatorios');
                 return;
@@ -80,8 +78,8 @@ const Signup = (props) => {
 
     //noValidate
     return(
-        <div className="row">
-                <div className="col-md-4 mx-auto mt-4 pb-4">
+        <div className="ingreso_cliente">
+                
                     <div className="card">
                         <div className="card-header text-center badge-primary">
                             Registro de Cliente
@@ -159,7 +157,7 @@ const Signup = (props) => {
                             </form>
                         </div>
                     </div>
-                </div>
+               
             </div>
         );
     

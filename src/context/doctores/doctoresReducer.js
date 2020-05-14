@@ -1,18 +1,23 @@
 import { 
-    NUEVO_DOCTOR
+    NUEVO_DOCTOR,
+    OBTENER_DOCTORES
 } from '../../types';
 
 export default (state, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case NUEVO_DOCTOR:
-            return{
+            return {
                 ...state,
                 nuevoDoctor: action.payload
             }
-        
-       default:
+        case OBTENER_DOCTORES:
+            return {
+                ...state,
+                doctoresNombre: action.payload
+            }
+        default:
             return state;
-        
+
     }
 
 }

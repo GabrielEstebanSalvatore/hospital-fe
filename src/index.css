@@ -1,3 +1,5 @@
+
+
 html {
   min-height: 100%;
   font-family: Arial, Helvetica, sans-serif;
@@ -76,21 +78,21 @@ section {
 
 
 /*---------------------*/
-.section-1 {
+.section-2 {
   padding: 20vmin 0vmin;
 }
 
-.section-1 .row .col-md-6 .pray img {
+.section-2 .row .col-md-6 .pray img {
   opacity: 0.8;
   width: 80%;
   border-radius: 0.2em;
 }
 
-.section-1 .row .col-md-6:last-child {
+.section-2 .row .col-md-6:last-child {
   position: relative;
 }
 
-.section-1 .row .col-md-6 .panel {
+.section-2 .row .col-md-6 .panel {
   position: absolute;
   top: 7vmin;
   left: -18vmin;
@@ -103,13 +105,13 @@ section {
   z-index: 1;
 }
 
-.section-1 .row .col-md-6 .panel h1 {
+.section-2 .row .col-md-6 .panel h1 {
   font-weight: bold;
   padding: 0.4em 0;
   font-size: 2em;
 }
 
-.section-1 .row .col-md-6 .panel p {
+.section-2 .row .col-md-6 .panel p {
   font-size: 0.9em;
   color: rgba(0, 0, 0, 0.5);
 }
@@ -154,7 +156,7 @@ section {
 
 /* Section 4 */
 
-.section-4 .container h1 {
+/*.section-4 .container h1 {
   font-size: 6vmin;
   padding-top: 14vmin;
 }
@@ -183,7 +185,7 @@ section {
 .border-radius {
   border-radius: 340px;
   width: 60%;
-}
+}*/
 
 
 
@@ -358,13 +360,21 @@ section {
   display: flex;
   flex-direction: column;
   min-height: 100px;
-  justify-content: space-between;
+  
 }
 
-.footerApp{
-  
-  
-  width: 100%;
+.App1{
+flex: 9;
 }
+.App2{
+  flex: 1;
+}
+
+
+.page-footer{
+  background: rgb(2,17,24);
+  color: white
+}
+
 
 

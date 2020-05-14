@@ -11,7 +11,7 @@ import {
     ENVIO_CORREO,
     EDITAR_TURNO,
     EDITAR_TURNO_EXITO,
-    OBTENER_DOCTORES
+    
     //EDITAR_TURNO_ERROR
     //TURNO_ERROR,
     /*
@@ -29,7 +29,7 @@ const ProyectoState = props => {
         turnos : [],
         errorformulario: false,
         tunoeditar:null,
-        doctoresNombre:[]
+        
     }
 
     // Dispatch para ejecutar las acciones
@@ -59,7 +59,7 @@ const ProyectoState = props => {
     
     }
     /////////////Doctores//////////////////
-      const obtenerDoctores = async () => {
+    /*  const obtenerDoctores = async () => {
         
         try {
             const respuesta = await clienteAxios.get('/doctores');
@@ -73,7 +73,7 @@ const ProyectoState = props => {
             console.log(error);
         }
     
-    }
+    }*/
 
     //Agregar nuevo turno
     const agregarTurno = async turno =>{
@@ -172,7 +172,7 @@ const ProyectoState = props => {
                 turnos:state.turnos,
                 errorformulario: state.errorformulario,
                 tunoeditar:state.tunoeditar,
-                doctoresNombre: state.doctoresNombre,
+                
                 /*
                 formulario: state.formulario,
                 ,*/
@@ -185,7 +185,7 @@ const ProyectoState = props => {
                 envioCorreo,
                 editarTurno,
                 editarTurnoExito,
-                obtenerDoctores
+                
             }}
         >
             {props.children}

@@ -21,7 +21,8 @@ const AuthState = props => {
         autenticado: null,
         cliente: null, 
         mensaje: null, 
-        cargando: true
+        cargando: true,
+        admin:null
     }
 
     const [ state, dispatch ] = useReducer(AuthReducer, initialState);
@@ -63,8 +64,9 @@ const AuthState = props => {
             var headers = {
                 "x-auth-token": token
             }
+            //ADMIN O USER
             const respuesta = await clienteAxios.get('/auth', {headers});
-            //console.log(respuesta);
+            console.log('cliente',respuesta.data);
             dispatch({
                 type: OBTENER_USUARIO,
                 payload: respuesta.data
@@ -83,7 +85,6 @@ const AuthState = props => {
     const iniciarSesion= async datos => {
         try{
             const respuesta = await clienteAxios.post('/auth', datos);
-            //console.log(respuesta);
             
             dispatch({
                 type:LOGIN_EXITOSO,

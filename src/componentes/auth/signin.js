@@ -58,8 +58,8 @@ const Signin = (props) => {
 
 //noValidate
     return(
-        <div className="row pb-4">
-                <div className="col-md-4 mx-auto mt-4">
+        <div className="registro_cliente">
+                
                     <div className="card">
                         <div className="card-header text-center badge-primary">
                             Ingreso de clientes
@@ -118,7 +118,7 @@ const Signin = (props) => {
                             </form>
                         </div>
                     </div>
-                </div>
+                
             </div>
         );
     

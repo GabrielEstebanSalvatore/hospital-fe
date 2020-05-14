@@ -1,0 +1,391 @@
+@import '~antd/dist/antd.css';
+
+.app-container{
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    
+  }
+    
+    .body-container {
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
+    }
+      .header-container{
+        background: rgb(2,17,24);
+        min-height: 70px;
+        flex:1;
+        
+      }
+      .sidebar-container{
+      background-color: white;
+      flex:8;
+      }
+      .content-container{
+      flex:1;
+      background: rgb(2,17,24);
+      color: white;
+      }
+
+
+/*------------------HOME PAGE-------------------*/
+
+/* SECCIÓN 1 */
+.homepage{
+  display: flex;
+  flex-direction: column;
+}
+/*.ant-carousel .slick-slide {
+  display: flex;
+  text-align: center;
+  height: 450px;
+  
+  background: #364d79;
+  overflow: hidden;
+}
+
+.homepage-header-turnos{
+  background-image: url(../src/assets/internaciones.jpg);
+  flex: 1;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  align-items: stretch;
+ }
+.homepage-header-emergencias{
+  background-image: url(../src/assets/emergencias.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.homepage-header-internaciones{
+  background-image: url(../src/assets/turnos.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}*/
+.homepage-header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.homepage-header p {
+  padding-top: 400px;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(2,17,24);
+  transition: all 0.5s ease-in-out;
+}
+.homepage-header-turnos, .homepage-header-emergencias, .homepage-header-internaciones{
+  flex:1;
+  display: flex;
+  justify-content: center;
+  height: 450px;
+  background-size: cover;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+  min-width: 300px;
+}
+.homepage-header-turnos:hover, .homepage-header-emergencias:hover, .homepage-header-internaciones:hover{
+  opacity: .85;
+}
+
+.homepage-header-turnos{
+  background-image: url(../src/assets/internaciones.jpg);
+ }
+.homepage-header-emergencias{
+  background-image: url(../src/assets/emergencias.jpg);
+}
+.homepage-header-internaciones{
+  background-image: url(../src/assets/turnos.jpg);
+}
+
+@media only screen and (max-width: 800px) {
+  
+  .homepage-header-turnos{
+    margin-top: 1rem;
+      }
+  .homepage-header-emergencias{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+   }
+  .homepage-header-internaciones{
+    margin-bottom: 1rem;
+   }
+   
+}
+
+/* SECCIÓN 2 */
+.section-2 {
+  padding: 10vmin 0vmin;
+  
+}
+.section-2 .row .col-md-6 .pray img {
+  opacity: 0.8;
+  width: 80%;
+  border-radius: 0.2em;
+}
+.section-2 .row .col-md-6:last-child {
+  position: relative;
+}
+.section-2 .row .col-md-6 .panel {
+  position: absolute;
+  top: 7vmin;
+  left: -18vmin;
+  background: white;
+  border-radius: 10px;
+  text-align: left;
+  padding: 13vmin 5vmin 20vmin 10vmin;
+  box-shadow: 0px 25px 42px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.section-2 .row .col-md-6 .panel h1 {
+  font-weight: bold;
+  padding: 0.4em 0;
+  font-size: 2.5em;
+}
+.section-2 .row .col-md-6 .panel p {
+  font-size: 1.1em;
+  justify-content: center;
+  text-align: justify;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/*-----------------------------------------*/
+
+/* SECCIÓN 3 */
+.section-3{
+  background:  rgb(2,17,24);
+  display: flex;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+}
+.section-3 .desktop{
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+ 
+}
+.section-3 .boton{
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+ 
+}
+.section-3 .boton .bot1, .bot2{
+  flex-direction: row;
+  display: flex;
+}
+
+/*-----------------------------------------*/
+
+/* SECCIÓN 4 */
+.section-4{
+  padding-top: 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.section-4-container{
+  display: flex;
+  flex-direction: row;
+}
+.team-1, .team-2,.team-3{
+  display: flex;
+flex: 1 ;
+align-items: center;
+justify-content: center;
+
+margin: 2em;
+flex-wrap: wrap;
+} 
+
+@media only screen and (max-width: 900px) {
+  
+  .section-4, .section-4-container{
+    text-align: center;
+    flex-wrap: wrap;
+    width: 100%;
+   
+  }
+  .team-1 .card, .team-2 .card,.team-3 .card{
+    width: 400px;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    } 
+    
+}
+
+@media only screen and (max-width: 450px) {
+  .section-4 .card {
+    width: 18em;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .section-4 .card {
+    width: 12em;
+    margin-left: -4vmin;
+  }
+}
+
+/*-----------------------------------------*/
+
+/*NAVEGACIÓN*/
+
+.navigation{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  
+}
+.navbar1{
+  display: flex;
+  margin: 10px;
+  align-items: center;
+  transition: ease-in 0.2s;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+.navbar1 img {
+  width: 50px;
+  margin: 5px;
+  border-radius: 30px;
+}
+.navbar2 {
+  display: flex;
+  flex-direction: row;
+  
+}
+.navbar2 ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin: 10px;
+} 
+.navbar2 ul li{
+  color: white;
+  margin: 10px;
+  font-size: large;
+  transition: ease-in 0.2s;
+  
+}
+  .navbar2-2, .navbar2-1 {
+    align-items: center;
+    display: flex;
+    transition: ease-in 0.2s;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+  }
+  
+  .navbar2-2 .nav-item:hover, .navbar2-1 .nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.2) ;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+/*--------------------------------------*/
+
+
+
+/*GESTÍON USUARIO*/
+
+.gestion , .gestion-principal{
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+/*BARRA GESTÍON USUARIO*/
+.barra_usuario{
+  align-items: center;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+ }
+
+.barra_usuario_nombre, .barra_usuario_boton{
+  margin: 10px;
+}
+
+          /*boton*/
+.botonMenu{
+  display: flex;
+  justify-content: flex-end;
+}
+.botonMenu, .submenu{
+  
+  width: 108px;
+  box-sizing: border-box;
+  padding-right: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.botonMenu label{
+  cursor: pointer;
+  font-size: 30px;
+  
+}
+.botonMenu ul{
+  
+  padding: 0;
+  display: flex;
+  list-style: none;
+  background-color: rgb(2,17,24);
+}
+#btn-menu{
+  display: none;
+}
+.botonMenu label{ 
+  display: none;
+  background: rgb(2,17,24);
+ }
+.botonMenu ul ul{ 
+ display: none;
+}
+.botonMenu li:hover{ 
+  background: rgba(156, 154, 154, 0.3);
+  transition: all 0.5s ease-in-out;
+ }
+.botonMenu ul li:hover ul{ 
+  display: block;
+  position: absolute;
+   transition: all 0.5s ease-in-out;
+}
+@media (max-width: 800px) {
+  
+  
+  .botonMenu label{ 
+    display: block;
+    
+  }
+}
+/*--------------------------------------*/
+
+/*INGRESO USUARIO*/
+.ingreso_cliente, .registro_cliente{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.ingreso_cliente .card, .registro_cliente .card{
+ 
+ width: 30%;
+}
