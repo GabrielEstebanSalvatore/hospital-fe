@@ -29,7 +29,8 @@ const Turnos = (props) => {
     const [turno, guardarTurno] = useState({
         fecha: new Date(),
         //doctores: [],
-        userSelected: ''
+        userSelected: '',
+        name:''
         
     });
     console.log(doctoresNombre);
@@ -91,7 +92,7 @@ const Turnos = (props) => {
                                     <input
                                         type="text"
                                         className="form-control"
-                                        name="pasciente"
+                                        name="paciente"
                                         placeholder="Escriba su nombre"
                                         required
                                         //value={this.state.titulo}
@@ -232,7 +233,7 @@ class Turnos extends Component {
                                         <input 
                                             type="text"
                                             className="form-control"
-                                            name="pasciente"
+                                            name="paciente"
                                             placeholder="Escriba su nombre"
                                             required
                                             //value={this.state.titulo}

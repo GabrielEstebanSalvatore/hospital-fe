@@ -23,8 +23,8 @@ const Signin = (props) => {
             //mostrarAlerta(mensaje.msg, mensaje.categoria);
             mostrarAlerta(mensaje.msg);
         }
-        // eslint-disable-next-line
-    }, [mensaje, autenticado, props.history]);
+        // eslint-disable-next-lines
+    }, [mensaje, autenticado, props.history,mostrarAlerta]);
 
     // State para iniciar sesión
     const [cliente, guardarCliente] = useState({

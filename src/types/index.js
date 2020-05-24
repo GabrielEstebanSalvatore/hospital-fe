@@ -23,6 +23,7 @@ export const ENVIO_CORREO = 'ENVIO_CORREO';
 export const NUEVO_DOCTOR = 'NUEVO_DOCTOR';
 export const OBTENER_DOCTORES = 'OBTENER_DOCTORES';
 
+export const HANDLE_MODAL = 'HANDLE_MODAL';
 
 /**/
 

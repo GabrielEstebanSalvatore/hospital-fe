@@ -1,5 +1,4 @@
 import { 
-    //FORMULARIO_PROYECTO, 
     OBTENER_TURNOS,
     AGREGAR_TURNO,
     VALIDAR_FORMULARIO,
@@ -7,20 +6,17 @@ import {
     ENVIO_CORREO,
     EDITAR_TURNO,
     EDITAR_TURNO_EXITO,
-    
-    //EDITAR_TURNO_ERROR
-    //TURNO_ERROR
-    
+    HANDLE_MODAL
 } from '../../types';
 
 
 export default (state, action) => {
     switch(action.type) {
-        /*case FORMULARIO_PROYECTO:
+        case HANDLE_MODAL:
             return {
                 ...state,
-                formulario: true
-            }*/
+                modalView : action.payload
+        }
         case OBTENER_TURNOS:
             //console.log(action.payload); para ver por consola que llega del be
             return {

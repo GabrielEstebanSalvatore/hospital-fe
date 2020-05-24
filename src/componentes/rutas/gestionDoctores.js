@@ -7,7 +7,7 @@ const GestionDoctores = () => {
         
         obtenerDoctores()    
       
-    }, [])
+    }, [obtenerDoctores])
     
 
     const doctoresContext= useContext(DoctoresContext)
@@ -18,16 +18,16 @@ const GestionDoctores = () => {
             <div className="row">
                 <div className="col-12">
                     <div className="row-nombre">
-                    <BarraAdmin/>
+                        <BarraAdmin />
                     </div>
                     <div className="row-nombre">
-                    {
-                                            doctoresNombre.map(doctor => (
-                                                <option key={doctor._id} value={doctor}>
-                                                    {doctor.name} - {doctor.profesion}
-                                                </option>
-                                            ))
-                                        }
+                        {
+                            doctoresNombre.map(doctor => (
+                                <option key={doctor._id} value={doctor}>
+                                    {doctor.name} - {doctor.profesion}
+                                </option>
+                            ))
+                        }
                     </div>
 
 

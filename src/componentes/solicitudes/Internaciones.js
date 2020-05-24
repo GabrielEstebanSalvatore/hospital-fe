@@ -57,7 +57,7 @@ const Internaciones = (props) => {
 
         // agregar al state
         agregarTurno(turno)
-
+        console.log("MODAL",turno);
         // Reiniciar el form
         guardarTurno({
             name:'',

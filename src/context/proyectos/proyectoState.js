@@ -11,13 +11,8 @@ import {
     ENVIO_CORREO,
     EDITAR_TURNO,
     EDITAR_TURNO_EXITO,
+    HANDLE_MODAL
     
-    //EDITAR_TURNO_ERROR
-    //TURNO_ERROR,
-    /*
-    
-    PROYECTO_ACTUAL,
-    ELIMINAR_PROYECTO*/
 } from '../../types';
 
 import clienteAxios from '../../config/axios';
@@ -29,12 +24,24 @@ const ProyectoState = props => {
         turnos : [],
         errorformulario: false,
         tunoeditar:null,
+        //modal
+        modalView: '',
+        //showModal: false,
         
     }
 
+
     // Dispatch para ejecutar las acciones
     const [state, dispatch] = useReducer(proyectoReducer, initialState)
-
+    
+    const handleModal = ( modalView)=>{
+        dispatch({
+            
+                type:  HANDLE_MODAL,
+                payload: modalView
+            
+        })
+    }
     // Serie de funciones para el CRUD--------ver
     const mostrarFormulario = () => {
         dispatch({
@@ -84,11 +91,11 @@ const ProyectoState = props => {
         
         try {
             const respuesta = await clienteAxios.post('/turnos', turno);
-            //console.log(respuesta);
+            console.log(respuesta);
             dispatch({
                 type: AGREGAR_TURNO,
                 payload: respuesta.data
-            })
+            },obtenerTurnos())
             
         } catch (error) {
             console.log(error);
@@ -172,7 +179,8 @@ const ProyectoState = props => {
                 turnos:state.turnos,
                 errorformulario: state.errorformulario,
                 tunoeditar:state.tunoeditar,
-                
+                modalView: state.modalView,
+                showModal: state.showModal,
                 /*
                 formulario: state.formulario,
                 ,*/
@@ -185,6 +193,7 @@ const ProyectoState = props => {
                 envioCorreo,
                 editarTurno,
                 editarTurnoExito,
+                handleModal
                 
             }}
         >

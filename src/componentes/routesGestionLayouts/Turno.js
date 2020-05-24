@@ -4,6 +4,7 @@ import clienteAxios from '../../config/axios';
 import { saveAs } from 'file-saver';
 import {useHistory} from 'react-router-dom'
 import Swal from 'sweetalert2'
+import { EyeFilled, VerticalAlignBottomOutlined } from '@ant-design/icons';
 
 const Turno = ({turno}) => {
 
@@ -67,16 +68,22 @@ const Turno = ({turno}) => {
 
     return(
         
-        <li className="tarea">
+
+        
+        <li className="turnoAdministracion-container">
+
+            
+            
+            {/*
             <hr/>
-            <div className="row ">
-                <div className="col" id="accion">
+            <div className="turnoAdministracion-container__body">
+                <div className="turnoAdministracion-container__body1">
                     <p>Clase: {turno.tipoTurno  } </p>
                     <p>Doctor: {turno.doctor  } </p>
                     <p>Paciente: {turno.name } </p>
                     <p>Fecha: {turno.fecha}</p>
                 </div>
-                <div className="col acciones ">
+                <div className="turnoAdministracion-container__body2">
                     <div className="acciones" id="acacciones">
                         
                         <button 
@@ -101,7 +108,7 @@ const Turno = ({turno}) => {
                     </div>
                 </div>
     
-            </div>
+            </div>*/}
         </li>
     )
 }

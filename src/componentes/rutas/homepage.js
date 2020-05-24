@@ -5,7 +5,7 @@ import foto1 from '../../assets/UI-face-1.jpg'
 import foto2 from '../../assets/UI-face-2.jpg'
 import foto3 from '../../assets/UI-face-3.jpg'
 import foto4 from '../../assets/UI-face-4.jpg'
-import { Carousel } from 'antd';
+//import { Carousel } from 'antd';
 
 class homepage extends Component {
 

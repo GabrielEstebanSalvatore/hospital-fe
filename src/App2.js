@@ -7,8 +7,9 @@ import Turnos from './componentes/solicitudes/Turnos';
 import homepage from './componentes/rutas/homepage';
 import Emergencias from './componentes/solicitudes/Emergencias';
 import Internaciones from './componentes/solicitudes/Internaciones';
-import GestionUsuario from './componentes/rutas/Gestion';
+import GestionClientes from './componentes/rutas/GestionClientes';
 import NuevoDoctor from './componentes/rutas/nuevoDoctor'
+import GestionDoctores from './componentes/rutas/gestionDoctores';
 
 //Usuario
 import Signin from './componentes/auth/signin';
@@ -63,7 +64,10 @@ function App2() {
                       <Route exact path="/turnos" component={Turnos} />
                       <Route exact path="/emergencias" component={Emergencias} />
                       <Route exact path="/internaciones" component={Internaciones} />
-                      <RutaPrivada exact path="/gestion" component={GestionUsuario} />
+
+                      <RutaPrivada exact path="/gestion" component={GestionClientes} />
+                      <Route exact path="/gestionadmin" component={GestionDoctores}/>
+
                       <Route exact path="/nuevodoctor" component={NuevoDoctor} />
                       <Route exact path="/contacto" component={Contacto} />
                       <Route exact path='/turno/:id' component={Editar} />

@@ -1,27 +1,44 @@
-import React, {useContext,useEffect} from 'react';
+import React, {useContext,useEffect,useState} from 'react';
 import AuthContext from '../../context/autenticacion/authContext';
-import {Link} from 'react-router-dom'
+import ProyectoContext from '../../context/proyectos/proyectoContext';
 import BotonDeBarra from './barra/BotonDeBarra'
+
 
 const BarraDeGestion = () => {
 
    const authContext = useContext(AuthContext);
+   const proyectoContext = useContext(ProyectoContext);
    const { clienteAutenticado, cliente, /*cerrarSesion*/} = authContext;
+   const {  handleModal} = proyectoContext;
 
+   
    useEffect(() => {
-       
-   clienteAutenticado();
-   //eslint-disable-next-line
-   }, [])
+       clienteAutenticado();
+       //eslint-disable-next-line
+    }, [])
+    
+    const [handleModalState, setHandleModalState] = useState(
+    'turnos',
+     //showModal: true,
+     );
+   const showModal = ()=>{
+ 
+        handleModal(handleModalState)
+    }
+   
+
 
     return ( 
         <div className="barra_usuario">
-            
+                  
+                    
                     <div className="barra_usuario_nombre">
                         {cliente ? <p className="nombre-usuario "><strong> Gestión de Turnos de: <span>{cliente.name} </span> </strong></p> : null}
                     </div>
 
-                        <BotonDeBarra/>
+                        <BotonDeBarra />
+                       
+                       { /*<button title='Nuevo turno' onClick={showModal}>Servicios</button>*/}
                     {/*<div className="barra_usuario_boton dropdown">
                         <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             ( &#43; )  Turnos
