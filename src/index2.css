@@ -70,6 +70,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 }*/
+
+
+
+
+
 .homepage-header {
   display: flex;
   flex-direction: row;
@@ -83,11 +88,17 @@
   color: rgb(2,17,24);
   transition: all 0.5s ease-in-out;
 }
+
+.carousel {
+  height: 400px;
+  
+}
+
 .homepage-header-turnos, .homepage-header-emergencias, .homepage-header-internaciones{
   flex:1;
   display: flex;
   justify-content: center;
-  height: 450px;
+  height: 480px;
   background-size: cover;
   transition: all 0.5s ease-in-out;
   text-align: center;
@@ -98,13 +109,14 @@
 }
 
 .homepage-header-turnos{
-  background-image: url(../src/assets/internaciones.jpg);
+  background-image: url(../src/assets/turnos.jpg);
+
  }
 .homepage-header-emergencias{
   background-image: url(../src/assets/emergencias.jpg);
 }
 .homepage-header-internaciones{
-  background-image: url(../src/assets/turnos.jpg);
+  background-image: url(../src/assets/internaciones.jpg);
 }
 
 @media only screen and (max-width: 800px) {
@@ -124,39 +136,20 @@
 
 /* SECCIÓN 2 */
 .section-2 {
-  padding: 10vmin 0vmin;
-  
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 460px;
 }
-.section-2 .row .col-md-6 .pray img {
-  opacity: 0.8;
-  width: 80%;
-  border-radius: 0.2em;
+.cantidad_clientes, .cantidad_turnos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.section-2 .row .col-md-6:last-child {
-  position: relative;
-}
-.section-2 .row .col-md-6 .panel {
-  position: absolute;
-  top: 7vmin;
-  left: -18vmin;
-  background: white;
-  border-radius: 10px;
-  text-align: left;
-  padding: 13vmin 5vmin 20vmin 10vmin;
-  box-shadow: 0px 25px 42px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-.section-2 .row .col-md-6 .panel h1 {
-  font-weight: bold;
-  padding: 0.4em 0;
-  font-size: 2.5em;
-}
-.section-2 .row .col-md-6 .panel p {
-  font-size: 1.1em;
-  justify-content: center;
-  text-align: justify;
-  color: rgba(0, 0, 0, 0.7);
-}
+
+
+
 
 /*-----------------------------------------*/
 
@@ -167,23 +160,46 @@
   justify-content: center;
   color: white;
   flex-direction: column;
+  padding: 20px 0px 30px 0px; 
 }
-.section-3 .desktop{
-  flex-direction: row;
-  display: flex;
-  justify-content: center;
+.section-3_header{
+padding-bottom: 20px;
  
 }
 .section-3 .boton{
   flex-direction: row;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
  
 }
-.section-3 .boton .bot1, .bot2{
+.section-3 .boton .bot1, .bot2, .bot3, .bot4, .bot5{
   flex-direction: row;
   display: flex;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white ;
+  border-radius: 60px;
+  width: 100px;
+  height: 100px;
+  transition: 0.3s ease-out;
 }
+.section-3 .bot1:hover, .bot2:hover, .bot3:hover, .bot4:hover, .bot5:hover{
+ background-color: rgba(39, 90, 202, 0.2);
+ font-size: 18px;
+ transition: 0.3s ease-out;
+ 
+}
+.section-3 span{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
 
 /*-----------------------------------------*/
 
@@ -299,25 +315,21 @@ flex-wrap: wrap;
 
 
 
-/*GESTÍON USUARIO*/
+/*GESTÍON USUARIO */
 
-.gestion{
+.gestionCliente{
   display: flex;
   flex-direction: column;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
 }
-.gestion-principal{
-  display: flex;
-  flex-direction: column;
-  height: 100hv;
-  z-index: 0;
-}
+
 .gestion-principal h2{
   padding-left: 10px;
-  
 }
-
+/*GESTÍON ADMIN */
+.gestionNombre{
+  padding-left: 10px;
+}
 
 /*Turno en listado de turno*/
 .turnoAdministracion-container{
@@ -491,7 +503,6 @@ flex-wrap: wrap;
   z-index: 1;
   padding: 20px;
 }
-
 .listado-turnos__Footer{
   display: flex;
 }
@@ -517,6 +528,7 @@ flex-wrap: wrap;
   font-weight: bold;
   border: 1px solid grey;
 }
+
 
 
 

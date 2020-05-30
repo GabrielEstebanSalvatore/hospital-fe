@@ -76,17 +76,20 @@ const Navigation = () => {
 
 
 
-
+/*{cliente.role == 'USER_ROLE' && <p>USER</p>}
+{cliente.role == 'ADMIN_ROLE' && <p>ADMIN</p>}*/
         
         <nav className="navigation">
 
             <div className="navbar1 ">
+                
                 {cliente
                     ?
                     <Link className="nav-item text-white" to="/">
                         
                     <img src="https://png.pngtree.com/template/20190314/ourmid/pngtree-hospital-logo-image_70558.jpg " alt="" />
-                        Home - {cliente.role}
+                        Home 
+                
                     </Link>
                     :
                     <Link className="nav-item text-white" to="/">
@@ -98,12 +101,19 @@ const Navigation = () => {
                 }
             </div>
             <div className="navbar2">
+                
                 {cliente
                     ?
 
                     <ul className="navbar2-1" >
+                        {cliente.role == 'ADMIN_ROLE' && 
+                            <li>
+                            <Link className=" text-white" to="/gestionadmin">Admin</Link>
+                            </li>
+                        }
                         <li className="nav-item ">
                             <Link className=" text-white" to="/gestion">Mi Gestion</Link>
+                            
                         </li>
                         <li className="nav-item "
                             

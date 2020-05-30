@@ -3,7 +3,8 @@ import doctoresContext from './doctoresContext';
 import doctoresReducer from './doctoresReducer';
 import {
     NUEVO_DOCTOR,
-    OBTENER_DOCTORES
+    OBTENER_DOCTORES,
+    ELIMINAR_DOCTOR
 } from '../../types'
 
 import ClienteAxios from '../../config/axios';
@@ -21,12 +22,13 @@ const DoctoresState = props => {
             console.log('NUEVO DOCTOR', doctor);
 
             const respuesta = await ClienteAxios.post('/doctores', doctor)
-            //console.log('NUEVO DOCTOR',respuesta);
+            console.log('NUEVO DOCTOR Respuesta',respuesta);
 
             dispatch({
                 type: NUEVO_DOCTOR,
                 payload: respuesta.data
             })
+            obtenerDoctores();
         } catch (error) {
 
         }
@@ -47,6 +49,22 @@ const DoctoresState = props => {
         }
 
     }
+    const eliminarDoctor = async (DocId)=>{
+        try{
+            const respuesta = await ClienteAxios.delete(`/doctores/${DocId}`)
+            console.log(respuesta, 'eliminar doctor');
+            
+           dispatch({
+                type: ELIMINAR_DOCTOR,
+                payload: DocId
+            })
+            obtenerDoctores();
+        }
+        catch(error){
+            console.log(error);
+            
+        }
+    }
 
      return(
          <doctoresContext.Provider
@@ -54,7 +72,8 @@ const DoctoresState = props => {
                 doctores: state.doctores,
                 doctoresNombre: state.doctoresNombre,
                 nuevoDoc,
-                obtenerDoctores
+                obtenerDoctores,
+                eliminarDoctor
             }}
          >
             {props.children}

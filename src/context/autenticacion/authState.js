@@ -12,7 +12,9 @@ import { 
     LOGIN_ERROR,
     OBTENER_USUARIO,
     LOGIN_EXITOSO,
-    CERRAR_SESION
+    CERRAR_SESION,
+    EDITAR_CLIENTE,
+    CANTIDAD_CLIENTES
 } from '../../types';
 
 const AuthState = props => {
@@ -22,7 +24,8 @@ const AuthState = props => {
         cliente: null, 
         mensaje: null, 
         cargando: true,
-        admin:null
+        admin:null,
+        numeroClientes:null
     }
 
     const [ state, dispatch ] = useReducer(AuthReducer, initialState);
@@ -51,6 +54,19 @@ const AuthState = props => {
             })
         }
     }
+    const cantidadDeClinetes = async() =>{
+        const respuesta = await clienteAxios.get('/clientes')
+        try{//FIDO
+            console.log(respuesta.data.cuantos,'cantidadDeClinetes');
+            dispatch({
+                type:CANTIDAD_CLIENTES,
+                payload:respuesta.data
+            })
+        }catch(error){
+            console.log(error);
+            
+        }
+    }
     
     //Retorna el usuario autenticado 
     const clienteAutenticado= async ( )=>{
@@ -59,7 +75,6 @@ const AuthState = props => {
             tokenAuth(token);
             //console.log('Token : ',token);
         }
-
         try {
             var headers = {
                 "x-auth-token": token
@@ -107,6 +122,41 @@ const AuthState = props => {
         }
     }
 
+    //Editar Cliente
+    const editarCliente= async datos => {
+        try{
+            console.log(datos,'antes');
+            
+            const respuesta = await clienteAxios.put(`/clientes/${datos.id}`, datos);
+                console.log(respuesta,'despues');
+                
+            dispatch({
+                type:EDITAR_CLIENTE,
+                payload: respuesta.data
+            })
+
+            // Obtener el cliente
+            clienteAutenticado()
+
+        }catch (error) {
+            //console.log(error.response.data.msg);
+            const alerta = {
+                msg: error.response.data.msg,
+                //categoria: 'alerta-error'
+            }
+            dispatch({
+                type: LOGIN_ERROR,
+                payload: alerta
+            })
+        }
+    }
+
+
+
+
+
+
+
     // Cierra la sesión del usuario
     const cerrarSesion = () => {
         dispatch({
@@ -122,10 +172,13 @@ const AuthState = props => {
                 cliente: state.cliente,
                 mensaje: state.mensaje,
                 cargando:state.cargando,
+                numeroClientes: state.numeroClientes,
                 registrarCliente,
                 clienteAutenticado,
                 iniciarSesion,
-                cerrarSesion
+                cerrarSesion,
+                editarCliente,
+                cantidadDeClinetes
             }}
         >{props.children}
 

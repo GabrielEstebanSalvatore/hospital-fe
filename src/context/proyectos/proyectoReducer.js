@@ -6,7 +6,8 @@ import {
     ENVIO_CORREO,
     EDITAR_TURNO,
     EDITAR_TURNO_EXITO,
-    HANDLE_MODAL
+    HANDLE_MODAL,
+    CANTIDAD_TURNOS
 } from '../../types';
 
 
@@ -53,6 +54,15 @@ export default (state, action) => {
                 ...state,
                 turnoeditar: action.payload
             }
+        case CANTIDAD_TURNOS:
+            console.log(action.payload.cuantos);
+            return{
+         
+                ...state,
+                
+                numeroTurnos: action.payload.cuantos,
+            }
+            
         default:
             return state;
     }

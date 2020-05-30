@@ -1,6 +1,7 @@
 import { 
     NUEVO_DOCTOR,
-    OBTENER_DOCTORES
+    OBTENER_DOCTORES,
+    ELIMINAR_DOCTOR
 } from '../../types';
 
 export default (state, action) => {
@@ -15,9 +16,15 @@ export default (state, action) => {
                 ...state,
                 doctoresNombre: action.payload
             }
+        case ELIMINAR_DOCTOR:
+            return{
+                ...state,
+                doctores: state.doctores.filter(doctor => doctor._id !== action.payload)
+            }
         default:
             return state;
 
     }
 
 }
+    

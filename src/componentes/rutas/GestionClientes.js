@@ -12,7 +12,7 @@ const GestionClientes= () => {
     
     return(
         
-        <div className="gestion">
+        <div className="gestionCliente">
         
             <div className="gestion-principal">
         {modalView  && <ModalContainer/>}

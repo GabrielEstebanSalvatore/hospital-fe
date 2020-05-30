@@ -1,41 +1,30 @@
 import React, {useContext} from 'react';
 import AuthContext from '../../context/autenticacion/authContext';
 import {Link} from 'react-router-dom'
-
+import BotonDeBarra from './botonBarra/BotonDeBarra'
 
 const BarraAdmin = () => {
 
 
-   
+
     const authContext = useContext(AuthContext);
-    const { cliente} = authContext;
- 
-    return ( 
-        <div className="barranav">
-            <nav className="navbar navbar-expand-lg navbar-primary bg-grey">
-                <div className="container-fluid">
-                    <div className="col-8">
-                        {cliente ? <p className="nombre-usuario">Gestión de Turnos de: <span>{cliente.name} </span> </p> : null}
-                    </div>
+    const { cliente } = authContext;
 
-                    <div className="dropdown">
-                        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            ( &#43; )  Turnos
-                        </button>
-                        <div className="dropdown-menu" >
+    return (
+        <div className="barra_usuario">
 
-                    
 
-                            <button className="dropdown-item" type="button"><Link to="/turnos" className="text-dark"><span className="span">Turnos</span></Link></button>
-                            <button className="dropdown-item" type="button"><Link to="/emergencias" className="text-dark"><span className="span">Emergencias</span></Link></button>
-                            <button className="dropdown-item" type="button"><Link to="/internaciones" className="text-dark"><span className="span">Internaciones</span></Link></button>
-                        </div>
-                    </div>
+            <div className="barra_usuario_nombre">
+                {cliente ? <p className="nombre-usuario "><strong> Gestión de Doctores de: <span>{cliente.name} </span> </strong></p> : null}
+            </div>
 
-                   
-                </div>
-            </nav>
+            <BotonDeBarra 
+            gestionAdmin={true}
+            />
+
+
+
         </div>
-        )
-    }
-    export default BarraAdmin;
+    )
+}
+export default BarraAdmin;

@@ -66,7 +66,7 @@ function App2() {
                       <Route exact path="/internaciones" component={Internaciones} />
 
                       <RutaPrivada exact path="/gestion" component={GestionClientes} />
-                      <Route exact path="/gestionadmin" component={GestionDoctores}/>
+                      <RutaPrivada exact path="/gestionadmin" component={GestionDoctores}/>
 
                       <Route exact path="/nuevodoctor" component={NuevoDoctor} />
                       <Route exact path="/contacto" component={Contacto} />

@@ -18,17 +18,18 @@ const ListadoTurnos = () => {
         obtenerTurnos(); 
     }, []);
    
-    /*const [turno,setTurno] = useState({
+    const [turno,setTurno] = useState({
         name: '',
         tipoTurno: "",
         doctor:"",
         fecha:"",
         receiptId:"",
-    });*/
+    })
+
     if(turnos.length === 0 ) return <p>No hay turnos solicitados</p>;;
 
-    /*const prepare = (record) =>{
-        console.log(record);
+    const prepare = (record) =>{
+        //console.log(record);
         setTurno({
             ...turno,
             name: record.name,
@@ -39,7 +40,7 @@ const ListadoTurnos = () => {
         })
 
         
-    }*/
+    }
     const columns = [
         {title: 'Cliente',dataIndex: 'name'},
         {title: 'Doctor',dataIndex: 'doctor'},
@@ -64,7 +65,7 @@ const ListadoTurnos = () => {
     //PDF
     const createAndDownloadPdf = async (turno) => {
         await clienteAxios.post('/create-pdf', turno)
-        .then(() => clienteAxios.get('fetch-pdf', { responseType: 'blob' }))
+        .then(() => clienteAxios.get('/fetch-pdf', { responseType: 'blob' }))
         .then((res) => {
                 const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
                 saveAs(pdfBlob, 'newPdf.pdf');
@@ -124,27 +125,7 @@ const ListadoTurnos = () => {
             
         </div>
        
-        /*<div className="listado-turnos">
-            <div className="listado-turnos__Header">
-                <div>Categoría</div>
-                <div>Proveedor</div>
-                <div>Cantidad</div>
-                <div>Cuenta</div>
-                <div className="titulo5"><div>Opciones</div></div>
-            </div>
-            <ul className="listado-turnos">
-                {turnos.map(turno => (
-                    <Turno
-                        key={turno._id}
-                        turno={turno}
-                    />
-
-                ))}
-
-            </ul>
-
-
-        </div>*/
+     
 
        
     )

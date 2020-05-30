@@ -1,7 +1,7 @@
 import React, {useContext,useEffect,useState} from 'react';
 import AuthContext from '../../context/autenticacion/authContext';
 import ProyectoContext from '../../context/proyectos/proyectoContext';
-import BotonDeBarra from './barra/BotonDeBarra'
+import BotonDeBarra from './botonBarra/BotonDeBarra'
 
 
 const BarraDeGestion = () => {
@@ -9,23 +9,14 @@ const BarraDeGestion = () => {
    const authContext = useContext(AuthContext);
    const proyectoContext = useContext(ProyectoContext);
    const { clienteAutenticado, cliente, /*cerrarSesion*/} = authContext;
-   const {  handleModal} = proyectoContext;
-
+ 
    
    useEffect(() => {
        clienteAutenticado();
        //eslint-disable-next-line
     }, [])
     
-    const [handleModalState, setHandleModalState] = useState(
-    'turnos',
-     //showModal: true,
-     );
-   const showModal = ()=>{
- 
-        handleModal(handleModalState)
-    }
-   
+    
 
 
     return ( 
@@ -36,7 +27,9 @@ const BarraDeGestion = () => {
                         {cliente ? <p className="nombre-usuario "><strong> Gestión de Turnos de: <span>{cliente.name} </span> </strong></p> : null}
                     </div>
 
-                        <BotonDeBarra />
+                        <BotonDeBarra 
+                        gestionCliente={true}
+                        />
                        
                        { /*<button title='Nuevo turno' onClick={showModal}>Servicios</button>*/}
                     {/*<div className="barra_usuario_boton dropdown">

@@ -6,10 +6,15 @@ import foto2 from '../../assets/UI-face-2.jpg'
 import foto3 from '../../assets/UI-face-3.jpg'
 import foto4 from '../../assets/UI-face-4.jpg'
 //import { Carousel } from 'antd';
+import ContadorClientes from './homePage/seccion2/seccion2';
+import ContadorRate from './homePage/seccion3/ContadorRate';
 
-class homepage extends Component {
-
-    render() {
+const homepage =() => {
+    
+  
+    
+    //FIDO
+   
         //if(!libros) return <Spinner />
         return (
             <Fragment>
@@ -28,7 +33,40 @@ class homepage extends Component {
                         <h3>3</h3>
                         </div>
                     </Carousel>*/}
-                    <div className="homepage-header ">
+
+                    <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+                        <ol className="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div className="carousel-inner">
+                            <div className="carousel-item active">
+                                <div className="homepage-header-turnos">
+                                <Link to="/turnos"><p >Turnos</p></Link>
+                                </div>
+                            </div>
+                            <div className="carousel-item">
+                                <div className="homepage-header-emergencias">
+                                <Link to="/emergencias"><p>Emergencias</p></Link>
+                                </div>
+                            </div>
+                            <div className="carousel-item">
+                                <div className="homepage-header-internaciones">
+                                <Link to="/internaciones"><p>Internaciones</p></Link>
+                                </div>
+                            </div>
+                        </div>
+                        <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span className="sr-only">Previous</span>
+                        </a>
+                        <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span className="sr-only">Next</span>
+                        </a>
+                    </div>
+                    {/*<div className="homepage-header ">
                         <div className="homepage-header-turnos" >
                             <Link to="/turnos"><p >Turnos</p></Link>
                             
@@ -41,107 +79,15 @@ class homepage extends Component {
                             <Link to="/internaciones"><p>Internaciones</p></Link>
                             
                         </div>
-                    </div>
+                    </div>*/}
                     {/* -------------------------------------------------------------------- */}
 
-                    {/*<div className="col-12 mt-3 pt-4">
-                            <Link to="/turnos" className="btn btn-white mt-4">
-                                <h2>
-                                    <i className="fas fa-user-md fa-lg"></i>  {''}
-                                    <button className="btn btn-light px-5 py-2 primary-btn">
-                                        Turnos
-                                                    </button>
-                                </h2>
-                            </Link>
-
-                        </div>
-                        <div className="col-12 mt-3">
-                            <Link to="/emergencias" className="btn btn-white mt-4">
-                                <h2>
-                                    <i className="fas fa-ambulance "></i>  {''}
-                                    <button className="btn btn-light px-5 py-2 primary-btn">
-                                        Emergencias
-                                                    </button>
-                                </h2>
-                            </Link>
-
-                        </div>
-                        <div className="col-12 mb-5 mt-3">
-                            <Link to="/internaciones" className="btn btn-white mt-4">
-                                <h2>
-                                    <i className="fas fa-procedures "></i>  {''}
-                                    <button className="btn btn-light px-5 py-2 primary-btn">
-                                        Internaciones
-                                                    </button>
-                                </h2>
-                            </Link>
-
-                    </div>
-                        <main>*/}
-
                     {/* SECCIÓN 2 */}
-                    <section className="section-2 ">
-                        <div className="container text-center">
-                            <div className="row">
-                                <div className="col-md-6 col-12">
-                                    <div className="pray">
-                                        <img src={pexels} alt="pray" width="500px" className="" />
-                                    </div>
-                                </div>
-                                <div className="col-md-6 col-12">
-                                    <div className="panel text-left">
-                                        <h1>Mr. Devid Smith</h1>
-                                        <p className="pt-4">
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere iure adipisci harum ducimus accusantium, repudiandae aperiam
-                                            voluptatum, id ex ratione omnis reiciendis possimus officiis.
-                                                </p>
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi vitae, tenetur quidem eum aliquid vel labore sint placeat
-                                            ad deserunt consectetur fugit ullam. Eius unde neque ducimus obcaecati ipsum quos vero totam recusandae hic
-                                            expedita nemo sit, illum harum. Quisquam impedit ullam itaque facere et ad molestiae quod reprehenderit excepturi!
-                                                </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    <ContadorClientes/>
                     {/* -------------------------------------------------------------------- */}
 
                     {/* SECCIÓN 3 */}
-                    <div className="section-3">
-                        <div>
-                            <h1 className="text-center m-2">Experiencias de los clientes</h1>
-                            <p className="text-center m-4">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum exercitationem alias perspiciatis omnis quod possimus odit
-                                voluptatum! Sunt ea quasi praesentium, tenetur doloribus animi obcaecati, sint nemo quae laudantium iusto unde
-                                eaque nostrum nobis voluptatum
-                                    </p>
-                        </div>
-
-                        <div className="boton">
-                            <div className="bot1 m-2">
-
-                                <i className="fas fa-mobile-alt fa-3x py-2 pr-3"></i>
-                                <div className="text text-left">
-                                    <button className="btn btn-outline-secondary">
-                                    <h3 className="pt-1 m-0">On Mobile</h3>
-                                    <p className="p-0 m-0">On Play Store</p>
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="bot2 m-2">
-                                <i className="fas fa-desktop fa-3x py-2 pr-3"></i>
-                                <div className="text text-left">
-                                    <button className="btn btn-outline-secondary">
-                                    <h3 className="pt-1 m-0">Desktop</h3>
-                                    <p className="p-0 m-0">On website</p>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
+                    <ContadorRate/>
                     {/* -------------------------------------------------------------------- */}
 
                     {/* SECCIÓN 4 */}    
@@ -193,7 +139,7 @@ class homepage extends Component {
                                 <div className="team-1 text-center">
                                     <div className="card  d-inline-block shadow-lg">
                                         <div className="card-img-top">
-                                        <img src={foto4} className="img-fluid border-radius p-4" alt=""/>
+                                        <img src={foto4} className="img-fluid rounded-circle w-30 p-4" alt=""/>
                                         </div>
                                         <div className="card-body">
                                         <h3 className="card-title">Blalock Jolene</h3>
@@ -247,7 +193,7 @@ class homepage extends Component {
                                 <div className="team-3 text-center">
                                     <div className="card shadow-lg">
                                         <div className="card-img-top">
-                                        <img src={foto3} className="img-fluid border-radius p-4" alt=""/>
+                                        <img src={foto3} className="img-fluid rounded-circle w-30 p-4" alt=""/>
                                         </div>
                                         
                                         <div className="card-body">
@@ -271,6 +217,6 @@ class homepage extends Component {
 
             </Fragment>
         );
-    }
+    
 }
 export default homepage;

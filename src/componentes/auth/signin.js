@@ -24,7 +24,7 @@ const Signin = (props) => {
             mostrarAlerta(mensaje.msg);
         }
         // eslint-disable-next-lines
-    }, [mensaje, autenticado, props.history,mostrarAlerta]);
+    }, [mensaje, autenticado, props.history]);
 
     // State para iniciar sesión
     const [cliente, guardarCliente] = useState({
@@ -67,17 +67,15 @@ const Signin = (props) => {
                         <div className="card-body">
                             <form onSubmit={onSubmit}  noValidate> 
 
-                            { alerta ? 
-                                <div className="alert alert-danger alert-dismissible fade show" role="alert">
+                           { alerta ? 
+                                <div className="alert alert-danger alert-dismissible" role="alert">
                                     {/*<div className={`alerta ${alerta.categoria}`}> {alerta.msg} </div>*/}
                                     <div> {alerta.msg} </div>
                                     
-                                    <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
+                                   
                                 </div>
                                     : null
-                            }
+                         }
                                 
                                 <div className="form-group">
                                    

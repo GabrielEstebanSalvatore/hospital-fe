@@ -4,11 +4,22 @@ import { 
     OBTENER_USUARIO,
     LOGIN_EXITOSO,
     LOGIN_ERROR,
-    CERRAR_SESION
+    CERRAR_SESION,
+    EDITAR_CLIENTE,
+    CANTIDAD_CLIENTES
 } from '../../types';
 
 export default (state, action) => {
     switch(action.type) {
+        case EDITAR_CLIENTE:
+            return{
+                ...state,
+                autenticado: true,
+                mensaje: null,
+                cliente: action.payload.cliente,
+                cargando: false,
+                numeroClientes:null
+            }
         case REGISTRO_EXITOSO:
         case LOGIN_EXITOSO:
             localStorage.setItem('token', action.payload.token);
@@ -39,6 +50,13 @@ export default (state, action) => {
                 autenticado: null,
                 mensaje: action.payload,
                 cargando: false               
+            }
+        case CANTIDAD_CLIENTES:
+            console.log(action.payload.cuantos);
+            return{
+                ...state,
+                
+                numeroClientes: action.payload.cuantos,
             }
         
         default:

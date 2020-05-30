@@ -11,7 +11,8 @@ import {
     ENVIO_CORREO,
     EDITAR_TURNO,
     EDITAR_TURNO_EXITO,
-    HANDLE_MODAL
+    HANDLE_MODAL,
+    CANTIDAD_TURNOS
     
 } from '../../types';
 
@@ -27,7 +28,7 @@ const ProyectoState = props => {
         //modal
         modalView: '',
         //showModal: false,
-        
+        numeroTurnos:null
     }
 
 
@@ -173,6 +174,20 @@ const ProyectoState = props => {
         }
     }
 
+    const cantidadDeTurnos = async() =>{
+        const respuesta = await clienteAxios.get('/turnos')
+        try{//FIDO
+            console.log(respuesta.data.cuantos,'cantidadDeClinetes');
+            dispatch({
+                type:CANTIDAD_TURNOS,
+                payload:respuesta.data
+            })
+        }catch(error){
+            console.log(error);
+            
+        }
+    }
+
     return (
         <proyectoContext.Provider
             value={{
@@ -181,6 +196,7 @@ const ProyectoState = props => {
                 tunoeditar:state.tunoeditar,
                 modalView: state.modalView,
                 showModal: state.showModal,
+                numeroTurnos : state.numeroTurnos,
                 /*
                 formulario: state.formulario,
                 ,*/
@@ -193,7 +209,8 @@ const ProyectoState = props => {
                 envioCorreo,
                 editarTurno,
                 editarTurnoExito,
-                handleModal
+                handleModal,
+                cantidadDeTurnos
                 
             }}
         >
