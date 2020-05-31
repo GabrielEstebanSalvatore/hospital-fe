@@ -4,6 +4,8 @@ import AlertaContext from '../../context/alertas/alertaContext';
 import AuthContext from '../../context/autenticacion/authContext';
 
 
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
+
 const Signin = (props) => {
 
     // extraer los valores del context
@@ -62,7 +64,7 @@ const Signin = (props) => {
                 
                     <div className="card">
                         <div className="card-header text-center badge-primary">
-                            Ingreso de clientes
+                            Ingreso de Usuarios
                         </div>
                         <div className="card-body">
                             <form onSubmit={onSubmit}  noValidate> 
@@ -100,6 +102,7 @@ const Signin = (props) => {
                                             required
                                             value={password}
                                             onChange={onChange}
+                                            
                                             />
                                     </div>
                                    

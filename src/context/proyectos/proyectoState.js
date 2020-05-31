@@ -175,7 +175,7 @@ const ProyectoState = props => {
     }
 
     const cantidadDeTurnos = async() =>{
-        const respuesta = await clienteAxios.get('/turnos')
+        const respuesta = await clienteAxios.get('/turnosclientes')
         try{//FIDO
             console.log(respuesta.data.cuantos,'cantidadDeClinetes');
             dispatch({

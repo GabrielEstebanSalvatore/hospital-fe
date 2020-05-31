@@ -11,7 +11,7 @@ const ContadorRate = () => {
         setRate({ value });
       };
 
-    const desc = ['Terrible', 'Malo', 'Normal', 'Bueno', 'Excelente'];
+  
     const [rate, setRate] = useState({
         value: 3
     }); 
@@ -32,10 +32,8 @@ const ContadorRate = () => {
                                 </div>
                                 <p>Usuarios satisfechos</p>
                                 <span>
-                                    <Rate tooltips={desc} onChange={handleChange} value={value} />
-                                    {value 
-                                    ? <span className="ant-rate-text">{desc[value - 1]}</span> 
-                                    : ''}
+                                    <Rate  onChange={handleChange} value={value} />
+                                   
                                 </span>
                             </div>
                             <div>
@@ -44,10 +42,8 @@ const ContadorRate = () => {
                                 </div>
                                 <p>Velocidad de atención</p>
                                 <span>
-                                    <Rate tooltips={desc} onChange={handleChange} value={value} />
-                                    {value 
-                                    ? <span className="ant-rate-text">{desc[value - 1]}</span> 
-                                    : ''}
+                                    <Rate  onChange={handleChange} value={value} />
+                                 
                                 </span>
                             </div>
                             <div>
@@ -56,10 +52,8 @@ const ContadorRate = () => {
                                 </div>
                                 <p>Personal capacitado</p>
                                 <span>
-                                    <Rate tooltips={desc} onChange={handleChange} value={value} />
-                                    {value 
-                                    ? <span className="ant-rate-text">{desc[value - 1]}</span> 
-                                    : ''}
+                                    <Rate onChange={handleChange} value={value} />
+                                   
                                 </span>
                             </div>
                             <div>
@@ -68,10 +62,8 @@ const ContadorRate = () => {
                                 </div>
                                 <p>Atención amplia</p>
                                 <span>
-                                    <Rate tooltips={desc} onChange={handleChange} value={value} />
-                                    {value 
-                                    ? <span className="ant-rate-text">{desc[value - 1]}</span> 
-                                    : ''}
+                                    <Rate  onChange={handleChange} value={value} />
+                                
                                 </span>
                             </div>
                             <div>
@@ -80,10 +72,8 @@ const ContadorRate = () => {
                                 </div>
                                 <p>Facilidad de gestión</p>
                                 <span>
-                                    <Rate tooltips={desc} onChange={handleChange} value={value} />
-                                    {value 
-                                    ? <span className="ant-rate-text">{desc[value - 1]}</span> 
-                                    : ''}
+                                    <Rate  onChange={handleChange} value={value} />
+                                  
                                 </span>
                             </div>
                         </div>

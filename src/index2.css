@@ -33,65 +33,13 @@
       }
 
 
+
 /*------------------HOME PAGE-------------------*/
 
 /* SECCIÓN 1 */
 .homepage{
   display: flex;
   flex-direction: column;
-}
-/*.ant-carousel .slick-slide {
-  display: flex;
-  text-align: center;
-  height: 450px;
-  
-  background: #364d79;
-  overflow: hidden;
-}
-
-.homepage-header-turnos{
-  background-image: url(../src/assets/internaciones.jpg);
-  flex: 1;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  justify-content: center;
-  align-items: stretch;
- }
-.homepage-header-emergencias{
-  background-image: url(../src/assets/emergencias.jpg);
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.homepage-header-internaciones{
-  background-image: url(../src/assets/turnos.jpg);
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-}*/
-
-
-
-
-
-.homepage-header {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  flex-wrap: wrap;
-}
-.homepage-header p {
-  padding-top: 400px;
-  font-size: 30px;
-  font-weight: bold;
-  color: rgb(2,17,24);
-  transition: all 0.5s ease-in-out;
-}
-
-.carousel {
-  height: 400px;
-  
 }
 
 .homepage-header-turnos, .homepage-header-emergencias, .homepage-header-internaciones{
@@ -104,21 +52,66 @@
   text-align: center;
   min-width: 300px;
 }
-.homepage-header-turnos:hover, .homepage-header-emergencias:hover, .homepage-header-internaciones:hover{
+/*.homepage-header-turnos:hover, .homepage-header-emergencias:hover, .homepage-header-internaciones:hover{
   opacity: .85;
+}*/
+
+.carousel{
+  display: flex;
+  flex-direction: row;
 }
 
-.homepage-header-turnos{
-  background-image: url(../src/assets/turnos.jpg);
+.homepage-header-turnos{background-image: url(../src/assets/turnos.jpg);}
 
+.homepage-emergencias-mascara,.homepage-turnos-mascara,.homepage-internaciones-mascara {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  flex:1;
+  background-color: rgba(2,17,24, 0.35);
+  justify-content: center;
+  align-items: center;
+}  
+.homepage-turnos-contenido ,.homepage-emergencias-contenido,.homepage-internaciones-contenido {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+  padding: 80px;
+  height: 40px;
+ }  
+ .homepage-turnos-contenido p, .homepage-emergencias-contenido p, .homepage-internaciones-contenido p {
+  border: 1px solid white ;
+  border-radius: 40px;
+  color: white;
+  margin: 20px;
+  padding: 10px 30px 10px 30px;
+  background-color: rgba(2,17,24, 0.3);
+  align-items: center;
+  justify-content: center;
+  transition: ease-in 0.3s;
  }
+ .homepage-turnos-contenido p:hover, .homepage-emergencias-contenido p:hover, .homepage-internaciones-contenido p:hover {
+  background-color: rgba(2,17,24, 0.1);
+ }
+ .homepage-turnos-contenido h4,.homepage-emergencias-contenido h4,.homepage-internaciones-contenido h4{
+  color: white;
+  padding: 5px;
+ }
+
 .homepage-header-emergencias{
   background-image: url(../src/assets/emergencias.jpg);
 }
-.homepage-header-internaciones{
-  background-image: url(../src/assets/internaciones.jpg);
-}
 
+.homepage-header-internaciones{
+  background-image: url(../src/assets/internaciones1.jpg);
+}
+ 
 @media only screen and (max-width: 800px) {
   
   .homepage-header-turnos{
@@ -131,7 +124,6 @@
   .homepage-header-internaciones{
     margin-bottom: 1rem;
    }
-   
 }
 
 /* SECCIÓN 2 */
@@ -147,9 +139,6 @@
   flex-direction: column;
   align-items: center;
 }
-
-
-
 
 /*-----------------------------------------*/
 
@@ -413,6 +402,7 @@ flex-wrap: wrap;
   }
 }
 /*--------------------------------------*/
+/*------------------LOGIN PAGE-------------------*/
 
 /*INGRESO USUARIO*/
 .ingreso_cliente, .registro_cliente{
@@ -528,6 +518,7 @@ flex-wrap: wrap;
   font-weight: bold;
   border: 1px solid grey;
 }
+
 
 
 

@@ -55,7 +55,6 @@ export default (state, action) => {
             console.log(action.payload.cuantos);
             return{
                 ...state,
-                
                 numeroClientes: action.payload.cuantos,
             }
         

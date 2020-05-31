@@ -6,6 +6,7 @@ import foto2 from '../../assets/UI-face-2.jpg'
 import foto3 from '../../assets/UI-face-3.jpg'
 import foto4 from '../../assets/UI-face-4.jpg'
 //import { Carousel } from 'antd';
+import CarrouselHomePage from './homePage/seccion1/seccion1'
 import ContadorClientes from './homePage/seccion2/seccion2';
 import ContadorRate from './homePage/seccion3/ContadorRate';
 
@@ -34,52 +35,8 @@ const homepage =() => {
                         </div>
                     </Carousel>*/}
 
-                    <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-                        <ol className="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
-                        <div className="carousel-inner">
-                            <div className="carousel-item active">
-                                <div className="homepage-header-turnos">
-                                <Link to="/turnos"><p >Turnos</p></Link>
-                                </div>
-                            </div>
-                            <div className="carousel-item">
-                                <div className="homepage-header-emergencias">
-                                <Link to="/emergencias"><p>Emergencias</p></Link>
-                                </div>
-                            </div>
-                            <div className="carousel-item">
-                                <div className="homepage-header-internaciones">
-                                <Link to="/internaciones"><p>Internaciones</p></Link>
-                                </div>
-                            </div>
-                        </div>
-                        <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Previous</span>
-                        </a>
-                        <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Next</span>
-                        </a>
-                    </div>
-                    {/*<div className="homepage-header ">
-                        <div className="homepage-header-turnos" >
-                            <Link to="/turnos"><p >Turnos</p></Link>
-                            
-                        </div>
-                        <div className="homepage-header-emergencias" >
-                            <Link to="/emergencias"><p>Emergencias</p></Link>
-                            
-                        </div>
-                        <div className="homepage-header-internaciones" >
-                            <Link to="/internaciones"><p>Internaciones</p></Link>
-                            
-                        </div>
-                    </div>*/}
+                   
+                    <CarrouselHomePage/>
                     {/* -------------------------------------------------------------------- */}
 
                     {/* SECCIÓN 2 */}
@@ -89,44 +46,6 @@ const homepage =() => {
                     {/* SECCIÓN 3 */}
                     <ContadorRate/>
                     {/* -------------------------------------------------------------------- */}
-
-                    {/* SECCIÓN 4 */}    
-                    {/*<section className="section-4 container-fluid p-0 text-center bg-primary">
-                                <div className="row">
-                                    <div className="col-md-12 col-sm-12">
-                                        <h1>Experiencias de los clientes</h1>
-                                        <p className="text-white">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum exercitationem alias perspiciatis omnis quod possimus odit
-                                            voluptatum! Sunt ea quasi praesentium, tenetur doloribus animi obcaecati, sint nemo quae laudantium iusto unde
-                                            eaque nostrum nobis voluptatum
-                                    </p>
-                                    </div>
-                                </div>
-                                <div className="platform row ">
-                                    <div className="col-md-6 col-sm-12 text-right">
-                                        <div className="desktop shadow-lg">
-                                            <div className="d-flex flex-row justify-content-center">
-                                                <i className="fas fa-desktop fa-3x py-2 pr-3"></i>
-                                                <div className="text text-left">
-                                                    <h3 className="pt-1 m-0">Desktop</h3>
-                                                    <p className="p-0 m-0">On website</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-6 col-sm-12 text-left">
-                                        <div className="desktop shadow-lg">
-                                            <div className="d-flex flex-row justify-content-center">
-                                                <i className="fas fa-mobile-alt fa-3x py-2 pr-3"></i>
-                                                <div className="text text-left">
-                                                    <h3 className="pt-1 m-0">On Mobile</h3>
-                                                    <p className="p-0 m-0">On Play Store</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>*/}
 
                     {/* SECCIÓN 4 */}
                             
