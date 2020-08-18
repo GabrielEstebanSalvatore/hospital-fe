@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import AlertaContext from '../../context/alertas/alertaContext';
 import AuthContext from '../../context/autenticacion/authContext';
 
-
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
-
 const Signin = (props) => {
 
     // extraer los valores del context
@@ -13,14 +10,14 @@ const Signin = (props) => {
     const { alerta, mostrarAlerta} = alertaContext;
 
     const authContext = useContext(AuthContext);
-    const { mensaje, autenticado, iniciarSesion } = authContext;
-
+    const { mensaje, autenticado, iniciarSesion,cliente } = authContext;
+    
     // En caso de que el password o usuario no exista
     useEffect(() => {
         if(autenticado) {
-            props.history.push('/gestion');
+            props.history.push('/');
         }
-       
+ 
         if(mensaje) {
             //mostrarAlerta(mensaje.msg, mensaje.categoria);
             mostrarAlerta(mensaje.msg);
@@ -29,17 +26,17 @@ const Signin = (props) => {
     }, [mensaje, autenticado, props.history]);
 
     // State para iniciar sesión
-    const [cliente, guardarCliente] = useState({
+    const [clienteDatos, guardarCliente] = useState({
         email: '',
         password: ''
     });
 
     // extraer de usuario
-    const { email, password } = cliente;
+    const { email, password } = clienteDatos;
 
     const onChange = e => {
         guardarCliente({
-            ...cliente,
+            ...clienteDatos,
             [e.target.name] : e.target.value
         })
     }
@@ -64,7 +61,7 @@ const Signin = (props) => {
                 
                     <div className="card">
                         <div className="card-header text-center badge-primary">
-                            Ingreso de Usuarios
+                            Ingreso de Usuarios 
                         </div>
                         <div className="card-body">
                             <form onSubmit={onSubmit}  noValidate> 

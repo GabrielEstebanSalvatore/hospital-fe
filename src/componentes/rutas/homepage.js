@@ -1,6 +1,4 @@
-import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import pexels from '../../assets/pexels-photo-1904769.jpeg'
+import React, { Fragment } from 'react';
 import foto1 from '../../assets/UI-face-1.jpg'
 import foto2 from '../../assets/UI-face-2.jpg'
 import foto3 from '../../assets/UI-face-3.jpg'

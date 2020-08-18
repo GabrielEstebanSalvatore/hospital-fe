@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useReducer, useState}from 'react';
+import React, {useContext, useEffect }from 'react';
 import DoctoresContext from '../../context/doctores/doctoresContext';
 import { Table } from 'antd';
 import { DeleteOutlined, VerticalAlignBottomOutlined } from '@ant-design/icons';
@@ -14,7 +14,7 @@ const ListadoDoctores = () => {
     useEffect(() => {
         obtenerDoctores()
       
-        
+        // eslint-disable-next-line
     }, []);
 
     const columns = [

@@ -3,14 +3,11 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 /*Vistas*/
-import Turnos from './componentes/solicitudes/Turnos';
 import homepage from './componentes/rutas/homepage';
-import Emergencias from './componentes/solicitudes/Emergencias';
-import Internaciones from './componentes/solicitudes/Internaciones';
-import GestionUsuario from './componentes/rutas/Gestion';
-import NuevoDoctor from './componentes/rutas/nuevoDoctor'
-import GestionDoctores from './componentes/rutas/gestionDoctores';
-
+import GestionClientes from './componentes/rutas/GestionClientes';
+import gestionAdmin_Doctores from './componentes/rutas/gestionAdmin_Doctores';
+import GestionAdmin_TurnosClinetes from './componentes/rutas/GestionAdmin_TurnosClinetes';
+import GestionDoctores from './componentes/rutas/GestionDoctores';
 //Usuario
 import Signin from './componentes/auth/signin';
 import Signup from './componentes/auth/signup';
@@ -39,46 +36,58 @@ if(token) {
   tokenAuth(token);
 }
 
-function App() {
+
+function App2() {
 
   return (
-    <div className="App">
-      <ProyectoState>
-        <AlertaState>
-          <AuthState>
-            <DoctoresState>
-              <Router>
-                <div className="App1">
-                <Navigation/>
-                  <Switch>
-                    <Route exact path="/" component={homepage}/>
-                    <Route exact path="/turnos" component={Turnos}/>
-                    <Route exact path="/emergencias" component={Emergencias}/>
-                    <Route exact path="/internaciones" component={Internaciones}/>
+    <ProyectoState>
+      <AlertaState>
+        <AuthState>
+          <DoctoresState>
+            <Router>
 
-                    <RutaPrivada exact path="/gestion" component={GestionUsuario}/>
-                    <Route exact path="/gestionadmin" component={GestionDoctores}/>
+              <div className="app-container">
 
-                    <Route exact path="/nuevodoctor" component={NuevoDoctor}/>
-                    <Route exact path="/contacto" component={Contacto}/>
-                    <Route exact path='/turno/:id' component={Editar}/>
 
-                    <Route exact path="/user/signin" component={Signin}/>
-                    <Route exact path="/user/signup" component={Signup}/>
-                  </Switch>
+
+                <div className="body-container">
+                <div className="header-container">
+                  <Navigation />
                 </div>
-              
-                <div className="App2">
-                  <Footer/>
-                </div>
-              </Router>
-            </DoctoresState>
-          </AuthState>
-        </AlertaState>
-      </ProyectoState>
+
+                  <div className="sidebar-container">
+                    <Switch>
+                      <Route exact path="/" component={homepage} />
                   
-    </div>
-  );
+                      <RutaPrivada exact path="/gestion" component={GestionClientes} />
+                      <RutaPrivada exact path="/gestiondoctores" component={GestionDoctores}/>
+                      <RutaPrivada exact path="/gestionadmin" component={gestionAdmin_Doctores}/>
+                      <RutaPrivada exact path="/gestionadminturnos" component={GestionAdmin_TurnosClinetes}/>
+
+                      <Route exact path="/contacto" component={Contacto} />
+                      <Route exact path='/turno/:id' component={Editar} />
+
+                      <Route exact path="/user/signin" component={Signin} />
+                      <Route exact path="/user/signup" component={Signup} />
+                    </Switch>
+
+                  </div>
+
+                  
+                <div className="content-container">
+                    <Footer />
+
+                </div>
+                </div>
+
+
+              </div>
+            </Router>
+          </DoctoresState>
+        </AuthState>
+      </AlertaState>
+    </ProyectoState>
+  )
 }
 
-export default App;
+export default App2;

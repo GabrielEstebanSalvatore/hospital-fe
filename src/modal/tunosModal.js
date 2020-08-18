@@ -14,9 +14,9 @@ const TurnosModal = ({ typeTurnos,typoInternaciones,typoEmergencias }) => {
 
     useEffect(() => {
         obtenerDoctores()
-        {typoInternaciones && guardarTurno({...turno, doctor: 'INTERNACION' })}
-        {typoEmergencias && guardarTurno({...turno, doctor: 'EMERGENCIA' })}
-        {typeTurnos && guardarTurno({...turno, doctor: '' })}
+        {typoInternaciones && guardarTurno({...turno, tipoTurno:'INTERNACION' })}
+        {typoEmergencias && guardarTurno({...turno, tipoTurno: 'EMERGENCIA' })}
+        {typeTurnos && guardarTurno({...turno, doctor: '',tipoTurno: 'TURNO' })}
         // eslint-disable-next-line
     }, [typoInternaciones,typoEmergencias,typeTurnos])
 
@@ -28,8 +28,9 @@ const TurnosModal = ({ typeTurnos,typoInternaciones,typoEmergencias }) => {
         //fecha: new Date(),
         hora: '',
         fecha: '',
-        doctor: '',
-        name: ''
+        name: '',
+        tipoTurno:'',
+        doctorEmail: '',
 
     });
    
@@ -40,6 +41,8 @@ const TurnosModal = ({ typeTurnos,typoInternaciones,typoEmergencias }) => {
     }
 
     const onChange = e => {
+        console.log(e.target.value,e.target.value2);
+        
         guardarTurno({
             ...turno,
             [e.target.name]: e.target.value
@@ -66,8 +69,9 @@ const TurnosModal = ({ typeTurnos,typoInternaciones,typoEmergencias }) => {
         guardarTurno({
             name: '',
             hora: '',
-            doctor: '',
+            doctorEmail: '',
             fecha: '',
+            tipoTurno:''
 
         })
 
@@ -98,13 +102,14 @@ const TurnosModal = ({ typeTurnos,typoInternaciones,typoEmergencias }) => {
                             className="form-control"
                             //value={turno.name}
                             onChange={onChange}
-                            name="doctor"
+                           
+                            name="doctorEmail"
 
                             required>
                             <option value="" disabled selected >Seleccione el doctor</option>
                             {
                                 doctoresNombre.map(doctor => (
-                                    <option key={doctor._id} value={doctor.name}>
+                                    <option key={doctor._id} value={doctor.email}>
                                         {doctor.name} - {doctor.profesion}
                                     </option>
                                 ))
@@ -116,7 +121,7 @@ const TurnosModal = ({ typeTurnos,typoInternaciones,typoEmergencias }) => {
                 }
                 {typoEmergencias &&
                     <div >
-                        <label>Doctor</label>
+                        <label>Tipo de Turno</label>
                         <input
                             type="text"
                             className="form-control"
@@ -130,7 +135,7 @@ const TurnosModal = ({ typeTurnos,typoInternaciones,typoEmergencias }) => {
                 }
                 {typoInternaciones &&
                     <div >
-                        <label>Doctor</label>
+                        <label>Tipo de Turno</label>
                         <input
                             type="text"
                             className="form-control"

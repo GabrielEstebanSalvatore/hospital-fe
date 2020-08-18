@@ -6,6 +6,7 @@ import ModalContainer from '../../modal/ModalContainer'
 import ProyectoContext from '../../context/proyectos/proyectoContext';
 
 
+
 const GestionClientes= () => {
     const proyectosContext = useContext(ProyectoContext);
     const {modalView } = proyectosContext;

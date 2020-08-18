@@ -1,18 +1,17 @@
-import React, {useContext,useEffect,useState} from 'react';
+import React, {useContext,useEffect} from 'react';
 import AuthContext from '../../context/autenticacion/authContext';
-import ProyectoContext from '../../context/proyectos/proyectoContext';
 import BotonDeBarra from './botonBarra/BotonDeBarra'
 
 
-const BarraDeGestion = () => {
+const BarraDeGestion = (props) => {
 
    const authContext = useContext(AuthContext);
-   const proyectoContext = useContext(ProyectoContext);
    const { clienteAutenticado, cliente, /*cerrarSesion*/} = authContext;
  
    
    useEffect(() => {
        clienteAutenticado();
+      
        //eslint-disable-next-line
     }, [])
     

@@ -1,4 +1,5 @@
-import React, { useReducer } from 'react';
+import React, { useReducer,useContext } from 'react';
+import AuthContext from '../../context/autenticacion/authContext';
 
 import proyectoContext from './proyectoContext';
 import proyectoReducer from './proyectoReducer';
@@ -12,7 +13,9 @@ import {
     EDITAR_TURNO,
     EDITAR_TURNO_EXITO,
     HANDLE_MODAL,
-    CANTIDAD_TURNOS
+    CANTIDAD_TURNOS,
+    CANTIDAD_TURNOS_CLIENTES,
+    OBTENER_TURNOS_DOCTORES
     
 } from '../../types';
 
@@ -23,6 +26,8 @@ const ProyectoState = props => {
     const initialState = {
 
         turnos : [],
+        turnosClientes : [],
+        turnosDoctores : [],
         errorformulario: false,
         tunoeditar:null,
         //modal
@@ -30,7 +35,6 @@ const ProyectoState = props => {
         //showModal: false,
         numeroTurnos:null
     }
-
 
     // Dispatch para ejecutar las acciones
     const [state, dispatch] = useReducer(proyectoReducer, initialState)
@@ -55,6 +59,7 @@ const ProyectoState = props => {
         
         try {
             const respuesta = await clienteAxios.get('/turnos');
+           
             
             dispatch({
                 type: OBTENER_TURNOS,
@@ -66,29 +71,32 @@ const ProyectoState = props => {
         }
     
     }
-    /////////////Doctores//////////////////
-    /*  const obtenerDoctores = async () => {
+    // Obtener los turnos
+    const obtenerTurnos_Doctores = async (email) => {
+        //console.log(email);
         
-        try {
-            const respuesta = await clienteAxios.get('/doctores');
-            //console.log('Doctores ',respuesta);
+
+       try {
+            const respuesta = await clienteAxios.get(`/turnosparadoctores/${email}`);
+            console.log(respuesta,"obtenerTurnos_Doctores");
             
             dispatch({
-                type: OBTENER_DOCTORES,
-                payload: respuesta.data.doctorDB
+                type: OBTENER_TURNOS_DOCTORES,
+                payload: respuesta.data.turnos
             })
         } catch (error) {
             console.log(error);
+            
         }
     
-    }*/
-
+    }
+   
     //Agregar nuevo turno
     const agregarTurno = async turno =>{
         //validar que venga fecha y hora
 
         let fechaFormatead = turno.fecha + "T" + turno.hora + ":00Z"
-        turno.fecha = new Date(fechaFormatead).toISOString()
+        turno.fecha = new Date(fechaFormatead).toISOString().slice(0,10)
         
         try {
             const respuesta = await clienteAxios.post('/turnos', turno);
@@ -174,10 +182,11 @@ const ProyectoState = props => {
         }
     }
 
+    //PARA SACAR UNICAMENTE LA CANTIDAD TURNOS Y PINTARLOS EN HomePage
     const cantidadDeTurnos = async() =>{
         const respuesta = await clienteAxios.get('/turnosclientes')
-        try{//FIDO
-            console.log(respuesta.data.cuantos,'cantidadDeClinetes');
+        try{
+            //
             dispatch({
                 type:CANTIDAD_TURNOS,
                 payload:respuesta.data
@@ -187,7 +196,22 @@ const ProyectoState = props => {
             
         }
     }
-
+    
+    //Para llenar con todos los turnos en gestion de Admin
+    const cantidadDeTurnosClientes = async() =>{
+        const respuesta = await clienteAxios.get('/turnosclientesadmin')
+        console.log(respuesta,"cantidadDeTurnosClientes");
+        
+        try{//PARA LLENAR FORMULARIO DE ADMIN
+            dispatch({
+                type:CANTIDAD_TURNOS_CLIENTES,
+                payload:respuesta.data
+            })
+        }catch(error){
+            console.log(error);
+            
+        }
+    }
     return (
         <proyectoContext.Provider
             value={{
@@ -197,6 +221,8 @@ const ProyectoState = props => {
                 modalView: state.modalView,
                 showModal: state.showModal,
                 numeroTurnos : state.numeroTurnos,
+                turnosClientes: state.turnosClientes,
+                turnosDoctores: state.turnosDoctores,
                 /*
                 formulario: state.formulario,
                 ,*/
@@ -210,7 +236,9 @@ const ProyectoState = props => {
                 editarTurno,
                 editarTurnoExito,
                 handleModal,
-                cantidadDeTurnos
+                cantidadDeTurnos,
+                cantidadDeTurnosClientes,
+                obtenerTurnos_Doctores
                 
             }}
         >

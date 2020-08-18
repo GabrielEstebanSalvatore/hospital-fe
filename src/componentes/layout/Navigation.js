@@ -106,17 +106,30 @@ const Navigation = () => {
                     ?
 
                     <ul className="navbar2-1" >
-                        {cliente.role == 'ADMIN_ROLE' && 
+                        {cliente.role == 'ADMIN_ROLE' &&
                             <li>
-                            <Link className=" text-white" to="/gestionadmin">Admin</Link>
+                                <Link className=" text-white" to="/gestionadmin">Doctores</Link>
                             </li>
                         }
-                        <li className="nav-item ">
-                            <Link className=" text-white" to="/gestion">Mi Gestion</Link>
-                            
-                        </li>
+                        {cliente.role == 'ADMIN_ROLE' &&
+                            <li>
+                                <Link className=" text-white" to="/gestionadminturnos">Turnos</Link>
+                            </li>
+                        }
+                        {cliente.role == 'USER_ROLE' &&
+                            <li className="nav-item ">
+                                <Link className=" text-white" to="/gestion">Mi Gestion</Link>
+
+                            </li>
+                        }
+                        {cliente.role == 'DOCTOR_ROLE' &&
+                            <li className="nav-item ">
+                                <Link className=" text-white" to="/gestiondoctores">Administrar Turnos</Link>
+
+                            </li>
+                        }
                         <li className="nav-item "
-                            
+
                             onClick={() => cerrarSesion()}
                         >Cerrar Sesión
                     </li>

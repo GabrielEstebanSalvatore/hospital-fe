@@ -28,7 +28,8 @@ export default (state, action) => {
                 autenticado: true,
                 mensaje: null,
                 token: action.payload.token,
-                cargando: false,
+                cargando: false
+                
                 
             }
         case OBTENER_USUARIO:
@@ -37,7 +38,9 @@ export default (state, action) => {
                 autenticado: true,
                 mensaje: null,
                 cliente: action.payload.cliente,
-                cargando: false
+                cargando: false,
+                email: action.payload.cliente.email
+
             }
         case CERRAR_SESION:
         case LOGIN_ERROR:

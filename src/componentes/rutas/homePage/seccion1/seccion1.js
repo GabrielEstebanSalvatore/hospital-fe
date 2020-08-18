@@ -20,7 +20,7 @@ const CarrouselHomePage = () => {
 
                                 <h4>Solicitud de Turnos</h4>
                                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis placeat voluptatum ducimus magni non facere dolorem accusamus ut voluptate ipsa quibusdam perspiciatis quaerat, illo nulla necessitatibus laboriosam, delectus quisquam!</span>
-                                <Link to="/turnos"><p >Turnos</p></Link>
+                                <Link to="/user/signin"><p >Turnos</p></Link>
 
                             </div>
 
@@ -34,7 +34,7 @@ const CarrouselHomePage = () => {
 
                             <h4>Solicitud de Emergencias</h4>
                             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis placeat voluptatum ducimus magni non facere dolorem accusamus ut voluptate ipsa quibusdam perspiciatis quaerat, illo nulla necessitatibus laboriosam, delectus quisquam!</span>
-                             <Link to="/emergencias"><p>Emergencias</p></Link>
+                             <Link to="/user/signin"><p>Emergencias</p></Link>
                             
 
                             </div>
@@ -50,7 +50,7 @@ const CarrouselHomePage = () => {
                             <h4>Solicitud de Internaciones</h4>
                             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis placeat voluptatum ducimus magni non facere dolorem accusamus ut voluptate ipsa quibusdam perspiciatis quaerat, illo nulla necessitatibus laboriosam, delectus quisquam!</span>
                      
-                             <Link to="/internaciones"><p>Internaciones</p></Link>
+                             <Link to="/user/signin"><p>Internaciones</p></Link>
                             
 
                             </div>

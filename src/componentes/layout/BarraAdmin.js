@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
 import AuthContext from '../../context/autenticacion/authContext';
-import {Link} from 'react-router-dom'
 import BotonDeBarra from './botonBarra/BotonDeBarra'
 
 const BarraAdmin = () => {
@@ -15,7 +14,7 @@ const BarraAdmin = () => {
 
 
             <div className="barra_usuario_nombre">
-                {cliente ? <p className="nombre-usuario "><strong> Gestión de Doctores de: <span>{cliente.name} </span> </strong></p> : null}
+                {cliente ? <p className="nombre-usuario "><strong> Gestión de: <span>{cliente.name} </span> </strong></p> : null}
             </div>
 
             <BotonDeBarra 

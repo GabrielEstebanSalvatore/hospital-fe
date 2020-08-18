@@ -7,14 +7,14 @@ import DoctoresContext from '../context/doctores/doctoresContext';
 //import Input from './input/index'
 
 
-const DoctorModal = ({  }) => {
+const DoctorModal = () => {
 
     const proyectoContext = useContext(ProyectoContext);
     const { handleModal } = proyectoContext;
     const doctoresContext = useContext(DoctoresContext);
     const {nuevoDoc } = doctoresContext;
 
-    const [handleModalState, setHandleModalState] = useState(
+    const [handleModalState] = useState(
         '',
         //showModal: false,
     );
@@ -32,7 +32,7 @@ const DoctorModal = ({  }) => {
         handleModal(handleModalState)
     }
 
-    const { name, email, profesion, telefono,direccion } = doctor;
+   
 
     const onChange = e => {
         guardarDoctor({

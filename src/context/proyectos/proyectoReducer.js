@@ -7,7 +7,9 @@ import {
     EDITAR_TURNO,
     EDITAR_TURNO_EXITO,
     HANDLE_MODAL,
-    CANTIDAD_TURNOS
+    CANTIDAD_TURNOS,
+    CANTIDAD_TURNOS_CLIENTES,
+    OBTENER_TURNOS_DOCTORES
 } from '../../types';
 
 
@@ -18,6 +20,7 @@ export default (state, action) => {
                 ...state,
                 modalView : action.payload
         }
+        
         case OBTENER_TURNOS:
             //console.log(action.payload); para ver por consola que llega del be
             return {
@@ -62,7 +65,21 @@ export default (state, action) => {
                 
                 numeroTurnos: action.payload.cuantos,
             }
-            
+        case CANTIDAD_TURNOS_CLIENTES:
+            return {
+                ...state,
+
+                turnosClientes: action.payload.turnos,
+            }
+
+        case OBTENER_TURNOS_DOCTORES:
+            return {
+                ...state,
+
+                turnosDoctores: action.payload,
+              
+            }
+
         default:
             return state;
     }

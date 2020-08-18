@@ -14,7 +14,7 @@ const ClienteModal = ({ clienteId }) => {
     const authContext = useContext(AuthContext);
     const {editarCliente } = authContext;
 
-    const [handleModalState, setHandleModalState] = useState(
+    const [handleModalState] = useState(
         '',
         //showModal: false,
     );
@@ -31,8 +31,6 @@ const ClienteModal = ({ clienteId }) => {
 
         handleModal(handleModalState)
     }
-
-    const { name, email, password, confirm_password } = cliente;
 
     const onChange = e => {
         guardarCliente({

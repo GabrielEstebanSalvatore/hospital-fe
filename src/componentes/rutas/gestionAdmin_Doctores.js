@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import BarraAdmin from '../layout/BarraAdmin';
 import DoctoresContext from '../../context/doctores/doctoresContext';
-import ListadoTurnosClientes from '../routesGestionLayouts/ListadoTurnosClientes_Doctor';
+import ListadoTurnosClientes_Doctor from '../routesGestionLayouts/ListadoTurnosClientes_Doctor';
 import ProyectoContext from '../../context/proyectos/proyectoContext'
 import ModalContainer from '../../modal/ModalContainer';
 
@@ -27,8 +27,8 @@ const GestionDoctores = () => {
             <BarraAdmin/>
             </div>
             <div className="gestion-principal__body">
-                    <h2 >Listado de turnos de clientes</h2>
-                    <ListadoTurnosClientes />
+                    <h2 >Listado de Doctores</h2>
+                    <ListadoTurnosClientes_Doctor />
             </div>
         </div>
 
