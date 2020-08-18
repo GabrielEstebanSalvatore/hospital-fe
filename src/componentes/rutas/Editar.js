@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useContext} from 'react';
-import proyectoContext from '../../context/proyectos/proyectoContext';
+import proyectoContext from '../../context/projects/proyectoContext';
 //import {useSelector} from 'react-redux';
 import {Link} from "react-router-dom";
 //

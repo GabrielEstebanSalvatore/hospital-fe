@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
-import ProyectoContext from '../context/proyectos/proyectoContext';
-import DoctoresContext from '../context/doctores/doctoresContext';
+import ProyectoContext from '../context/projects/proyectoContext';
+import DoctoresContext from '../context/doctors/doctoresContext';
 
 
 

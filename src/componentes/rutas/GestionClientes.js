@@ -3,7 +3,7 @@ import React, { useContext} from 'react';
 import BarraDeGestion from '../layout/BarraDeGestion';
 import ListadoTurnos from '../routesGestionLayouts/ListadoTurnos'
 import ModalContainer from '../../modal/ModalContainer'
-import ProyectoContext from '../../context/proyectos/proyectoContext';
+import ProyectoContext from '../../context/projects/proyectoContext';
 
 
 

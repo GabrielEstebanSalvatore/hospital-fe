@@ -1,12 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import clienteAxios from '../../config/axios';
 import AuthContext from '../../context/autenticacion/authContext';
-import proyectoContext from '../../context/proyectos/proyectoContext';
-import { saveAs } from 'file-saver';
+import proyectoContext from '../../context/projects/proyectoContext';
 import { Table } from 'antd';
-import { DeleteOutlined, VerticalAlignBottomOutlined } from '@ant-design/icons';
-import Swal from 'sweetalert2'
-
 import { Input, Button, Space } from 'antd';
 //import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';

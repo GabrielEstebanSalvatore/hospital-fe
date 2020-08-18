@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import BarraAdmin from '../layout/BarraAdmin';
-import DoctoresContext from '../../context/doctores/doctoresContext';
+import DoctoresContext from '../../context/doctors/doctoresContext';
 import ListadoTurnosClientes from '../routesGestionLayouts/ListadoTurnosClientes_Doctor';
-import ProyectoContext from '../../context/proyectos/proyectoContext'
+import ProyectoContext from '../../context/projects/proyectoContext'
 import ModalContainer from '../../modal/ModalContainer';
 
 const GestionDoctores = () => {

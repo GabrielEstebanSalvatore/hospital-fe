@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import {Link} from 'react-router-dom';
 import { Menu, Dropdown, Button } from 'antd';
-import ProyectoContext from '../../../context/proyectos/proyectoContext';
+import ProyectoContext from '../../../context/projects/proyectoContext';
 
 const DropButton = ({gestionAdmin,gestionCliente}) => {
 

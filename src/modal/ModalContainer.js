@@ -2,7 +2,7 @@ import React,{useContext} from 'react';
 import TurnosModal from './tunosModal';
 import ClienteModal from './clienteModal';
 import DoctorModal from './doctorModal';
-import proyectoContext from '../context/proyectos/proyectoContext';
+import proyectoContext from '../context/projects/proyectoContext';
 import AuthContext from '../context/autenticacion/authContext';
 
 const ModalContainer = ()=>{

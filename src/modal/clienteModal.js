@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import ProyectoContext from '../context/proyectos/proyectoContext';
+import ProyectoContext from '../context/projects/proyectoContext';
 import AuthContext from '../context/autenticacion/authContext';
 
 

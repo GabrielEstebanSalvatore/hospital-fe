@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import AlertaContext from '../../context/alertas/alertaContext';
+import AlertaContext from '../../context/alerts/alertaContext';
 import AuthContext from '../../context/autenticacion/authContext';
 
 const Signin = (props) => {

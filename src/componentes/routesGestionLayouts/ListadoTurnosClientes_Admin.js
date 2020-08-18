@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import clienteAxios from '../../config/axios';
-import proyectoContext from '../../context/proyectos/proyectoContext';
+import proyectoContext from '../../context/projects/proyectoContext';
 import { saveAs } from 'file-saver';
 import { Table } from 'antd';
 import { DeleteOutlined, VerticalAlignBottomOutlined } from '@ant-design/icons';

@@ -19,10 +19,10 @@ import Navigation from './componentes/layout/Navigation';
 import Footer from './componentes/layout/Footer';
 
 /*Context*/
-import AlertaState from './context/alertas/alertaState'
-import ProyectoState from './context/proyectos/proyectoState';
+import AlertaState from './context/alerts/alertaState'
+import ProyectoState from './context/projects/proyectoState';
 import AuthState from './context/autenticacion/authState';
-import DoctoresState from './context/doctores/doctoresState'
+import DoctoresState from './context/doctors/doctoresState'
 
 /*Tomar el token para no perder el usuario*/
 import tokenAuth from './config/token';

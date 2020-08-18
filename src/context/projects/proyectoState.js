@@ -1,6 +1,4 @@
-import React, { useReducer,useContext } from 'react';
-import AuthContext from '../../context/autenticacion/authContext';
-
+import React, { useReducer } from 'react';
 import proyectoContext from './proyectoContext';
 import proyectoReducer from './proyectoReducer';
 import { 
