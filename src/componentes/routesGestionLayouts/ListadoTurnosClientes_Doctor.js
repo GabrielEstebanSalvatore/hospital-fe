@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../context/autenticacion/authContext';
-import proyectoContext from '../../context/projects/proyectoContext';
+import proyectContext from '../../context/projects/proyectContext';
 import { Table } from 'antd';
 import { Input, Button, Space } from 'antd';
 //import Highlighter from 'react-highlight-words';
@@ -16,7 +16,7 @@ const ListadoTurnosClientes_Doctor = () => {
 
 
   //Extraer Turnos de state inicial
-  const proyectosContext = useContext(proyectoContext);
+  const proyectosContext = useContext(proyectContext);
   const {  turnos,turnosClientes,obtenerTurnos_Doctores,turnosDoctores,obtenerTurnos } = proyectosContext;
  
 

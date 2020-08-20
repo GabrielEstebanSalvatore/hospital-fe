@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import ProyectoContext from '../context/projects/proyectoContext';
+import ProyectContext from '../context/projects/proyectContext';
 import DoctoresContext from '../context/doctors/doctoresContext';
 
 
@@ -9,8 +9,8 @@ import DoctoresContext from '../context/doctors/doctoresContext';
 
 const DoctorModal = () => {
 
-    const proyectoContext = useContext(ProyectoContext);
-    const { handleModal } = proyectoContext;
+    const proyectContext = useContext(ProyectContext);
+    const { handleModal } = proyectContext;
     const doctoresContext = useContext(DoctoresContext);
     const {nuevoDoc } = doctoresContext;
 

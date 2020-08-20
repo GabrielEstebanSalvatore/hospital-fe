@@ -20,7 +20,7 @@ import Footer from './componentes/layout/Footer';
 
 /*Context*/
 import AlertaState from './context/alerts/alertaState'
-import ProyectoState from './context/projects/proyectoState';
+import ProyectState from './context/projects/proyectState';
 import AuthState from './context/autenticacion/authState';
 import DoctoresState from './context/doctors/doctoresState'
 
@@ -40,7 +40,7 @@ if(token) {
 function App2() {
 
   return (
-    <ProyectoState>
+    <ProyectState>
       <AlertaState>
         <AuthState>
           <DoctoresState>
@@ -86,7 +86,7 @@ function App2() {
           </DoctoresState>
         </AuthState>
       </AlertaState>
-    </ProyectoState>
+    </ProyectState>
   )
 }
 

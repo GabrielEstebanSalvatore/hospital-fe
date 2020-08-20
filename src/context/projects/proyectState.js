@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
-import proyectoContext from './proyectoContext';
-import proyectoReducer from './proyectoReducer';
+import proyectContext from './proyectContext';
+import proyectReducer from './proyectReducer';
 import { 
     FORMULARIO_PROYECTO, 
     OBTENER_TURNOS,
@@ -35,7 +35,7 @@ const ProyectoState = props => {
     }
 
     // Dispatch para ejecutar las acciones
-    const [state, dispatch] = useReducer(proyectoReducer, initialState)
+    const [state, dispatch] = useReducer(proyectReducer, initialState)
     
     const handleModal = ( modalView)=>{
         dispatch({
@@ -211,7 +211,7 @@ const ProyectoState = props => {
         }
     }
     return (
-        <proyectoContext.Provider
+        <proyectContext.Provider
             value={{
                 turnos:state.turnos,
                 errorformulario: state.errorformulario,
@@ -241,7 +241,7 @@ const ProyectoState = props => {
             }}
         >
             {props.children}
-        </proyectoContext.Provider>
+        </proyectContext.Provider>
         
     )
 }

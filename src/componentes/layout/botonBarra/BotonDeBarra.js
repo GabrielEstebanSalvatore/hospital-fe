@@ -1,13 +1,13 @@
 import React, {useContext, useState} from 'react';
 import {Link} from 'react-router-dom';
 import { Menu, Dropdown, Button } from 'antd';
-import ProyectoContext from '../../../context/projects/proyectoContext';
+import ProyectContext from '../../../context/projects/proyectContext';
 
 const DropButton = ({gestionAdmin,gestionCliente}) => {
 
     
-    const proyectoContext = useContext(ProyectoContext);
-    const {  handleModal} = proyectoContext;
+    const proyectContext = useContext(ProyectContext);
+    const {  handleModal} = proyectContext;
 
 
     const [modalTurnos, setModalTurno] = useState('turnos');

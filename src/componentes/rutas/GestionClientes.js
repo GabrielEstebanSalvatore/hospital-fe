@@ -3,12 +3,12 @@ import React, { useContext} from 'react';
 import BarraDeGestion from '../layout/BarraDeGestion';
 import ListadoTurnos from '../routesGestionLayouts/ListadoTurnos'
 import ModalContainer from '../../modal/ModalContainer'
-import ProyectoContext from '../../context/projects/proyectoContext';
+import ProyectContext from '../../context/projects/proyectContext';
 
 
 
 const GestionClientes= () => {
-    const proyectosContext = useContext(ProyectoContext);
+    const proyectosContext = useContext(ProyectContext);
     const {modalView } = proyectosContext;
     
     return(

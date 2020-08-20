@@ -2,12 +2,12 @@ import React, { useContext, useEffect } from 'react';
 import BarraAdmin from '../layout/BarraAdmin';
 import DoctoresContext from '../../context/doctors/doctoresContext';
 import ListadoTurnosClientes_Doctor from '../routesGestionLayouts/ListadoTurnosClientes_Doctor';
-import ProyectoContext from '../../context/projects/proyectoContext'
+import ProyectContext from '../../context/projects/proyectContext'
 import ModalContainer from '../../modal/ModalContainer';
 
 const GestionDoctores = () => {
 
-    const proyectosContext = useContext(ProyectoContext);
+    const proyectosContext = useContext(ProyectContext);
     const {modalView } = proyectosContext;
     
     useEffect(() => {

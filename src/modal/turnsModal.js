@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import ProyectoContext from '../context/projects/proyectoContext';
+import ProyectContext from '../context/projects/proyectContext';
 import DoctoresContext from '../context/doctors/doctoresContext';
 
 //import Input from './input/index'
@@ -7,8 +7,8 @@ import DoctoresContext from '../context/doctors/doctoresContext';
 
 const TurnosModal = ({ typeTurnos,typoInternaciones,typoEmergencias }) => {
 
-    const proyectoContext = useContext(ProyectoContext);
-    const { handleModal, agregarTurno } = proyectoContext;
+    const proyectContext = useContext(ProyectContext);
+    const { handleModal, agregarTurno } = proyectContext;
     const doctoresContext = useContext(DoctoresContext)
     const { obtenerDoctores, doctoresNombre } = doctoresContext;
 

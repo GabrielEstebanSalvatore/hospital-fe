@@ -1,8 +1,8 @@
 import React, { useState, useContext} from 'react';
-import proyectoContext from '../../context/projects/proyectoContext';
+import proyectContext from '../../context/projects/proyectContext';
 
 const Contacto = () => {
-    const proyectosContext = useContext(proyectoContext);
+    const proyectosContext = useContext(proyectContext);
     const {envioCorreo} = proyectosContext;
     
     // State para Emergencia

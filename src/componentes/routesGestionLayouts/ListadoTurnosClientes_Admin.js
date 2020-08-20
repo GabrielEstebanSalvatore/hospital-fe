@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import clienteAxios from '../../config/axios';
-import proyectoContext from '../../context/projects/proyectoContext';
+import proyectContext from '../../context/projects/proyectContext';
 import { saveAs } from 'file-saver';
 import { Table } from 'antd';
 import { DeleteOutlined, VerticalAlignBottomOutlined } from '@ant-design/icons';
@@ -15,7 +15,7 @@ import { SearchOutlined } from '@ant-design/icons';
 const ListadoTurnosClientes = () => {
 
   //Extraer Turnos de state inicial
-  const proyectosContext = useContext(proyectoContext);
+  const proyectosContext = useContext(proyectContext);
   const { eliminarTurno, turnosClientes, cantidadDeTurnosClientes } = proyectosContext;
 
   // Obtener proyectos cuando carga el componente

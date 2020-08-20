@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import ProyectoContext from '../context/projects/proyectoContext';
+import ProyectContext from '../context/projects/proyectContext';
 import AuthContext from '../context/autenticacion/authContext';
 
 
@@ -7,10 +7,10 @@ import AuthContext from '../context/autenticacion/authContext';
 //import Input from './input/index'
 
 
-const ClienteModal = ({ clienteId }) => {
+const ClientModal = ({ clienteId }) => {
 
-    const proyectoContext = useContext(ProyectoContext);
-    const { handleModal } = proyectoContext;
+    const proyectContext = useContext(ProyectContext);
+    const { handleModal } = proyectContext;
     const authContext = useContext(AuthContext);
     const {editarCliente } = authContext;
 
@@ -32,13 +32,14 @@ const ClienteModal = ({ clienteId }) => {
         handleModal(handleModalState)
     }
 
+    
     const onChange = e => {
         guardarCliente({
             ...cliente,
             [e.target.name] : e.target.value
         })
     }
-
+   
     const onSubmitTurno = e => {
         e.preventDefault();
         // Validar el turno
@@ -125,4 +126,4 @@ const ClienteModal = ({ clienteId }) => {
         </div>
     )
 }
-export default ClienteModal
+export default ClientModal

@@ -1,14 +1,14 @@
 import React, {useContext, useEffect } from 'react';
 
 import AuthContext from '../../../../context/autenticacion/authContext';
-import ProyectoContext from '../../../../context/projects/proyectoContext'
+import ProyectContext from '../../../../context/projects/proyectContext'
 
 //FIDO
 const ContadorClientes = () => {
 
     const authContext = useContext(AuthContext);
     const { cantidadDeClinetes,numeroClientes} = authContext;
-    const proyectosContext = useContext(ProyectoContext);
+    const proyectosContext = useContext(ProyectContext);
     const {numeroTurnos,cantidadDeTurnos } = proyectosContext;
 
     useEffect(()=>{

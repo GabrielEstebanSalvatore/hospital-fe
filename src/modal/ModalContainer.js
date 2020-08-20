@@ -1,13 +1,13 @@
 import React,{useContext} from 'react';
-import TurnosModal from './tunosModal';
-import ClienteModal from './clienteModal';
+import TurnosModal from './turnsModal';
+import ClientModal from './clientModal';
 import DoctorModal from './doctorModal';
-import proyectoContext from '../context/projects/proyectoContext';
+import proyectContext from '../context/projects/proyectContext';
 import AuthContext from '../context/autenticacion/authContext';
 
 const ModalContainer = ()=>{
     
-    const proyectosContext = useContext(proyectoContext);
+    const proyectosContext = useContext(proyectContext);
     const {modalView } = proyectosContext;
     const authContext = useContext(AuthContext);
     const { cliente } = authContext;
@@ -27,7 +27,7 @@ const ModalContainer = ()=>{
                     typoInternaciones={true}
                 />
             case 'clienteEditar':
-                return <ClienteModal
+                return <ClientModal
                     clienteId={cliente._id}
                 />
             case 'nuevoDoctor':

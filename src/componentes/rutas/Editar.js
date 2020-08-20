@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useContext} from 'react';
-import proyectoContext from '../../context/projects/proyectoContext';
+import proyectContext from '../../context/projects/proyectContext';
 //import {useSelector} from 'react-redux';
 import {Link} from "react-router-dom";
 //
@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 
 const Editar = (props) => {
 
-    const proyectosContext = useContext(proyectoContext);
+    const proyectosContext = useContext(proyectContext);
     const { tunoeditar, editarTurnoExito } = proyectosContext;
     
     /*useEffect(()=>{
