@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from 'react';
-import BarraAdmin from '../layout/BarraAdmin';
-import DoctoresContext from '../../context/doctors/doctoresContext';
-import ListadoTurnosClientes_Doctor from '../routesGestionLayouts/ListadoTurnosClientes_Doctor';
+import BarraAdmin from '../layout/AdminBar';
+import DoctoresContext from '../../context/doctors/doctorsContext';
+import ListadoTurnosClientes from '../routesGestionLayouts/ClientsTurnsList_Admin';
 import ProyectContext from '../../context/projects/proyectContext'
 import ModalContainer from '../../modal/ModalContainer';
 
-const GestionDoctores = () => {
+const GestionDoctores_TurnosClinetes = () => {
 
     const proyectosContext = useContext(ProyectContext);
     const {modalView } = proyectosContext;
@@ -27,12 +27,12 @@ const GestionDoctores = () => {
             <BarraAdmin/>
             </div>
             <div className="gestion-principal__body">
-                    <h2 >Listado de Doctores</h2>
-                    <ListadoTurnosClientes_Doctor />
+                    <h2 >Listado de turnos de clientes</h2>
+                    <ListadoTurnosClientes />
             </div>
         </div>
 
     )
 }
 
-export default GestionDoctores;
+export default GestionDoctores_TurnosClinetes;

@@ -15,7 +15,7 @@ export default class Footer extends Component {
                             
                         </li>
                         <li className="list-inline-item pr-4">
-                            <Link to="/contacto" className="text-white">
+                            <Link to="/contact" className="text-white">
                                 <span className="btn btn-outline-secondary"><i className="fas fa-envelope mr-3"/>Envíanos un correo!</span>
                             </Link>
                         </li>

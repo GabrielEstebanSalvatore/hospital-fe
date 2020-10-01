@@ -1,10 +1,10 @@
 import React, {useContext, useEffect }from 'react';
-import DoctoresContext from '../../context/doctores/doctoresContext';
+import DoctoresContext from '../../context/doctors/doctorsContext';
 import { Table } from 'antd';
 import { DeleteOutlined, VerticalAlignBottomOutlined } from '@ant-design/icons';
 import Swal from 'sweetalert2'
 
-const ListadoDoctores = () => {
+const DoctorsList = () => {
 
     //Extraer Turnos de state inicial
     const doctoresContext= useContext(DoctoresContext)
@@ -20,7 +20,7 @@ const ListadoDoctores = () => {
     const columns = [
         {title: 'Doctor',dataIndex: 'name'},
         {title: 'Especialidad',dataIndex: 'profesion'},
-        {title: 'Teleéfono',dataIndex: 'telefono'},
+        {title: 'Teléfono',dataIndex: 'telefono'},
         {title: 'Correo',dataIndex: 'email'},
         {   title: 'Acciones',
             key: 'actions',
@@ -85,4 +85,4 @@ const ListadoDoctores = () => {
     )
 }
 
-export default ListadoDoctores
+export default DoctorsList;

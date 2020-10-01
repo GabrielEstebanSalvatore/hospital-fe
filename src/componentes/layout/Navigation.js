@@ -1,15 +1,11 @@
 import React, { useContext, useEffect} from 'react'
 import {Link} from 'react-router-dom'
-import AuthContext from '../../context/autenticacion/authContext';
+import AuthContext from '../../context/authentication/authContext';
 
 const Navigation = () => {
     
     const authContext = useContext(AuthContext);
     const { clienteAutenticado,cliente, cerrarSesion } = authContext;
-    //console.log(cliente);
-    
-    
-    
     
     useEffect(() => {
         

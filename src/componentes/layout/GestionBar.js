@@ -1,9 +1,9 @@
 import React, {useContext,useEffect} from 'react';
-import AuthContext from '../../context/autenticacion/authContext';
-import BotonDeBarra from './botonBarra/BotonDeBarra'
+import AuthContext from '../../context/authentication/authContext';
+import BotonDeBarra from './buttonBar/BarButton'
 
 
-const BarraDeGestion = (props) => {
+const GestionBar = (props) => {
 
    const authContext = useContext(AuthContext);
    const { clienteAutenticado, cliente, /*cerrarSesion*/} = authContext;
@@ -46,35 +46,7 @@ const BarraDeGestion = (props) => {
                 
         </div>
 
-        /*
-        <div className="barranav">
-            <nav className="navbar navbar-expand-lg navbar-primary bg-grey">
-                <div className="container-fluid">
-                    <div className="col-8">
-                        {cliente ? <p className="nombre-usuario">Gestión de Turnos de: <span>{cliente.name} </span> </p> : null}
-                    </div>
-
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="btn btn-primary "  type="button"><h5><strong> &laquo;</strong></h5></span>
-                    </button>
-
-                    <div className="collapse navbar-collapse col-4" id="navbarNav">
-                        <ul className="navbar-nav ml-auto" >
-                            <li className="nav-item">
-                                <Link to="/" className="btn btn-success ">
-                                    
-                                           ( &#43; )  Turnos
-                                      
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        */
-    
      );
 }
  
-export default BarraDeGestion;
+export default GestionBar;

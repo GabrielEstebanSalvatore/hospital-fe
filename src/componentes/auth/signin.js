@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import AlertaContext from '../../context/alerts/alertaContext';
-import AuthContext from '../../context/autenticacion/authContext';
+import AlertaContext from '../../context/alerts/alertContext';
+import AuthContext from '../../context/authentication/authContext';
 
 const Signin = (props) => {
 
@@ -15,7 +15,7 @@ const Signin = (props) => {
     // En caso de que el password o usuario no exista
     useEffect(() => {
         if(autenticado) {
-            props.history.push('/');
+            props.history.push('/gestion');
         }
  
         if(mensaje) {

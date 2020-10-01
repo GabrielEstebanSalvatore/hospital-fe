@@ -1,7 +1,7 @@
 import React, { useState, useContext} from 'react';
 import proyectContext from '../../context/projects/proyectContext';
 
-const Contacto = () => {
+const Contact = () => {
     const proyectosContext = useContext(proyectContext);
     const {envioCorreo} = proyectosContext;
     
@@ -124,4 +124,4 @@ const Contacto = () => {
     )
 }
 
-export default Contacto;
+export default Contact;

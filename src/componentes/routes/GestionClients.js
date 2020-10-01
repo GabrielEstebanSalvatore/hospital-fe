@@ -1,7 +1,7 @@
 import React, { useContext} from 'react';
 //import {Link} from 'react-router-dom';
-import BarraDeGestion from '../layout/BarraDeGestion';
-import ListadoTurnos from '../routesGestionLayouts/ListadoTurnos'
+import GestionBar from '../layout/GestionBar';
+import TurnsList from '../routesGestionLayouts/TurnsList'
 import ModalContainer from '../../modal/ModalContainer'
 import ProyectContext from '../../context/projects/proyectContext';
 
@@ -18,11 +18,11 @@ const GestionClientes= () => {
             <div className="gestion-principal">
         {modalView  && <ModalContainer/>}
                 <div >
-                    <BarraDeGestion />
+                    <GestionBar />
                 </div>
                 <div className="gestion-principal__body">
                     <h2 >Tus Turnos</h2>
-                    <ListadoTurnos />
+                    <TurnsList />
                 </div>
             </div>
         </div>

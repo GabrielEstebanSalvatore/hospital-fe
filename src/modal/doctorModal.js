@@ -1,11 +1,6 @@
 import React, { useContext, useState } from 'react';
 import ProyectContext from '../context/projects/proyectContext';
-import DoctoresContext from '../context/doctors/doctoresContext';
-
-
-
-//import Input from './input/index'
-
+import DoctoresContext from '../context/doctors/doctorsContext';
 
 const DoctorModal = () => {
 
@@ -25,14 +20,11 @@ const DoctorModal = () => {
         telefono: '',
         direccion: ''
     });
-   
 
     const showModal = () => {
 
         handleModal(handleModalState)
     }
-
-   
 
     const onChange = e => {
         guardarDoctor({

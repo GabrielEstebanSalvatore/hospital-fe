@@ -3,7 +3,7 @@ import TurnosModal from './turnsModal';
 import ClientModal from './clientModal';
 import DoctorModal from './doctorModal';
 import proyectContext from '../context/projects/proyectContext';
-import AuthContext from '../context/autenticacion/authContext';
+import AuthContext from '../context/authentication/authContext';
 
 const ModalContainer = ()=>{
     

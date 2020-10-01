@@ -1,6 +1,6 @@
 import React, {useReducer} from 'react';
-import alertaReducer from './alertaReducer'
-import alertaContext from './alertaContext'
+import alertaReducer from './alertReducer'
+import alertaContext from './alertContext'
 
 import { MOSTRAR_ALERTA, OCULTAR_ALERTA} from '../../types';
 

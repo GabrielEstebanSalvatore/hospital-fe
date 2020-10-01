@@ -11,7 +11,7 @@ import {  Input, Button, Space } from 'antd';
 //import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
 
-const ListadoTurnos = () => {
+const TurnsList = () => {
 
     //Extraer Turnos de state inicial
     const proyectosContext = useContext(proyectContext);
@@ -42,22 +42,6 @@ const ListadoTurnos = () => {
     })
     if(turnos.length === 0 ) return <p>No hay turnos solicitados</p>;
 
-    /*const prepare = (record) =>{
-        //console.log(record);
-        setTurno({
-            ...turno,
-            name: record.name,
-            tipoTurno: record.name,
-            doctor: record.doctor,
-            fecha: record.fecha,
-            receiptId: record.key,
-        })
-
-        
-    }*/
-
-   
-    
 
     const getColumnSearchProps = dataIndex => ({
         filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
@@ -111,20 +95,14 @@ const ListadoTurnos = () => {
     
       const handleSearch = (selectedKeys, confirm, dataIndex) => {
         confirm();
-        /*this.setState({
-            ...turno,
-          searchText: selectedKeys[0],
-          searchedColumn: dataIndex,
-        });*/
       };
     
       const handleReset = clearFilters => {
         clearFilters();
-        //this.setState({ ...turno,searchText: '' });
       };
 
     const columns = [
-        {title: 'Cliente',dataIndex: 'name',key: 'name',...getColumnSearchProps('name')},
+        {title: 'Paciente',dataIndex: 'name',key: 'name',...getColumnSearchProps('name')},
         {title: 'Doctor',dataIndex: 'doctor',key: 'doctor',...getColumnSearchProps('doctor')},
         {title: 'Tipo Turno',dataIndex: 'tipoTurno',key: 'tipoTurno',...getColumnSearchProps('tipoTurno')},
         {title: 'Fecha',dataIndex: 'fecha'},
@@ -144,7 +122,6 @@ const ListadoTurnos = () => {
         }
     ];
       
-    //PDF
     const createAndDownloadPdf = async (turno) => {
         await clienteAxios.post('/create-pdf', turno)
         .then(() => clienteAxios.get('/fetch-pdf', { responseType: 'blob' }))
@@ -154,23 +131,19 @@ const ListadoTurnos = () => {
         })
     }
 
-    //ARMAR LA TABLA
-   const getRow = () =>{
+    const getRow = () =>{
     return turnos.map((turno)=>{
-      console.log(turnos);
+      console.log(turno);
       
         return{
             key:turno._id,
             name:turno.name,
-            doctor:turno.doctorEmail,
+            doctor: 'Gabriel Salvatore',
             tipoTurno:turno.tipoTurno,
             fecha:turno.fecha
         }
     })
-   }
-   
-  
-    //ELIMAR TURNO
+    }
     const onClickEliminar = (id) => {
         console.log(id);
         
@@ -192,30 +165,19 @@ const ListadoTurnos = () => {
                     'success'
                 )
             }
-          })
-        
+          })  
     }
 
-    
-    
     return(
 
-        
         <div className="tabla">
-        {/*turno.name != '' ? createAndDownloadPdf() : null*/}
-
             <Table 
             columns={columns}
             dataSource={getRow()} 
             pagination={{ position: [pagination.bottom] }}
             />
-            
-        </div>
-       
-     
-
-       
+        </div>  
     )
 }
 
-export default ListadoTurnos
+export default TurnsList

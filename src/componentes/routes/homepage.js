@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 import foto1 from '../../assets/UI-face-1.jpg'
 import foto2 from '../../assets/UI-face-2.jpg'
-import foto3 from '../../assets/UI-face-3.jpg'
-import foto4 from '../../assets/UI-face-4.jpg'
+import foto3 from '../../assets/doctor.jpg'
+import foto4 from '../../assets/doctora.jpg'
 //import { Carousel } from 'antd';
-import CarrouselHomePage from './homePage/seccion1/seccion1'
-import ContadorClientes from './homePage/seccion2/seccion2';
-import ContadorRate from './homePage/seccion3/ContadorRate';
+import CarrouselHomePage from './homePage/sectionOne/sectionOne'
+import ContadorClientes from './homePage/sectionTwo/sectionTwo';
+import ContadorRate from './homePage/sectionThree/ContadorRate';
 
 const homepage =() => {
     
@@ -49,8 +49,8 @@ const homepage =() => {
                             
                    <section className="section-4" >
                             <div className="">
-                                <h1 className="">What our Reader's Say about us</h1>
-                                <p className="text-center">Lorem ipsum dolor sit amet.</p>
+                                <h1 className="">Acerca de nosotros</h1>
+                                
                             </div>
                             <div className="section-4-container ">
                                 <div className="team-1 text-center">
@@ -59,13 +59,13 @@ const homepage =() => {
                                         <img src={foto4} className="img-fluid rounded-circle w-30 p-4" alt=""/>
                                         </div>
                                         <div className="card-body">
-                                        <h3 className="card-title">Blalock Jolene</h3>
+                                        <h3 className="card-title">Samanta Robles</h3>
                                         <p className="card-text">
                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
                                             minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
                                         </p>
-                                        <a href="/" className="text-secondary text-decoration-none">Go somewhere</a>
-                                        <p className="text-black-50">CEO at Google</p>
+                                        <a href="/" className="text-secondary text-decoration-none">Ver perfil</a>
+                                        <p className="text-black-50">Gerente General</p>
                                         </div>
                                     </div>
                                 </div>
@@ -78,13 +78,13 @@ const homepage =() => {
                                                 <img src={foto1} className="img-fluid rounded-circle w-50 p-4" alt=""/>
                                             </div>
                                             <div className="card-body">
-                                                <h3 className="card-title">Allen Agnes</h3>
+                                                <h3 className="card-title">Claudio Ruso</h3>
                                                 <p className="card-text">
                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
                                                 minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
                                                 </p>
-                                                <a href="/" className="text-secondary text-decoration-none">Go somewhere</a>
-                                                <p className="text-black-50">CEO at Google</p>
+                                                <a href="/" className="text-secondary text-decoration-none">Ver perfil</a>
+                                                <p className="text-black-50">Director Odontología</p>
                                             </div>
                                             </div>
                                         </div>
@@ -94,13 +94,13 @@ const homepage =() => {
                                                 <img src={foto2} className="img-fluid rounded-circle w-50 p-4 " alt=""/>
                                             </div>
                                             <div className="card-body">
-                                                <h3 className="card-title">Amiel Barbara</h3>
+                                                <h3 className="card-title">Cristian Gonzales</h3>
                                                 <p className="card-text">
                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
                                                 minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
                                                 </p>
-                                                <a href="/" className="text-secondary text-decoration-none">Go somewhere</a>
-                                                <p className="text-black-50">CEO at Google</p>
+                                                <a href="/" className="text-secondary text-decoration-none">Ver perfil</a>
+                                                <p className="text-black-50">Director Cardiología</p>
                                             </div>
                                             </div>
                                         </div>
@@ -114,13 +114,13 @@ const homepage =() => {
                                         </div>
                                         
                                         <div className="card-body">
-                                        <h3 className="card-title">Olivia Louis</h3>
+                                        <h3 className="card-title">Esteban Ruiz</h3>
                                         <p className="card-text">
                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
                                             minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
                                         </p>
-                                        <a href="/" className="text-secondary text-decoration-none">Go somewhere</a>
-                                        <p className="text-black-50">CEO at Google</p>
+                                        <a href="/" className="text-secondary text-decoration-none">Ver perfil</a>
+                                        <p className="text-black-50">Director Pediatría</p>
                                         </div>
                                     </div>
                                 </div>

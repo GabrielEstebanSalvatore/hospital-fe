@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import AuthContext from '../../context/autenticacion/authContext';
-import BotonDeBarra from './botonBarra/BotonDeBarra'
+import AuthContext from '../../context/authentication/authContext';
+import BotonDeBarra from './buttonBar/BarButton'
 
 const BarraAdmin = () => {
 

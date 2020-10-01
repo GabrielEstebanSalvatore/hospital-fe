@@ -5,16 +5,11 @@ import {Link} from "react-router-dom";
 //
 
 
-const Editar = (props) => {
+const TurnEdit = (props) => {
 
     const proyectosContext = useContext(proyectContext);
     const { tunoeditar, editarTurnoExito } = proyectosContext;
     
-    /*useEffect(()=>{
-        guardarTurno(tunoeditar)
-    },[tunoeditar])*/
-
-    // State para Emergencia
     const [turno, guardarTurno] = useState({
         name:tunoeditar.name,
         tipoTurno:'EMERGENCIA',
@@ -24,17 +19,13 @@ const Editar = (props) => {
         id:tunoeditar._id
     });
 
-    //const { name, fecha } = tunoeditar;
-    //const { name } = turno.name;
-    // Lee los contenidos del input
     const onChange= e => {
         guardarTurno({
             ...turno,
             [e.target.name] : e.target.value
         })
     }
-   
-    
+
     const onSubmitTurno = e => {
         e.preventDefault();
         // agregar al state
@@ -147,7 +138,6 @@ const Editar = (props) => {
             </div>
             </Fragment>
         )
-    
 }
 
-export default  Editar;
+export default  TurnEdit;

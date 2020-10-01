@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import ProyectContext from '../context/projects/proyectContext';
-import DoctoresContext from '../context/doctors/doctoresContext';
+import DoctoresContext from '../context/doctors/doctorsContext';
 
 //import Input from './input/index'
 
@@ -31,7 +31,7 @@ const TurnosModal = ({ typeTurnos,typoInternaciones,typoEmergencias }) => {
         name: '',
         tipoTurno:'',
         doctorEmail: '',
-
+        
     });
    
 
@@ -41,7 +41,7 @@ const TurnosModal = ({ typeTurnos,typoInternaciones,typoEmergencias }) => {
     }
 
     const onChange = e => {
-        console.log(e.target.value,e.target.value2);
+        //console.log(e.target.value,e.target.value2);
         
         guardarTurno({
             ...turno,

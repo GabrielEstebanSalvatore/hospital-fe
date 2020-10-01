@@ -1,19 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
-import AuthContext from '../../context/autenticacion/authContext';
+import AuthContext from '../../context/authentication/authContext';
 import proyectContext from '../../context/projects/proyectContext';
 import { Table } from 'antd';
 import { Input, Button, Space } from 'antd';
 //import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
 
-
-
-const ListadoTurnosClientes_Doctor = () => {
+const ClientsTurnsList_Doctor = () => {
     
   const authContext = useContext(AuthContext);
   const { cliente,email } = authContext;
-  
-
 
   //Extraer Turnos de state inicial
   const proyectosContext = useContext(proyectContext);
@@ -79,11 +75,7 @@ const ListadoTurnosClientes_Doctor = () => {
     filterIcon: filtered => <SearchOutlined style={{ color: filtered ? '#1890ff' : undefined }} />,
     onFilter: (value, record) =>
       record[dataIndex].toString().toLowerCase().includes(value.toLowerCase()),
-    /*onFilterDropdownVisibleChange: visible => {
-      if (visible) {
-        setTimeout(() => this.searchInput.select());
-      }
-    },*/
+  
     render: text =>
       buscar.searchedColumn === dataIndex ? (
         <Button
@@ -99,11 +91,7 @@ const ListadoTurnosClientes_Doctor = () => {
 
   const handleSearch = (selectedKeys, confirm, dataIndex) => {
     confirm();
-    /*this.setState({
-        ...turno,
-      searchText: selectedKeys[0],
-      searchedColumn: dataIndex,
-    });*/
+   
   };
 
   const handleReset = clearFilters => {
@@ -112,7 +100,7 @@ const ListadoTurnosClientes_Doctor = () => {
   };
 
   const columns = [
-    { title: 'Cliente', dataIndex: 'name', key: 'name', ...buscarDatoTabla('name') },
+    { title: 'Paciente', dataIndex: 'name', key: 'name', ...buscarDatoTabla('name') },
     { title: 'Doctor', dataIndex: 'doctor', key: 'doctor', ...buscarDatoTabla('doctor') },
     { title: 'Tipo Turno', dataIndex: 'tipoTurno', key: 'tipoTurno', ...buscarDatoTabla('tipoTurno') },
     { title: 'Fecha', dataIndex: 'fecha' },
@@ -127,8 +115,6 @@ const ListadoTurnosClientes_Doctor = () => {
     }
   ];
 
- 
-  
   //ARMAR LA TABLA
   const getRow = () => {
     
@@ -137,62 +123,25 @@ const ListadoTurnosClientes_Doctor = () => {
           return {
             key: turno._id,
             name: turno.name,
-            doctor: turno.doctorEmail,
+            doctor: 'Gabriel Salvatore',
             tipoTurno: turno.tipoTurno,
             fecha: turno.fecha
           }
         
     })
   }
-    
-
-
-   /*
-  
-   onSelectChange = (event) => {
-        let value = event.target.value
-        turnosDoctores.map(prov => {
-            if (value == prov.id) {
-                this.setState({ currentProviders: [prov], categoryId: value, showInput: false })
-                return;
-            }
-            else {
-                this.setState({ currentProviders: [], categoryId: value, showInput: false })
-            }
-            if (value == "") {
-                this.setState({ currentProviders: [], categoryId: value, showInput: true })
-            }
-        })
-    }
-  
-  
-  
-  */
-
-
 
   return (
-
-
     <div className="tabla">
       <div className="barra_usuario_nombre">
-
-            </div>
-    
-
-      {/*turno.name != '' ? createAndDownloadPdf() : null*/}
-
-      <Table
-        columns={columns}
-        dataSource={getRow()}
-        pagination={{ position: [pagination.bottom] }}
-      />
+        </div>
+          <Table
+            columns={columns}
+            dataSource={getRow()}
+            pagination={{ position: [pagination.bottom] }}
+          />
     </div>
-
-
-
-
   )
 }
 
-export default ListadoTurnosClientes_Doctor
+export default ClientsTurnsList_Doctor

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import ProyectContext from '../context/projects/proyectContext';
-import AuthContext from '../context/autenticacion/authContext';
+import AuthContext from '../context/authentication/authContext';
 
 
 

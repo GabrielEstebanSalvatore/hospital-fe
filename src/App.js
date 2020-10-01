@@ -3,32 +3,32 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 /*Vistas*/
-import homepage from './componentes/rutas/homepage';
-import GestionClientes from './componentes/rutas/GestionClientes';
-import gestionAdmin_Doctores from './componentes/rutas/gestionAdmin_Doctores';
-import GestionAdmin_TurnosClinetes from './componentes/rutas/GestionAdmin_TurnosClinetes';
-import GestionDoctores from './componentes/rutas/GestionDoctores';
+import homepage from './componentes/routes/homepage';
+import GestionClients from './componentes/routes/GestionClients';
+import gestionAdmin_Doctores from './componentes/routes/GestionAdmin_Doctors';
+import GestionAdmin_TurnosClinetes from './componentes/routes/GestionAdmin_TurnosClinetes';
+import DoctorsGestion from './componentes/routes/DoctorsGestion';
 //Usuario
 import Signin from './componentes/auth/signin';
 import Signup from './componentes/auth/signup';
-import Contacto from './componentes/rutas/Contacto'
-import Editar from './componentes/rutas/Editar'
+import Contact from './componentes/routes/Contact'
+import Editar from './componentes/routes/TurnEdit'
 
 /*Componentes*/
 import Navigation from './componentes/layout/Navigation';
 import Footer from './componentes/layout/Footer';
 
 /*Context*/
-import AlertaState from './context/alerts/alertaState'
+import AlertaState from './context/alerts/alertState'
 import ProyectState from './context/projects/proyectState';
-import AuthState from './context/autenticacion/authState';
-import DoctoresState from './context/doctors/doctoresState'
+import AuthState from './context/authentication/authState';
+import DoctoresState from './context/doctors/doctorsState'
 
 /*Tomar el token para no perder el usuario*/
 import tokenAuth from './config/token';
 
 /*Rutas Privadas*/
-import RutaPrivada from './componentes/rutasPrivadas/RutaPrivada'
+import RutaPrivada from './componentes/privateRoutes/privateRoutes'
 
 // Revisar si tenemos un token
 const token = localStorage.getItem('token');
@@ -37,7 +37,7 @@ if(token) {
 }
 
 
-function App2() {
+function App() {
 
   return (
     <ProyectState>
@@ -59,12 +59,12 @@ function App2() {
                     <Switch>
                       <Route exact path="/" component={homepage} />
                   
-                      <RutaPrivada exact path="/gestion" component={GestionClientes} />
-                      <RutaPrivada exact path="/gestiondoctores" component={GestionDoctores}/>
+                      <RutaPrivada exact path="/gestion" component={GestionClients} />
+                      <RutaPrivada exact path="/gestiondoctores" component={DoctorsGestion}/>
                       <RutaPrivada exact path="/gestionadmin" component={gestionAdmin_Doctores}/>
                       <RutaPrivada exact path="/gestionadminturnos" component={GestionAdmin_TurnosClinetes}/>
 
-                      <Route exact path="/contacto" component={Contacto} />
+                      <Route exact path="/contacto" component={Contact} />
                       <Route exact path='/turno/:id' component={Editar} />
 
                       <Route exact path="/user/signin" component={Signin} />
@@ -90,4 +90,4 @@ function App2() {
   )
 }
 
-export default App2;
+export default App;

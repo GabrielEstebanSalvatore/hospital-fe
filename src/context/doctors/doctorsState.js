@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
-import doctoresContext from './doctoresContext';
-import doctoresReducer from './doctoresReducer';
+import doctoresContext from './doctorsContext';
+import doctoresReducer from './doctorsReducer';
 import {
     NUEVO_DOCTOR,
     OBTENER_DOCTORES,

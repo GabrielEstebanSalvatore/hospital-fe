@@ -1,6 +1,6 @@
 import React, {useContext, useEffect } from 'react';
 
-import AuthContext from '../../../../context/autenticacion/authContext';
+import AuthContext from '../../../../context/authentication/authContext';
 import ProyectContext from '../../../../context/projects/proyectContext'
 
 //FIDO
