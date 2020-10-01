@@ -1,28 +1,25 @@
-import React, { Fragment, useState, useContext} from 'react';
+import React, { Fragment, useState, useContext } from 'react';
 import proyectContext from '../../context/projects/proyectContext';
-//import {useSelector} from 'react-redux';
-import {Link} from "react-router-dom";
-//
-
+import { Link } from "react-router-dom";
 
 const TurnEdit = (props) => {
 
     const proyectosContext = useContext(proyectContext);
     const { tunoeditar, editarTurnoExito } = proyectosContext;
-    
+
     const [turno, guardarTurno] = useState({
-        name:tunoeditar.name,
-        tipoTurno:'EMERGENCIA',
-        doctor:'EMERGENCIA',
-        fecha:tunoeditar.fecha,
-        hora:tunoeditar.hora,
-        id:tunoeditar._id
+        name: tunoeditar.name,
+        tipoTurno: 'EMERGENCIA',
+        doctor: 'EMERGENCIA',
+        fecha: tunoeditar.fecha,
+        hora: tunoeditar.hora,
+        id: tunoeditar._id
     });
 
-    const onChange= e => {
+    const onChange = e => {
         guardarTurno({
             ...turno,
-            [e.target.name] : e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
@@ -30,20 +27,19 @@ const TurnEdit = (props) => {
         e.preventDefault();
         // agregar al state
         editarTurnoExito(turno)
-        console.log("Dentro de editar",turno);
-        
+        console.log("Dentro de editar", turno);
+
         // Reiniciar el form
         guardarTurno({
-            name:'',
-            tipoTurno:'',
-            doctor:'',
-            fecha:'',
-            hora:''
+            name: '',
+            tipoTurno: '',
+            doctor: '',
+            fecha: '',
+            hora: ''
         })
-
         props.history.push('/gestion');
     }
-    
+
     return (
         <Fragment>
             <div className="container">
@@ -68,7 +64,7 @@ const TurnEdit = (props) => {
                                 >
                                     <div className="form-group">
                                         <label>Paciente:</label>
-                                        <input 
+                                        <input
                                             type="text"
                                             className="form-control"
                                             name="name"
@@ -80,7 +76,7 @@ const TurnEdit = (props) => {
                                     </div>
                                     <div className="form-group">
                                         <label>Tipo:</label>
-                                        <input 
+                                        <input
                                             type="text"
                                             className="form-control"
                                             name="tipoTurno"
@@ -91,7 +87,7 @@ const TurnEdit = (props) => {
 
                                     <div className="form-group">
                                         <label>Doctor:</label>
-                                        <input 
+                                        <input
                                             type="text"
                                             className="form-control"
                                             name="doctor"
@@ -99,45 +95,45 @@ const TurnEdit = (props) => {
                                             readOnly
                                         />
                                     </div>
-                                                        
+
                                     <div className="form-group row">
                                         <label className="col-sm-4 col-lg-2 col-form-label">Fecha</label>
                                         <div className="col-sm-8 col-lg-4  mb-4 mb-lg-0">
-                                            <input 
-                                                type="date" 
+                                            <input
+                                                type="date"
                                                 className="form-control"
                                                 name="fecha"
                                                 onChange={onChange}
-                                                
+
                                             />
-                                        </div>                            
+                                        </div>
 
                                         <label className="col-sm-4 col-lg-2 col-form-label">Hora</label>
                                         <div className="col-sm-8 col-lg-4">
-                                            <input 
-                                                type="time" 
-                                                className="form-control" 
+                                            <input
+                                                type="time"
+                                                className="form-control"
                                                 name="hora"
                                                 onChange={onChange}
-                                            
+
                                             />
-                                        </div> 
-                                    </div>                  
-                                                                    
+                                        </div>
+                                    </div>
+
                                     <button className="btn btn-success btn-block mb-4">
-                                    Aceptar
+                                        Aceptar
                                     </button>
-                                                           
+
                                 </form>
-                            
+
                             </div>
                         </div>
                     </div>
-                    
-                </div> 
+
+                </div>
             </div>
-            </Fragment>
-        )
+        </Fragment>
+    )
 }
 
-export default  TurnEdit;
+export default TurnEdit;

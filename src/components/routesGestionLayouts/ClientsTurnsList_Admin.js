@@ -42,7 +42,6 @@ const ListadoTurnosClientes = () => {
     searchedColumn: ''
   })
 
-
   const buscarDatoTabla = dataIndex => ({
     filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
       <div style={{ padding: 8 }}>
@@ -138,7 +137,6 @@ const ListadoTurnosClientes = () => {
         saveAs(pdfBlob, 'newPdf.pdf');
       })
   }
-
   //ARMAR LA TABLA
   const getRow = () => {
     return turnosClientes.map((turno) => {
@@ -151,8 +149,6 @@ const ListadoTurnosClientes = () => {
       }
     })
   }
-
-
   //ELIMAR TURNO
   const onClickEliminar = (id) => {
     console.log(id);
@@ -179,25 +175,14 @@ const ListadoTurnosClientes = () => {
 
   }
 
-
-
   return (
-
-
     <div className="tabla">
-      {/*turno.name != '' ? createAndDownloadPdf() : null*/}
-
       <Table
         columns={columns}
         dataSource={getRow()}
         pagination={{ position: [pagination.bottom] }}
       />
-
     </div>
-
-
-
-
   )
 }
 

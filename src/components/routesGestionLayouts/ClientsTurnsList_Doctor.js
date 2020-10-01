@@ -7,22 +7,20 @@ import { Input, Button, Space } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 
 const ClientsTurnsList_Doctor = () => {
-    
+
   const authContext = useContext(AuthContext);
-  const { cliente,email } = authContext;
+  const { cliente, email } = authContext;
 
   //Extraer Turnos de state inicial
   const proyectosContext = useContext(proyectContext);
-  const {  turnos,turnosClientes,obtenerTurnos_Doctores,turnosDoctores,obtenerTurnos } = proyectosContext;
- 
+  const { turnos, turnosClientes, obtenerTurnos_Doctores, turnosDoctores, obtenerTurnos } = proyectosContext;
+
 
   // Obtener proyectos cuando carga el componente
   useEffect(() => {
     obtenerTurnos_Doctores(email)
-    
+
   }, []);
-
-
 
   const [turno, setTurno] = useState({
     name: '',
@@ -31,7 +29,7 @@ const ClientsTurnsList_Doctor = () => {
     fecha: "",
     receiptId: "",
   })
- 
+
 
   const [pagination] = useState({
 
@@ -75,7 +73,7 @@ const ClientsTurnsList_Doctor = () => {
     filterIcon: filtered => <SearchOutlined style={{ color: filtered ? '#1890ff' : undefined }} />,
     onFilter: (value, record) =>
       record[dataIndex].toString().toLowerCase().includes(value.toLowerCase()),
-  
+
     render: text =>
       buscar.searchedColumn === dataIndex ? (
         <Button
@@ -91,7 +89,7 @@ const ClientsTurnsList_Doctor = () => {
 
   const handleSearch = (selectedKeys, confirm, dataIndex) => {
     confirm();
-   
+
   };
 
   const handleReset = clearFilters => {
@@ -109,7 +107,7 @@ const ClientsTurnsList_Doctor = () => {
       key: 'actions',
       render: (text, record) => (
         <div className="listado-turnos__Footer">
-        
+
         </div>
       )
     }
@@ -117,29 +115,29 @@ const ClientsTurnsList_Doctor = () => {
 
   //ARMAR LA TABLA
   const getRow = () => {
-    
+
     return turnosDoctores.map((turno) => {
-       
-          return {
-            key: turno._id,
-            name: turno.name,
-            doctor: 'Gabriel Salvatore',
-            tipoTurno: turno.tipoTurno,
-            fecha: turno.fecha
-          }
-        
+
+      return {
+        key: turno._id,
+        name: turno.name,
+        doctor: 'Gabriel Salvatore',
+        tipoTurno: turno.tipoTurno,
+        fecha: turno.fecha
+      }
+
     })
   }
 
   return (
     <div className="tabla">
       <div className="barra_usuario_nombre">
-        </div>
-          <Table
-            columns={columns}
-            dataSource={getRow()}
-            pagination={{ position: [pagination.bottom] }}
-          />
+      </div>
+      <Table
+        columns={columns}
+        dataSource={getRow()}
+        pagination={{ position: [pagination.bottom] }}
+      />
     </div>
   )
 }

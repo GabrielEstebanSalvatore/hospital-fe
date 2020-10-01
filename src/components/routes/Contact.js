@@ -24,7 +24,6 @@ const Contact = () => {
         })
     }
 
-
     const onSubmitTurno = e => {
         e.preventDefault();
 

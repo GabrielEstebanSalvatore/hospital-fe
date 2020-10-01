@@ -2,11 +2,6 @@ import React, { useContext, useState } from 'react';
 import ProyectContext from '../context/projects/proyectContext';
 import AuthContext from '../context/authentication/authContext';
 
-
-
-//import Input from './input/index'
-
-
 const ClientModal = ({ clienteId }) => {
 
     const proyectContext = useContext(ProyectContext);
@@ -16,7 +11,6 @@ const ClientModal = ({ clienteId }) => {
 
     const [handleModalState] = useState(
         '',
-        //showModal: false,
     );
     const [cliente, guardarCliente] = useState({
         name: '',
@@ -26,20 +20,17 @@ const ClientModal = ({ clienteId }) => {
         id: clienteId
     });
    
-
     const showModal = () => {
 
         handleModal(handleModalState)
     }
 
-    
     const onChange = e => {
         guardarCliente({
             ...cliente,
             [e.target.name] : e.target.value
         })
     }
-   
     const onSubmitTurno = e => {
         e.preventDefault();
         // Validar el turno
@@ -56,8 +47,6 @@ const ClientModal = ({ clienteId }) => {
             email: '',
             password: '',
             confirmar: ''
-
-
         })
 
         handleModal(handleModalState)
@@ -81,7 +70,6 @@ const ClientModal = ({ clienteId }) => {
                         placeholder="Escriba su nombre" />
                 </div>
                
-            
                     <div >
                         <label>Email</label>
                         <input

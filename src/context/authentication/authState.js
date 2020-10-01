@@ -3,7 +3,6 @@ import AuthContext from './authContext';
 import AuthReducer from './authReducer';
 
 import clienteAxios from '../../config/axios';
-//import axios from 'axios';
 import tokenAuth from '../../config/token';
 
 import { 
@@ -32,11 +31,8 @@ const AuthState = props => {
     const [ state, dispatch ] = useReducer(AuthReducer, initialState);
 
     const registrarCliente = async datos => {
-        //console.log('Fuera',datos);
         try {
             const respuesta = await clienteAxios.post('/clientes', datos);
-            //console.log("Roberto", respuesta);
-            
             dispatch({
                 type: REGISTRO_EXITOSO,
                 payload: respuesta.data
@@ -57,7 +53,7 @@ const AuthState = props => {
     }
     const cantidadDeClinetes = async() =>{
         const respuesta = await clienteAxios.get('/clientes')
-        try{//FIDO
+        try{
             console.log(respuesta.data.cuantos,'cantidadDeClinetes');
             dispatch({
                 type:CANTIDAD_CLIENTES,
@@ -65,7 +61,6 @@ const AuthState = props => {
             })
         }catch(error){
             console.log(error);
-            
         }
     }
     
@@ -89,7 +84,6 @@ const AuthState = props => {
             });
             
         } catch (error) {
-            //console.log(error.response);
             dispatch({
                 type: LOGIN_ERROR
             })
@@ -101,20 +95,15 @@ const AuthState = props => {
     const iniciarSesion= async datos => {
         try{
             const respuesta = await clienteAxios.post('/auth', datos);
-            
             dispatch({
                 type:LOGIN_EXITOSO,
                 payload: respuesta.data
             })
-
-            // Obtener el cliente
             clienteAutenticado()
 
         }catch (error) {
-            //console.log(error.response.data.msg);
             const alerta = {
                 msg: error.response.data.msg,
-                //categoria: 'alerta-error'
             }
             dispatch({
                 type: LOGIN_ERROR,
@@ -127,23 +116,17 @@ const AuthState = props => {
     const editarCliente= async datos => {
         try{
             console.log(datos,'antes');
-            
             const respuesta = await clienteAxios.put(`/clientes/${datos.id}`, datos);
-                console.log(respuesta,'despues');
-                
             dispatch({
                 type:EDITAR_CLIENTE,
                 payload: respuesta.data
             })
 
-            // Obtener el cliente
             clienteAutenticado()
 
         }catch (error) {
-            //console.log(error.response.data.msg);
             const alerta = {
                 msg: error.response.data.msg,
-                //categoria: 'alerta-error'
             }
             dispatch({
                 type: LOGIN_ERROR,
@@ -151,20 +134,11 @@ const AuthState = props => {
             })
         }
     }
-
-
-
-
-
-
-
-    // Cierra la sesión del usuario
     const cerrarSesion = () => {
         dispatch({
             type: CERRAR_SESION
         })
     }
-    
     return(
         <AuthContext.Provider
             value={{

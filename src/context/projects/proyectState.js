@@ -22,15 +22,12 @@ import clienteAxios from '../../config/axios';
 const ProyectoState = props => {
     
     const initialState = {
-
         turnos : [],
         turnosClientes : [],
         turnosDoctores : [],
         errorformulario: false,
         tunoeditar:null,
-        //modal
         modalView: '',
-        //showModal: false,
         numeroTurnos:null
     }
 
@@ -40,8 +37,8 @@ const ProyectoState = props => {
     const handleModal = ( modalView)=>{
         dispatch({
             
-                type:  HANDLE_MODAL,
-                payload: modalView
+            type:  HANDLE_MODAL,
+            payload: modalView
             
         })
     }
@@ -57,8 +54,6 @@ const ProyectoState = props => {
         
         try {
             const respuesta = await clienteAxios.get('/turnos');
-           
-            
             dispatch({
                 type: OBTENER_TURNOS,
                 payload: respuesta.data.turnos
@@ -69,11 +64,8 @@ const ProyectoState = props => {
         }
     
     }
-    // Obtener los turnos
-    const obtenerTurnos_Doctores = async (email) => {
-        //console.log(email);
-        
 
+    const obtenerTurnos_Doctores = async (email) => {
        try {
             const respuesta = await clienteAxios.get(`/turnosparadoctores/${email}`);
             console.log(respuesta,"obtenerTurnos_Doctores");
@@ -84,14 +76,12 @@ const ProyectoState = props => {
             })
         } catch (error) {
             console.log(error);
-            
         }
     
     }
    
     //Agregar nuevo turno
     const agregarTurno = async turno =>{
-        //validar que venga fecha y hora
 
         let fechaFormatead = turno.fecha + "T" + turno.hora + ":00Z"
         turno.fecha = new Date(fechaFormatead).toISOString().slice(0,10)
@@ -106,16 +96,6 @@ const ProyectoState = props => {
             
         } catch (error) {
             console.log(error);
-            
-            /*const alerta = {
-                msg: 'Hubo un error',
-                //categoria: 'alerta-error'
-            }
-            
-            dispatch({
-                type: TURNO_ERROR,
-                payload: alerta
-            })*/
         }
     }
 

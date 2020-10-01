@@ -34,14 +34,12 @@ const TurnosModal = ({ typeTurnos,typoInternaciones,typoEmergencias }) => {
         
     });
    
-
     const showModal = () => {
 
         handleModal(handleModalState)
     }
 
     const onChange = e => {
-        //console.log(e.target.value,e.target.value2);
         
         guardarTurno({
             ...turno,
@@ -113,11 +111,9 @@ const TurnosModal = ({ typeTurnos,typoInternaciones,typoEmergencias }) => {
                                         {doctor.name} - {doctor.profesion}
                                     </option>
                                 ))
-                            }
-                                        
+                            }         
                         </select>
                     </div>
-
                 }
                 {typoEmergencias &&
                     <div >
@@ -131,7 +127,6 @@ const TurnosModal = ({ typeTurnos,typoInternaciones,typoEmergencias }) => {
                             readOnly
                         />
                     </div>
-
                 }
                 {typoInternaciones &&
                     <div >
@@ -144,9 +139,7 @@ const TurnosModal = ({ typeTurnos,typoInternaciones,typoEmergencias }) => {
                             readOnly
                         />
                     </div>
-
                 }
-
                 <label>Fecha</label>
                 <div className="">
                     <input
@@ -168,11 +161,6 @@ const TurnosModal = ({ typeTurnos,typoInternaciones,typoEmergencias }) => {
 
                     />
                 </div>
-
-
-
-
-
                 <div className='nuevoturno-container__footer'>
                     <button className="btn btn-success" onClick={onSubmitTurno}>Aceptar</button>
                     <button className="btn btn-danger" onClick={showModal} >Cancelar</button>

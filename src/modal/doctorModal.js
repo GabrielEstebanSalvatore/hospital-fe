@@ -74,7 +74,6 @@ const DoctorModal = () => {
                         placeholder="Escriba su nombre" />
                 </div>
                
-            
                     <div >
                         <label>Email</label>
                         <input
@@ -86,7 +85,6 @@ const DoctorModal = () => {
                         />
                     </div>
 
-               
                     <div >
                         <label>Profesión</label>
                         <input
@@ -118,7 +116,6 @@ const DoctorModal = () => {
                             onChange={onChange}
                         />
                     </div>
-
 
                 <div className='nuevoturno-container__footer'>
                     <button className="btn btn-success" onClick={onSubmitTurno}>Aceptar</button>

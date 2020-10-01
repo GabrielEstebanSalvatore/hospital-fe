@@ -22,7 +22,6 @@ export default (state, action) => {
         }
         
         case OBTENER_TURNOS:
-            //console.log(action.payload); para ver por consola que llega del be
             return {
                 ...state,
                 turnos: action.payload
@@ -36,8 +35,6 @@ export default (state, action) => {
                 mensaje: null,
                 token: action.payload.token,
                 cargando: false
-                /*turnos: [...state.turnos, action.payload],
-                errorformulario: false*/
             }
         case VALIDAR_FORMULARIO:
             return {
@@ -51,8 +48,6 @@ export default (state, action) => {
         } 
         case EDITAR_TURNO:
         case EDITAR_TURNO_EXITO:
-            //console.log('pr', action.payload);
-            
             return{
                 ...state,
                 turnoeditar: action.payload
@@ -60,24 +55,19 @@ export default (state, action) => {
         case CANTIDAD_TURNOS:
             console.log(action.payload.cuantos);
             return{
-         
-                ...state,
-                
+                ...state,  
                 numeroTurnos: action.payload.cuantos,
             }
         case CANTIDAD_TURNOS_CLIENTES:
             return {
                 ...state,
-
                 turnosClientes: action.payload.turnos,
             }
 
         case OBTENER_TURNOS_DOCTORES:
             return {
                 ...state,
-
                 turnosDoctores: action.payload,
-              
             }
 
         default:

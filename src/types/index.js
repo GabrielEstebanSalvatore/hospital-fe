@@ -34,9 +34,5 @@ export const OBTENER_TURNOS_DOCTORES = 'OBTENER_TURNOS_DOCTORES';
 /**/
 
 
-//export const PROYECTO_ACTUAL = 'PROYECTO_ACTUAL';
-//export const TURNO_ERROR = 'TURNO_ERROR';
-
-
 
 

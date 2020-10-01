@@ -29,8 +29,6 @@ export default (state, action) => {
                 mensaje: null,
                 token: action.payload.token,
                 cargando: false
-                
-                
             }
         case OBTENER_USUARIO:
             return {
@@ -40,7 +38,6 @@ export default (state, action) => {
                 cliente: action.payload.cliente,
                 cargando: false,
                 email: action.payload.cliente.email
-
             }
         case CERRAR_SESION:
         case LOGIN_ERROR:

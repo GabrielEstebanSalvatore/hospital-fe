@@ -36,8 +36,6 @@ const ModalContainer = ()=>{
                 />
             default:
                 return null
-                    
-                
             }
         }
 

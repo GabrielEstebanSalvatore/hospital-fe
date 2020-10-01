@@ -6,11 +6,11 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import homepage from './components/routes/homepage';
 import GestionClients from './components/routes/GestionClients';
 import gestionAdmin_Doctores from './components/routes/GestionAdmin_Doctors';
-import GestionAdmin_TurnosClinetes from './components/routes/GestionAdmin_TurnosClinetes';
+import GestionAdmin_TurnosClinetes from './components/routes/GestionAdmin_ClientTurns';
 import DoctorsGestion from './components/routes/DoctorsGestion';
 //Usuario
-import Signin from './components/auth/signin';
-import Signup from './components/auth/signup';
+import SignIn from './components/auth/signIn';
+import SignUp from './components/auth/signUp';
 import Contact from './components/routes/Contact'
 import Editar from './components/routes/TurnEdit'
 
@@ -36,7 +36,6 @@ if(token) {
   tokenAuth(token);
 }
 
-
 function App() {
 
   return (
@@ -45,42 +44,28 @@ function App() {
         <AuthState>
           <DoctoresState>
             <Router>
-
               <div className="app-container">
-
-
-
                 <div className="body-container">
                 <div className="header-container">
-                  <Navigation />
-                </div>
-
-                  <div className="sidebar-container">
-                    <Switch>
-                      <Route exact path="/" component={homepage} />
-                  
-                      <RutaPrivada exact path="/gestion" component={GestionClients} />
-                      <RutaPrivada exact path="/gestiondoctores" component={DoctorsGestion}/>
-                      <RutaPrivada exact path="/gestionadmin" component={gestionAdmin_Doctores}/>
-                      <RutaPrivada exact path="/gestionadminturnos" component={GestionAdmin_TurnosClinetes}/>
-
-                      <Route exact path="/contacto" component={Contact} />
-                      <Route exact path='/turno/:id' component={Editar} />
-
-                      <Route exact path="/user/signin" component={Signin} />
-                      <Route exact path="/user/signup" component={Signup} />
-                    </Switch>
-
+                    <Navigation />
                   </div>
-
-                  
-                <div className="content-container">
-                    <Footer />
-
+                    <div className="sidebar-container">
+                      <Switch>
+                        <Route exact path="/" component={homepage} />
+                        <RutaPrivada exact path="/gestion" component={GestionClients} />
+                        <RutaPrivada exact path="/gestiondoctores" component={DoctorsGestion}/>
+                        <RutaPrivada exact path="/gestionadmin" component={gestionAdmin_Doctores}/>
+                        <RutaPrivada exact path="/gestionadminturnos" component={GestionAdmin_TurnosClinetes}/>
+                        <Route exact path="/contacto" component={Contact} />
+                        <Route exact path='/turno/:id' component={Editar} />
+                        <Route exact path="/user/signin" component={SignIn} />
+                        <Route exact path="/user/signup" component={SignUp} />
+                      </Switch>
+                    </div>
+                  <div className="content-container">
+                      <Footer />
+                  </div>
                 </div>
-                </div>
-
-
               </div>
             </Router>
           </DoctoresState>

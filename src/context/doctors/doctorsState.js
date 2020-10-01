@@ -33,13 +33,11 @@ const DoctoresState = props => {
 
         }
     }
-    /////////////Doctores//////////////////
+
     const obtenerDoctores = async () => {
 
         try {
             const respuesta = await ClienteAxios.get('/doctores');
-            //console.log('Doctores ',respuesta);
-
             dispatch({
                 type: OBTENER_DOCTORES,
                 payload: respuesta.data.doctorDB
@@ -47,7 +45,6 @@ const DoctoresState = props => {
         } catch (error) {
             console.log(error);
         }
-
     }
     const eliminarDoctor = async (DocId)=>{
         try{
@@ -62,10 +59,8 @@ const DoctoresState = props => {
         }
         catch(error){
             console.log(error);
-            
         }
     }
-
      return(
          <doctoresContext.Provider
             value={{
