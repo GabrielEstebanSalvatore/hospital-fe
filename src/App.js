@@ -3,20 +3,20 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 /*Vistas*/
-import homepage from './componentes/routes/homepage';
-import GestionClients from './componentes/routes/GestionClients';
-import gestionAdmin_Doctores from './componentes/routes/GestionAdmin_Doctors';
-import GestionAdmin_TurnosClinetes from './componentes/routes/GestionAdmin_TurnosClinetes';
-import DoctorsGestion from './componentes/routes/DoctorsGestion';
+import homepage from './components/routes/homepage';
+import GestionClients from './components/routes/GestionClients';
+import gestionAdmin_Doctores from './components/routes/GestionAdmin_Doctors';
+import GestionAdmin_TurnosClinetes from './components/routes/GestionAdmin_TurnosClinetes';
+import DoctorsGestion from './components/routes/DoctorsGestion';
 //Usuario
-import Signin from './componentes/auth/signin';
-import Signup from './componentes/auth/signup';
-import Contact from './componentes/routes/Contact'
-import Editar from './componentes/routes/TurnEdit'
+import Signin from './components/auth/signin';
+import Signup from './components/auth/signup';
+import Contact from './components/routes/Contact'
+import Editar from './components/routes/TurnEdit'
 
 /*Componentes*/
-import Navigation from './componentes/layout/Navigation';
-import Footer from './componentes/layout/Footer';
+import Navigation from './components/layout/Navigation';
+import Footer from './components/layout/Footer';
 
 /*Context*/
 import AlertaState from './context/alerts/alertState'
@@ -28,7 +28,7 @@ import DoctoresState from './context/doctors/doctorsState'
 import tokenAuth from './config/token';
 
 /*Rutas Privadas*/
-import RutaPrivada from './componentes/privateRoutes/privateRoutes'
+import RutaPrivada from './components/privateRoutes/privateRoutes'
 
 // Revisar si tenemos un token
 const token = localStorage.getItem('token');
