@@ -3,7 +3,7 @@ import BarraAdmin from '../layout/AdminBar';
 import DoctoresContext from '../../context/doctors/doctorsContext';
 import DoctorsList from '../routesGestionLayouts/DoctorsList';
 import ProyectContext from '../../context/projects/proyectContext'
-import ModalContainer from '../../modal/ModalContainer';
+import ModalContainer from '../../modal/modalContainer';
 
 const GestionDoctores = () => {
 

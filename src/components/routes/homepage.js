@@ -8,7 +8,7 @@ import CarrouselHomePage from './homePage/sectionOne/sectionOne'
 import ContadorClientes from './homePage/sectionTwo/sectionTwo';
 import ContadorRate from './homePage/sectionThree/ContadorRate';
 
-const homepage = () => {
+const Homepage = () => {
 
     return (
         <Fragment>
@@ -111,4 +111,4 @@ const homepage = () => {
     );
 
 }
-export default homepage;
+export default Homepage;

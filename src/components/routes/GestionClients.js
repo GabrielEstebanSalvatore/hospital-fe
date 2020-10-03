@@ -2,12 +2,12 @@ import React, { useContext} from 'react';
 //import {Link} from 'react-router-dom';
 import GestionBar from '../layout/GestionBar';
 import TurnsList from '../routesGestionLayouts/TurnsList'
-import ModalContainer from '../../modal/ModalContainer'
+import ModalContainer from '../../modal/modalContainer'
 import ProyectContext from '../../context/projects/proyectContext';
 
 
 
-const GestionClientes= () => {
+const GestionClients= () => {
     const proyectosContext = useContext(ProyectContext);
     const {modalView } = proyectosContext;
     
@@ -29,4 +29,4 @@ const GestionClientes= () => {
     );
 }
 
-export default GestionClientes;
+export default GestionClients;

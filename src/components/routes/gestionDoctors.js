@@ -3,9 +3,9 @@ import BarraAdmin from '../layout/AdminBar';
 import doctorsContext from '../../context/doctors/doctorsContext';
 import ListadoTurnosClientes from '../routesGestionLayouts/ClientsTurnsList_Doctor';
 import ProyectContext from '../../context/projects/proyectContext'
-import ModalContainer from '../../modal/ModalContainer';
+import ModalContainer from '../../modal/modalContainer';
 
-const GestionDoctores = () => {
+const DoctorGestion = () => {
 
     const proyectosContext = useContext(ProyectContext);
     const {modalView } = proyectosContext;
@@ -35,4 +35,4 @@ const GestionDoctores = () => {
     )
 }
 
-export default GestionDoctores;
+export default DoctorGestion;
