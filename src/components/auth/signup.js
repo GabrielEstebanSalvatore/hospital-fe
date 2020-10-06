@@ -7,21 +7,21 @@ const Signup = (props) => {
 
     // extraer los valores del context
     const alertaContext = useContext(AlertaContext);
-    const { alerta, mostrarAlerta } = alertaContext;
+    const { alert, mostrarAlerta } = alertaContext;
 
     const authContext = useContext(AuthContext);
-    const { mensaje, autenticado, registrarCliente } = authContext;
+    const { message, authenticated, registrarCliente } = authContext;
 
     //En caso de que el usuairo se haya autenticado o registrado o sea un registro duplicado
     useEffect(() => {
-        if (autenticado) {
+        if (authenticated) {
             props.history.push('/user/signin')
         }
-        if (mensaje) {
-            mostrarAlerta(mensaje.msg);
+        if (message) {
+            mostrarAlerta(message.msg);
         }
         // eslint-disable-next-line
-    }, [mensaje, autenticado, props.history])
+    }, [message, authenticated, props.history])
     // State para iniciar sesión
     const [cliente, guardarCliente] = useState({
         name: '',
@@ -81,9 +81,9 @@ const Signup = (props) => {
                 <div className="card-body">
                     <form onSubmit={onSubmit} noValidate >
                         <div className="form-group">
-                            {alerta ?
+                            {alert ?
                                 <div className="alert alert-danger alert-dismissible fade show" role="alert">
-                                    <div> {alerta.msg} </div>
+                                    <div> {alert.msg} </div>
 
                                 </div>
                                 : null}

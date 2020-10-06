@@ -9,15 +9,16 @@ import {
 
 import ClienteAxios from '../../config/axios';
 
-const DoctoresState = props => {
+const DoctorsState = props => {
     const initialState= {
-        doctores: [],
-        doctoresNombre:[]
+        doctors: [],
+        doctorsName:[],
+        nuevoDoctor:""
     };
 
     const [state, dispatch] = useReducer(doctoresReducer, initialState);
 
-    const nuevoDoc = async doctor => {
+    const newDoctor = async doctor => {
         try {
             console.log('NUEVO DOCTOR', doctor);
 
@@ -64,9 +65,9 @@ const DoctoresState = props => {
      return(
          <doctoresContext.Provider
             value={{
-                doctores: state.doctores,
-                doctoresNombre: state.doctoresNombre,
-                nuevoDoc,
+                doctors: state.doctors,
+                doctorsName: state.doctorsName,
+                newDoctor,
                 obtenerDoctores,
                 eliminarDoctor
             }}
@@ -75,4 +76,4 @@ const DoctoresState = props => {
          </doctoresContext.Provider>
     )
 }
-export default DoctoresState;
+export default DoctorsState;

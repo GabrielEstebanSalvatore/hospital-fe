@@ -4,7 +4,7 @@ import AuthContext from '../../context/authentication/authContext';
 
 const RutaPrivada = ({ component: Component, ...props}) => {
     const authContext = useContext(AuthContext)
-    const {autenticado, clienteAutenticado, cargando} = authContext;
+    const {authenticated, clienteAutenticado, loading} = authContext;
 
     useEffect(() => {
        
@@ -13,7 +13,7 @@ const RutaPrivada = ({ component: Component, ...props}) => {
     }, [])
 
     return (
-        <Route {...props} render={props => !autenticado && !cargando ? (
+        <Route {...props} render={props => !authenticated && !loading ? (
             <Redirect to="/"/>
         ) : (
             <Component {...props} />

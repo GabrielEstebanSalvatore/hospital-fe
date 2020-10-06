@@ -14,12 +14,12 @@ export default (state, action) => {
         case OBTENER_DOCTORES:
             return {
                 ...state,
-                doctoresNombre: action.payload
+                doctorsName: action.payload
             }
         case ELIMINAR_DOCTOR:
             return{
                 ...state,
-                doctores: state.doctores.filter(doctor => doctor._id !== action.payload)
+                doctors: state.doctors.filter(doctor => doctor._id !== action.payload)
             }
         default:
             return state;

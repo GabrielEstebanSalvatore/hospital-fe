@@ -7,7 +7,7 @@ const DoctorModal = () => {
     const proyectContext = useContext(ProyectContext);
     const { handleModal } = proyectContext;
     const doctoresContext = useContext(DoctoresContext);
-    const {nuevoDoc } = doctoresContext;
+    const {newDoctor } = doctoresContext;
 
     const [handleModalState] = useState(
         '',
@@ -41,7 +41,7 @@ const DoctorModal = () => {
             return;
         }
 
-        nuevoDoc(doctor);;
+        newDoctor(doctor);;
 
         console.log("doctor modal", doctor);
 

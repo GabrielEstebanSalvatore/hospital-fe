@@ -9,7 +9,7 @@ import { SearchOutlined } from '@ant-design/icons';
 const ClientsTurnsList_Doctor = () => {
 
   const authContext = useContext(AuthContext);
-  const { cliente, email } = authContext;
+  const { client, email } = authContext;
 
   //Extraer Turnos de state inicial
   const proyectosContext = useContext(proyectContext);

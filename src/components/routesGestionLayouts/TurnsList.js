@@ -5,10 +5,7 @@ import { saveAs } from 'file-saver';
 import { Table } from 'antd';
 import { DeleteOutlined, VerticalAlignBottomOutlined } from '@ant-design/icons';
 import Swal from 'sweetalert2'
-
-
 import {  Input, Button, Space } from 'antd';
-//import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
 
 const TurnsList = () => {
@@ -17,7 +14,6 @@ const TurnsList = () => {
     const proyectosContext = useContext(proyectContext);
     const { turnos, obtenerTurnos,eliminarTurno} = proyectosContext;
     
-
     // Obtener proyectos cuando carga el componente
     useEffect(() => {
         obtenerTurnos(); 

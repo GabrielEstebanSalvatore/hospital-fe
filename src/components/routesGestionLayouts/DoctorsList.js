@@ -8,7 +8,7 @@ const DoctorsList = () => {
 
     //Extraer Turnos de state inicial
     const doctoresContext= useContext(DoctoresContext)
-    const {obtenerDoctores,doctoresNombre,eliminarDoctor} = doctoresContext;
+    const {obtenerDoctores,doctorsName,eliminarDoctor} = doctoresContext;
 
     // Obtener proyectos cuando carga el componente
     useEffect(() => {
@@ -40,7 +40,7 @@ const DoctorsList = () => {
 
     //ARMAR LA TABLA
    const getRow = () =>{
-    return doctoresNombre.map((doctor)=>{
+    return doctorsName.map((doctor)=>{
         return{
             key:doctor._id,
             name:doctor.name,

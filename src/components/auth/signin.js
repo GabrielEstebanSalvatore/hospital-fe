@@ -6,21 +6,21 @@ import AuthContext from '../../context/authentication/authContext';
 const SignIn = (props) => {
 
     const alertaContext = useContext(AlertaContext);
-    const { alerta, mostrarAlerta } = alertaContext;
+    const { alert, mostrarAlerta } = alertaContext;
 
     const authContext = useContext(AuthContext);
-    const { mensaje, autenticado, iniciarSesion, cliente } = authContext;
+    const { message, authenticated, iniciarSesion, cliente } = authContext;
 
     // En caso de que el password o usuario no exista
     useEffect(() => {
-        if (autenticado) {
+        if (authenticated) {
             props.history.push('/gestion');
         }
 
-        if (mensaje) {
-            mostrarAlerta(mensaje.msg);
+        if (message) {
+            mostrarAlerta(message.msg);
         }
-    }, [mensaje, autenticado, props.history]);
+    }, [message, authenticated, props.history]);
 
     // State para iniciar sesión
     const [clienteDatos, guardarCliente] = useState({
@@ -61,10 +61,10 @@ const SignIn = (props) => {
                 <div className="card-body">
                     <form onSubmit={onSubmit} noValidate>
 
-                        {alerta ?
+                        {alert ?
                             <div className="alert alert-danger alert-dismissible" role="alert">
                                 
-                                <div> {alerta.msg} </div>
+                                <div> {alert.msg} </div>
                             </div>
                             : null
                         }

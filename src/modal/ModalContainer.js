@@ -10,7 +10,7 @@ const ModalContainer = ()=>{
     const proyectosContext = useContext(proyectContext);
     const {modalView } = proyectosContext;
     const authContext = useContext(AuthContext);
-    const { cliente } = authContext;
+    const { client } = authContext;
 
     const renderModalView =()=>{
         switch (modalView) {
@@ -28,7 +28,7 @@ const ModalContainer = ()=>{
                 />
             case 'clienteEditar':
                 return <ClientModal
-                    clienteId={cliente._id}
+                    clienteId={client._id}
                 />
             case 'nuevoDoctor':
                 return <DoctorModal

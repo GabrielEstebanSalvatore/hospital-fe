@@ -5,7 +5,7 @@ import AuthContext from '../../context/authentication/authContext';
 const Navigation = () => {
 
     const authContext = useContext(AuthContext);
-    const { clienteAutenticado, cliente, cerrarSesion } = authContext;
+    const { clienteAutenticado, client, cerrarSesion } = authContext;
 
     useEffect(() => {
 
@@ -17,7 +17,7 @@ const Navigation = () => {
 
         <nav className="navigation">
             <div className="navbar1 ">
-                {cliente
+                {client
                     ?
                     <Link className="nav-item text-white" to="/">
 
@@ -36,27 +36,27 @@ const Navigation = () => {
             </div>
             <div className="navbar2">
 
-                {cliente
+                {client
                     ?
 
                     <ul className="navbar2-1" >
-                        {cliente.role == 'ADMIN_ROLE' &&
+                        {client.role === 'ADMIN_ROLE' &&
                             <li>
                                 <Link className=" text-white" to="/gestionadmin">Doctores</Link>
                             </li>
                         }
-                        {cliente.role == 'ADMIN_ROLE' &&
+                        {client.role === 'ADMIN_ROLE' &&
                             <li>
                                 <Link className=" text-white" to="/gestionadminturnos">Turnos</Link>
                             </li>
                         }
-                        {cliente.role == 'USER_ROLE' &&
+                        {client.role === 'USER_ROLE' &&
                             <li className="nav-item ">
                                 <Link className=" text-white" to="/gestion">Mi Gestion</Link>
 
                             </li>
                         }
-                        {cliente.role == 'DOCTOR_ROLE' &&
+                        {client.role === 'DOCTOR_ROLE' &&
                             <li className="nav-item ">
                                 <Link className=" text-white" to="/gestiondoctores">Administrar Turnos</Link>
 

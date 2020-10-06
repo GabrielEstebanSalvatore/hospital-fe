@@ -2,15 +2,12 @@ import React, { useContext, useState, useEffect } from 'react';
 import ProyectContext from '../context/projects/proyectContext';
 import DoctoresContext from '../context/doctors/doctorsContext';
 
-//import Input from './input/index'
-
-
 const TurnosModal = ({ typeTurnos,typoInternaciones,typoEmergencias }) => {
 
     const proyectContext = useContext(ProyectContext);
     const { handleModal, agregarTurno } = proyectContext;
     const doctoresContext = useContext(DoctoresContext)
-    const { obtenerDoctores, doctoresNombre } = doctoresContext;
+    const { obtenerDoctores, doctorsName } = doctoresContext;
 
     useEffect(() => {
         obtenerDoctores()
@@ -106,7 +103,7 @@ const TurnosModal = ({ typeTurnos,typoInternaciones,typoEmergencias }) => {
                             required>
                             <option value="" disabled selected >Seleccione el doctor</option>
                             {
-                                doctoresNombre.map(doctor => (
+                                doctorsName.map(doctor => (
                                     <option key={doctor._id} value={doctor.email}>
                                         {doctor.name} - {doctor.profesion}
                                     </option>

@@ -14,10 +14,10 @@ export default (state, action) => {
         case EDITAR_CLIENTE:
             return{
                 ...state,
-                autenticado: true,
-                mensaje: null,
-                cliente: action.payload.cliente,
-                cargando: false,
+                authenticated: true,
+                message: null,
+                client: action.payload.cliente,
+                loading: false,
                 numeroClientes:null
             }
         case REGISTRO_EXITOSO:
@@ -25,18 +25,18 @@ export default (state, action) => {
             localStorage.setItem('token', action.payload.token);
             return {
                 ...state,
-                autenticado: true,
-                mensaje: null,
+                authenticated: true,
+                message: null,
                 token: action.payload.token,
-                cargando: false
+                loading: false
             }
         case OBTENER_USUARIO:
             return {
                 ...state,
-                autenticado: true,
-                mensaje: null,
-                cliente: action.payload.cliente,
-                cargando: false,
+                authenticated: true,
+                message: null,
+                client: action.payload.cliente,
+                loading: false,
                 email: action.payload.cliente.email
             }
         case CERRAR_SESION:
@@ -46,10 +46,10 @@ export default (state, action) => {
             return {
                 ...state,
                 token: null,
-                cliente: null,
-                autenticado: null,
-                mensaje: action.payload,
-                cargando: false               
+                client: null,
+                authenticated: null,
+                message: action.payload,
+                loading: false               
             }
         case CANTIDAD_CLIENTES:
             console.log(action.payload.cuantos);

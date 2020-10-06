@@ -19,10 +19,10 @@ import { 
 const AuthState = props => {
     const initialState = {
         token: props.token ? props.token : localStorage.getItem('token'),
-        autenticado: null,
-        cliente: null, 
-        mensaje: null, 
-        cargando: true,
+        authenticated: null,
+        client: null, 
+        message: null, 
+        loading: true,
         admin:null,
         numeroClientes:null,
         email:null
@@ -143,10 +143,10 @@ const AuthState = props => {
         <AuthContext.Provider
             value={{
                 token: state.token,
-                autenticado: state.autenticado,
-                cliente: state.cliente,
-                mensaje: state.mensaje,
-                cargando:state.cargando,
+                authenticated: state.authenticated,
+                client: state.client,
+                message: state.message,
+                loading:state.loading,
                 numeroClientes: state.numeroClientes,
                 email: state.email,
                 registrarCliente,

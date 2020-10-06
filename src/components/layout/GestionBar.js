@@ -6,7 +6,7 @@ import BotonDeBarra from './buttonBar/BarButton'
 const GestionBar = (props) => {
 
     const authContext = useContext(AuthContext);
-    const { clienteAutenticado, cliente, /*cerrarSesion*/ } = authContext;
+    const { clienteAutenticado, client, /*cerrarSesion*/ } = authContext;
 
 
     useEffect(() => {
@@ -19,7 +19,7 @@ const GestionBar = (props) => {
         <div className="barra_usuario">
 
             <div className="barra_usuario_nombre">
-                {cliente ? <p className="nombre-usuario "><strong> Gestión de Turnos de: <span>{cliente.name} </span> </strong></p> : null}
+                {client ? <p className="nombre-usuario "><strong> Gestión de Turnos de: <span>{client.name} </span> </strong></p> : null}
             </div>
 
             <BotonDeBarra
