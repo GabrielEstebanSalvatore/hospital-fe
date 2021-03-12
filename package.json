@@ -18,7 +18,7 @@
     "html-pdf": "^2.2.0",
     "jquery": "^3.5.1",
     "js-datepicker": "^5.16.0",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "react": "^16.13.1",
     "react-date-picker": "^7.10.0",
     "react-dom": "^16.13.1",
